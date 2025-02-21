@@ -7,19 +7,20 @@ import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
 interface AboutPageProps {
-  params: {
+  params: Promise<{
     lang: Locale;
-  };
+  }>;
 }
 
-const Page = async ({ params }: AboutPageProps) => {
-  const lang = (await params).lang;
+export default async function Page({ params }: AboutPageProps) {
+  const { lang } = await params;
+  console.log(lang);
   const dictionary = await getDictionary(lang);
   const page = dictionary.pages.about;
 
   return (
     <main>
-      <PageHeader page={page} lang={lang} />
+      <PageHeader page={page} />
       <AboutIntro />
       <Structure />
       <Vission />
@@ -28,6 +29,4 @@ const Page = async ({ params }: AboutPageProps) => {
       {/* team */}
     </main>
   );
-};
-
-export default Page;
+}

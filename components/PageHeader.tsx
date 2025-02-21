@@ -1,17 +1,11 @@
-import React from "react";
-import ButtonLine from "./ButtonLine";
-import { getDictionary, Locale } from "@/lib/i18n";
-
 interface PageHeaderProps {
-  lang: Locale;
   page: {
     title: string;
     subtitle: string;
   };
 }
 
-const PageHeader = async ({ page, lang }: PageHeaderProps) => {
-  const dictionary = await getDictionary(lang);
+const PageHeader = async ({ page }: PageHeaderProps) => {
   return (
     <section className="h-[500px] bg-[#5c5b5b] relative">
       <div>

@@ -3,19 +3,19 @@ import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     lang: Locale;
-  };
+  }>;
 }
 
 const Page = async ({ params }: ServicePageProps) => {
-  const lang = (await params).lang;
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   const page = dictionary.pages.service;
 
   return (
     <main>
-      <PageHeader page={page} lang={lang} />
+      <PageHeader page={page} />
       {/* general into */}
       {/* service 1 */}
       {/* service 1 */}

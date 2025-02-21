@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutIntro = () => {
   return (
     <section className="h-screen ">

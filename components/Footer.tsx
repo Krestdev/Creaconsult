@@ -23,11 +23,11 @@ const Footer = async ({ lang }: FooterProps) => {
                 className="w-full object-cover"
               />
               <p className="opacity-70">
-                cabinet d’ingénieurs et de maîtrise d’œuvre basé à Douala,
+                {`cabinet d’ingénieurs et de maîtrise d’œuvre basé à Douala,
                 spécialisé en études sectorielles, contrôle technique et
                 développement d'infrastructures, avec un engagement envers la
                 satisfaction client, la durabilité environnementale et la
-                responsabilité sociale.
+                responsabilité sociale.`}
               </p>
               <div className="flex items-center gap-2">
                 <LinkedinFilled className="text-[32px]" />

@@ -1,8 +1,5 @@
-import { PushpinOutlined } from "@ant-design/icons";
-import React from "react";
-import ListItem from "./ListItem";
-import BorderDecoration from "../BorderDecoration";
 import BorderDecorationImage from "./BorderDecorationImage";
+import ListItem from "./ListItem";
 
 const Mission = () => {
   return (

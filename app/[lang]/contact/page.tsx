@@ -3,19 +3,19 @@ import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
 interface contactPageProps {
-  params: {
+  params: Promise<{
     lang: Locale;
-  };
+  }>;
 }
 
 const Page = async ({ params }: contactPageProps) => {
-  const lang = (await params).lang;
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   const page = dictionary.pages.contact;
 
   return (
     <main>
-      <PageHeader page={page} lang={lang} />
+      <PageHeader page={page} />
       {/* General intro*/}
       {/* visson */}
       {/* mission */}
