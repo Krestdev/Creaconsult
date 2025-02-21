@@ -4,7 +4,7 @@ export const en: Dictionary = {
   title: "CreaConsult",
   navbar: [
     { link: "/", title: "Creaconsult" },
-    { link: "/home", title: "Home" },
+    { link: "/", title: "Home" },
     { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
     { link: "/contact", title: "contact us" },
