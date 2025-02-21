@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
+import { DM_Sans } from "next/font/google";
+import "../globals.css";
+import React from "react";
+import { Locale } from "@/lib/i18n";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const jakarta_sans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta-sans",
+const dm_sans = DM_Sans({
+  variable: "--font-DM-sans",
   subsets: ["latin"],
 });
 
@@ -23,18 +17,28 @@ export const metadata: Metadata = {
     "High class consulting, monioring, support and analysis services",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+  params: {
+    lang: Locale;
+  };
+}
+
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "fr" }];
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
+  const lang = (await params).lang;
   return (
-    <html lang="en">
-      <body
-        className={` 
-          ${geistSans.variable} ${geistMono.variable} ${jakarta_sans.variable} antialiased`}
-      >
+    <html lang={lang}>
+      <body className={`${dm_sans.variable} antialiased`}>
+        <NavBar lang={lang} />
         {children}
+        <Footer lang={lang} />
       </body>
     </html>
   );

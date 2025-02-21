@@ -1,69 +1,89 @@
 import React from "react";
+import ButtonLine from "./ButtonLine";
+import { getDictionary, Locale } from "@/lib/i18n";
 
-const Hero = () => {
+interface HeroProps {
+  lang: Locale;
+}
+
+const Hero = async ({ lang }: HeroProps) => {
+  const dictionary = await getDictionary(lang);
   return (
-    <section className="z-[11] h-screen sticky top-0 overflow-hidden">
-      <div className="h-full flex relative">
-        {/* Hero left */}
-        <div className="will-change-[transform] flex-grow-0 flex-shrink basis-1/2 relative hero-left-slide-out">
-          {/* hero left main */}
-          <div className=" bg-[#27323a] flex justify-end items-stretch h-full px-[15px]">
-            {/* hero left content */}
-            <div className=" z-[111] gap-[80px] relative pt-[140px] max-w-[600px] flex justify-center items-start flex-1 flex-col flex-nowrap">
-              {/* hero top text */}
-              <div>
-                {/*  */}
-                <div className="overflow-hidden pb-10">
-                  <div className=" tracking-[1.8px] uppercase text-[12px] font-bold leading-[17.6px] ">
-                    crafting the future
-                  </div>
-                </div>
-                {/* building your modern Space */}
-                <div className="max-w-[475px] overflow-hidden pb-[25px]">
-                  <h1 className="my-0 text-[60px] tracking-[-2px] font-light leading-[66px]">
-                    Building your modern space
-                  </h1>
-                </div>
-                {/* Transform your vision into reality with our innovative designs, creating modern spaces that blend funtionality, aesthetics, and sustainability. */}
-                <div className="max-w-[475px] overflow-hidden">
-                  <p className="tracking-[0.5px] mb-[10px] text-[16px] leading-[25px] font-medium text-[#dcc5b7c7]">
-                    Transform your vision into reality with our innovative
-                    designs, creating modern spaces that blend funtionality,
-                    aesthetics, and sustainability.{" "}
-                  </p>
-                </div>
+    <section className="h-screen bg-[#5c5b5b] relative">
+      <div>
+        <div className="herobg" />
+        <div className="bgLines" />
+        <div className="bgStyle" />
+        <div className="absolute z-[4] top-0 w-full h-screen bg-black opacity-60" />
+      </div>
+      <div className="absolute z-[5] w-full flex justify-center items-center py-[180px] h-screen">
+        <div className="max-w-7xl w-full grid md:grid-cols-2 grid-cols-1 items-center">
+          <div className="col-span-1 space-y-4">
+            <p className=" uppercase small font-extrabold">
+              {dictionary.hero.title.small}
+            </p>
+            <h1 className="leading-[100%]">{dictionary.hero.title.main}</h1>
+            <p>{dictionary.hero.title.sub}</p>
+            <div className="flex gap-10">
+              <ButtonLine text="Contactez-nous" />
+              <ButtonLine text="Demandez un devis" />
+            </div>
+          </div>
+          <div className="col-span-1">
+            <div className="ml-auto w-full space-y-10">
+              <div className=" text-right">
+                <h1 className="extra">{dictionary.hero.experience.years}</h1>
+                <p className="leading-[100%]">
+                  {dictionary.hero.experience.message}
+                </p>
               </div>
-              {/* Hero buttom text */}
-              <div className="z-[11] gap-[20px] flex justify-start items-end">
-                {/* Hero slide Image */}
-                <div className=" overflow-hidden max-w-[186px] pb-10">
-                  <h2 className="uppercase text-[40px] font-light leading-[50px] my-0 tracking-[-1.5px] text-[#dcc5b7c7]">
-                    Live Project
-                  </h2>
-                </div>
-                {/* hero slide Image */}
-                <div className="z-[111] w-[283px] h-[318px] relative">
-                  <div className="z-[111] h-full relative overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className=" bg-[url('/ui/hero.jpg')] object-cover z-[-100] bg-[50%] bg-cover w-full h-full m-auto absolute -inset-full align-baseline inline-block"
-                    >
-                      <source src="https://cdn.prod.website-files.com/66d1476206d9b1b69ee2b899%2F66d5470b435f3588b0fea103_4065357-hd_1920_1080_25fps-transcode.mp4" />
-                      <source src="https://cdn.prod.website-files.com/66d1476206d9b1b69ee2b899%2F66d5470b435f3588b0fea103_4065357-hd_1920_1080_25fps-transcode.webm" />
-                    </video>
+              <div className=" text-right">
+                <h1 className="extra">{dictionary.hero.workers.number}</h1>
+                <p className="leading-[100%]">
+                  {dictionary.hero.workers.number}
+                </p>
+              </div>
+              <div className="text-right">
+                <h5>{dictionary.hero.certification.title}</h5>
+                <div className="flex gap-4 w-full justify-end">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/ui/isoveritas.png"
+                      className="w-[150px] h-[70px] object-cover"
+                      alt="veritas sertificate iso 14001"
+                    />
+                    <p className="small">
+                      ISO 14001:2015 <br />
+                      <span className="mariyam">Veritas</span>
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <img
+                      className="w-[160px] h-[70px] object-cover"
+                      src="/ui/isoveritas2.png"
+                      alt="veritas sertificate iso 9001"
+                    />
+                    <p className="small">
+                      ISO 9001:2015 <br />
+                      <span className="mariyam">Veritas</span>
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <img
+                      className="w-[40px] h-[70px] object-cover"
+                      src="/ui/ukasMS.png"
+                      alt="ukas managment system certificate 0006"
+                    />
+                    <p className="small">
+                      0006 <br />
+                      <span className="mariyam">Ukas</span>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/* Hero right */}
-        <div className="flex-1"></div>
-        {/* hero line */}
-        <div className="w-full h-[1px] bg-[#dcc5b733] max-w-[1780px] mx-auto absolute inset-x-0 top-auto bottom-1/4 hero-line-slide-right"></div>
       </div>
     </section>
   );
