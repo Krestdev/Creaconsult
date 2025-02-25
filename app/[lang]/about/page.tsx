@@ -6,9 +6,7 @@ import Team from "@/components/about/Team";
 import Values from "@/components/about/Values";
 import Vission from "@/components/about/Vission";
 import PageHeader from "@/components/global/PageHeader";
-import Partners from "@/components/home/Partners";
 import { getDictionary, Locale } from "@/lib/i18n";
-import React from "react";
 
 interface AboutPageProps {
   params: Promise<{

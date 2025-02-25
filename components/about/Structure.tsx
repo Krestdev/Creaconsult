@@ -1,5 +1,3 @@
-import React from "react";
-import Values from "./Values";
 import ListItem from "./ListItem";
 
 const Structure = () => {

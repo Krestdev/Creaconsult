@@ -1,13 +1,5 @@
-import React from "react";
+import { Mail, Mailbox, MailCheck, MapPin, Phone } from "lucide-react";
 import BorderDecoration from "../utils/BorderDecoration";
-import {
-  Mail,
-  Mailbox,
-  MailCheck,
-  MapPin,
-  MapPinCheck,
-  Phone,
-} from "lucide-react";
 
 const ContactIntro = () => {
   return (

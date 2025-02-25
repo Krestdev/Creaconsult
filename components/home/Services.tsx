@@ -1,8 +1,6 @@
-import Link from "next/link";
-import { describe } from "node:test";
-import React from "react";
-import BorderDecorationImage from "../utils/BorderDecorationImage";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import BorderDecorationImage from "../utils/BorderDecorationImage";
 
 const Services = () => {
   return (

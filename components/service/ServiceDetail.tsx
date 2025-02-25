@@ -1,5 +1,3 @@
-import { title } from "process";
-import React from "react";
 import BorderDecorationImage from "../utils/BorderDecorationImage";
 
 const ServiceDetail = () => {
@@ -219,20 +217,20 @@ const ServiceDetailItem = ({ title, desc, img }: ServiceDetailItem) => {
     </li>
   );
 };
-const ServiceDetailItemReverse = ({ title, desc, img }: ServiceDetailItem) => {
-  return (
-    <li className="grid grid-cols-3 gap-4">
-      <div className="col-span-2">
-        <h5>{title}</h5>
-        <p>{desc}</p>
-      </div>
-      <img
-        src={img}
-        alt=""
-        className="col-span-1 w-full h-[200px] object-cover"
-      />
-    </li>
-  );
-};
+// const ServiceDetailItemReverse = ({ title, desc, img }: ServiceDetailItem) => {
+//   return (
+//     <li className="grid grid-cols-3 gap-4">
+//       <div className="col-span-2">
+//         <h5>{title}</h5>
+//         <p>{desc}</p>
+//       </div>
+//       <img
+//         src={img}
+//         alt=""
+//         className="col-span-1 w-full h-[200px] object-cover"
+//       />
+//     </li>
+//   );
+// };
 
 export default ServiceDetail;

@@ -1,6 +1,3 @@
-import React from "react";
-import ContactForm from "./ContactForm";
-import ButtonLine from "../utils/ButtonLine";
 import BorderDecoration from "../utils/BorderDecoration";
 
 const ContactUs = () => {

@@ -1,16 +1,8 @@
 import { getDictionary, Locale } from "@/lib/i18n";
+import { Linkedin, Mail, Mailbox, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import BorderDecoration from "../utils/BorderDecoration";
-import {
-  Award,
-  Linkedin,
-  Mail,
-  Mailbox,
-  MapPin,
-  Phone,
-  Scale,
-} from "lucide-react";
 
 interface FooterProps {
   lang: Locale;
