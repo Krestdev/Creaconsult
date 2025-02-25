@@ -23,7 +23,8 @@ export const fr: Dictionary = {
     },
     service: {
       title: "Nos Service",
-      subtitle: "Service us title",
+      subtitle:
+        "Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des projets d’exception.",
     },
     contact: {
       title: "Contactez nous",

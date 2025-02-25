@@ -11,7 +11,7 @@ export const en: Dictionary = {
   ],
   footer: [
     { link: "/", title: "Creaconsult" },
-    { link: "/home", title: "Home" },
+    { link: "/", title: "Home" },
     { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
     { link: "/contact", title: "contact us" },
@@ -23,7 +23,8 @@ export const en: Dictionary = {
     },
     service: {
       title: "Service",
-      subtitle: "Service us title",
+      subtitle:
+        "Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des projets d’exception.",
     },
     contact: {
       title: "Contact Us",

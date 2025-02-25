@@ -3,8 +3,8 @@ import { DM_Sans } from "next/font/google";
 import "../globals.css";
 import React from "react";
 import { Locale } from "@/lib/i18n";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import NavBar from "@/components/global/NavBar";
+import Footer from "@/components/global/Footer";
 
 const dm_sans = DM_Sans({
   variable: "--font-DM-sans",

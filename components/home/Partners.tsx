@@ -11,7 +11,7 @@ const Partners = ({}) => {
       </div> */}
       <div className="w-full absolute z-[5] flex items-center">
         <div className="w-full max-w-7xl mx-auto flex items-center min-h-[500px]">
-          <div className="border-[#9999999c] border-[10px] h-[200px] w-full flex justify-evenly items-center ">
+          <div className="bg-[#d6d6d69c] h-[200px] w-full flex justify-evenly items-center ">
             <img
               src="/ui/partners/banque.png"
               className="w-[100px] h-[100px] object-cover"

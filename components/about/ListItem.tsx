@@ -1,14 +1,19 @@
-import { PushpinOutlined } from "@ant-design/icons";
+import { ArrowRightCircle, Play } from "lucide-react";
 import React from "react";
 
 interface ListItemProps {
+  icon: "circle" | "caret" | "";
   text: string;
 }
 
-const ListItem = ({ text }: ListItemProps) => {
+const ListItem = ({ icon, text }: ListItemProps) => {
   return (
-    <li className="flex gap-4">
-      <PushpinOutlined className="text-[24px]" />{" "}
+    <li className="flex gap-4 items-start">
+      {icon == "caret" ? (
+        <Play strokeWidth={0.8} className="text-[--primary]" />
+      ) : (
+        <ArrowRightCircle strokeWidth={0.8} className="text-[--primary]" />
+      )}{" "}
       <p className="small font-light">{text}</p>
     </li>
   );

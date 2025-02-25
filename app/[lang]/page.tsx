@@ -1,8 +1,9 @@
-import ContactUs from "@/components/ContactUs";
-import Hero from "@/components/Hero";
-import Partners from "@/components/Partners";
-import Services from "@/components/Services";
-import Whyus from "@/components/Whyus";
+import PartnersDetails from "@/components/about/PartnersDetails";
+import ContactUs from "@/components/home/ContactUs";
+import Hero from "@/components/home/Hero";
+import Partners from "@/components/home/Partners";
+import Services from "@/components/home/Services";
+import Whyus from "@/components/home/Whyus";
 import { Locale } from "@/lib/i18n";
 
 interface HomePageProps {
@@ -18,8 +19,8 @@ export default async function Home({ params }: HomePageProps) {
       <Hero lang={lang} />
       <Services />
       <Whyus lang={lang} />
-      <Partners />
       <ContactUs />
+      <PartnersDetails />
     </main>
   );
 }

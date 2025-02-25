@@ -1,4 +1,7 @@
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/global/PageHeader";
+import ContactUs from "@/components/home/ContactUs";
+import Whyus from "@/components/home/Whyus";
+import ServiceDetail from "@/components/service/ServiceDetail";
 import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
@@ -17,9 +20,9 @@ const Page = async ({ params }: ServicePageProps) => {
     <main>
       <PageHeader page={page} />
       {/* general into */}
-      {/* service 1 */}
-      {/* service 1 */}
-      {/* service 1 */}
+      <ServiceDetail />
+      <Whyus lang={lang} />
+      <ContactUs />
       {/* why choose us */}
     </main>
   );

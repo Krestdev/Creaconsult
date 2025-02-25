@@ -1,6 +1,6 @@
 const AboutIntro = () => {
   return (
-    <section className="h-screen ">
+    <section className="h-fit">
       <div className="max-w-7xl h-[80vh] mx-auto flex flex-col items-center justify-center">
         <div className="grid grid-cols-2">
           <div className="space-y-8">
@@ -55,15 +55,21 @@ const AboutIntro = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <div className="relative w-fit ml-auto">
+            <div className="relative w-fit h-full ml-auto">
               <img
-                src="https://placehold.co/400x400"
-                className="ml-auto"
+                src="/ui/services/company.jpeg"
+                className="max-w-[500px] w-full h-full object-cover"
                 alt=""
               />
               <img
-                src="https://placehold.co/300x300"
-                className="absolute -z-[1] -left-[30%] -bottom-10"
+                src="/ui/services/logo.png"
+                className="max-w-[250px] w-full h-[250px] object-cover absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%]"
+                alt=""
+              />
+
+              <img
+                src="/ui/services/douala.jpeg"
+                className="absolute -z-[1] -left-[30%] -bottom-10 max-w-[300px] w-full max-h-[300px] object-cover"
                 alt=""
               />
             </div>

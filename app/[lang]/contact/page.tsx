@@ -1,4 +1,5 @@
-import PageHeader from "@/components/PageHeader";
+import ContactIntro from "@/components/contact/ContactIntro";
+import PageHeader from "@/components/global/PageHeader";
 import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
@@ -16,7 +17,7 @@ const Page = async ({ params }: contactPageProps) => {
   return (
     <main>
       <PageHeader page={page} />
-      {/* General intro*/}
+      <ContactIntro />
       {/* visson */}
       {/* mission */}
       {/* values */}

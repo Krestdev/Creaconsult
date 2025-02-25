@@ -1,8 +1,12 @@
 import AboutIntro from "@/components/about/AboutIntro";
 import Mission from "@/components/about/Mission";
+import PartnersDetails from "@/components/about/PartnersDetails";
 import Structure from "@/components/about/Structure";
+import Team from "@/components/about/Team";
+import Values from "@/components/about/Values";
 import Vission from "@/components/about/Vission";
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/global/PageHeader";
+import Partners from "@/components/home/Partners";
 import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
@@ -23,10 +27,13 @@ export default async function Page({ params }: AboutPageProps) {
       <PageHeader page={page} />
       <AboutIntro />
       <Structure />
-      <Vission />
-      <Mission />
-      {/* values */}
-      {/* team */}
+      <div className="">
+        <Vission />
+        <Mission />
+      </div>
+      <PartnersDetails />
+      <Values />
+      <Team />
     </main>
   );
 }
