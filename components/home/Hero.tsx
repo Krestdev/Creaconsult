@@ -14,7 +14,7 @@ const Hero = async ({ lang }: HeroProps) => {
         <div className="herobg" />
         <div className="bgLines" />
         {/* <div className="bgStyle" /> */}
-        <div className="absolute z-[2] top-0 w-full h-screen bg-gradient-to-b from-black via-transparent to-white" />
+        <div className="absolute z-[2] top-0 w-full h-screen bg-gradient-to-b from-black via-transparent to-transparent" />
       </div>
       <div className="absolute z-[5] w-full flex justify-center items-center py-[180px] h-screen">
         <div className="max-w-7xl w-full grid md:grid-cols-2 grid-cols-1 items-center">
