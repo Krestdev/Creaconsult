@@ -12,6 +12,7 @@ const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
   // const page = dictionary.pages.contact;
+  console.log(dictionary);
 
   return (
     <main>

@@ -17,6 +17,7 @@ interface HomePageProps {
 
 export default async function Home({ params }: HomePageProps) {
   // const lang = (await params).lang;
+  console.log(params);
   return (
     <main>
       {/* Hero */}

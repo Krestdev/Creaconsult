@@ -1,12 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { label, p, s } from "framer-motion/client";
-import Link from "next/link";
-import { List, Translate, X } from "phosphor-react";
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { List, Translate, X } from "phosphor-react";
+import { useEffect, useState } from "react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
