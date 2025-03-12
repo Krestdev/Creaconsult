@@ -9,6 +9,7 @@ import Footer from "@/components/base/Footer";
 const POPPINS = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
   style: "normal",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {

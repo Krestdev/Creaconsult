@@ -16,9 +16,9 @@ const Projects = () => {
               Djapoma Stadium Construction
             </h3>
             <p>
-              Avec plus de 15 ans d'expérience , nous avons accompagné de
-              nombreux projets à travers l'Afrique subsaharienne, en particulier
-              au Cameroun.
+              {
+                "Avec plus de 15 ans d'expérience , nous avons accompagné de nombreux projets à travers l'Afrique subsaharienne, en particulier au Cameroun."
+              }
             </p>
           </div>
         </div>

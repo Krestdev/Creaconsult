@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import SectionContainer from "../global/SectionContainer";
 import { FacebookLogo, GoogleLogo, LinkedinLogo } from "phosphor-react";
+import SectionContainer from "../global/SectionContainer";
 
 const Team = () => {
   return (

@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import SectionContainer from "./SectionContainer";
 import { ArrowRight } from "phosphor-react";
+import SectionContainer from "./SectionContainer";
 
 const LatestNews = () => {
   return (
@@ -65,9 +64,9 @@ const LatestNews = () => {
                 <h4 className="hidden md:block">Une Expertise Reconnue</h4>
                 <h6 className="md:hidden">Une Expertise Reconnue</h6>
                 <p>
-                  Avec plus de 15 ans d'expérience , nous avons accompagné de
-                  nombreux projets à travers l'Afrique subsaharienne, en
-                  particulier au Cameroun.
+                  {
+                    "Avec plus de 15 ans d'expérience , nous avons accompagné de nombreux projets à travers l'Afrique subsaharienne, en particulier au Cameroun."
+                  }
                 </p>
                 <div className="flex gap-2 items-center text-[var(--primary)] font-semibold mt-auto">
                   <p>Read More</p> <ArrowRight size={24} />
@@ -88,9 +87,9 @@ const LatestNews = () => {
                   Certifications et Engagement Qualité
                 </h6>
                 <p>
-                  Nous sommes certifiés ISO 9001 et 14001 (référentiel 2015),
-                  garantissant une gestion rigoureuse de la qualité et une
-                  approche respectueuse de l'environnement.
+                  {
+                    "Nous sommes certifiés ISO 9001 et 14001 (référentiel 2015), garantissant une gestion rigoureuse de la qualité et une approche respectueuse de l'environnement."
+                  }
                 </p>
                 <div className="flex gap-2 items-center text-[var(--primary)] font-semibold mt-auto">
                   <p>Read More</p> <ArrowRight size={24} />

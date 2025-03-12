@@ -1,7 +1,6 @@
 import ContactUs from "@/components/global/ContactUs";
 import Subscription from "@/components/global/Subscription";
 import { getDictionary, Locale } from "@/lib/i18n";
-import React from "react";
 
 interface contactPageProps {
   params: Promise<{
@@ -12,7 +11,7 @@ interface contactPageProps {
 const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  const page = dictionary.pages.contact;
+  // const page = dictionary.pages.contact;
 
   return (
     <main>

@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import SectionContainer from "./SectionContainer";
 import { BoundingBox, Envelope, MapPin, Phone } from "phosphor-react";
+import SectionContainer from "./SectionContainer";
 
 const ContactUs = () => {
   return (
@@ -20,8 +19,9 @@ const ContactUs = () => {
                 Shear your projects and lets work togrther
               </h6>
               <p>
-                Des solutions innovantes en ingénierie et maîtrise d'œuvre pour
-                des projets d'exception.
+                {
+                  "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+                }
               </p>
             </div>
             <ul className="space-y-2">

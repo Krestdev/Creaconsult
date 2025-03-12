@@ -13,16 +13,18 @@ const Services = () => {
         <div className="w-full">
           <h2 className="font-semibold hidden md:block">Nos Service</h2>
           <h5 className="max-w-[600px] hidden md:block">
-            Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des
-            projets d'exception.
+            {
+              "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+            }
           </h5>
         </div>
         {/* mobile */}
         <div className="w-full">
           <h4 className="font-semibold md:hidden">Nos Service</h4>
           <p className="max-w-[600px] md:hidden">
-            Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des
-            projets d'exception.
+            {
+              "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+            }
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">

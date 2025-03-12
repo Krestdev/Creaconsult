@@ -3,7 +3,6 @@ import Partners from "@/components/global/Partners";
 import WhyChooseUs from "@/components/global/WhyChooseUs";
 import ServicesDetails from "@/components/services/ServicesDetails";
 import { getDictionary, Locale } from "@/lib/i18n";
-import React from "react";
 
 interface contactPageProps {
   params: Promise<{
@@ -14,7 +13,7 @@ interface contactPageProps {
 const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  const page = dictionary.pages.contact;
+  // const page = dictionary.pages.contact;
 
   return (
     <main>

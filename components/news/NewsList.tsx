@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-import SectionContainer from "../global/SectionContainer";
 import clsx from "clsx";
 import { ArrowRight } from "phosphor-react";
+import SectionContainer from "../global/SectionContainer";
 
 const NewsList = () => {
   return (
@@ -11,8 +10,9 @@ const NewsList = () => {
       <div className="space-y-2 mb-4">
         <h2 className="font-semibold">News</h2>
         <h6 className="max-w-[700px]">
-          Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des
-          projets d'exception.
+          {
+            "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+          }
         </h6>
       </div>
       <div className="space-y-4">

@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import SectionContainer from "../global/SectionContainer";
 import { ArrowRight } from "phosphor-react";
+import SectionContainer from "../global/SectionContainer";
 
 const Story = () => {
   return (
@@ -12,17 +11,14 @@ const Story = () => {
           <h2 className="font-semibold hidden md:block">Our Story</h2>
           <h4 className="font-bold md:hidden">Our Story</h4>
           <p>
-            Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des
-            projets d'exception.Des solutions innovantes en ingénierie et
-            maîtrise d'œuvre pour des projets d'exception. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Itaque, modi sapiente a eos quo
-            expedita doloribus perspiciatis qui iste dolores repellendus aliquam
-            laborum excepturi nesciunt. Saepe ex facere corporis est?
+            {
+              "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception.Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, modi sapiente a eos quo expedita doloribus perspiciatis qui iste dolores repellendus aliquam laborum excepturi nesciunt. Saepe ex facere corporis est?"
+            }
           </p>
           <p>
-            Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des
-            projets d'exception. Des solutions innovantes en ingénierie et
-            maîtrise d'œuvre pour des projets d'exception.
+            {
+              "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception. Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+            }
           </p>
         </div>
         <div className="grid grid-cols-2 w-full gap-4">

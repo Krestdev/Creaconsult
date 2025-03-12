@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-import SectionContainer from "../global/SectionContainer";
-import { Square } from "phosphor-react";
 import clsx from "clsx";
+import { Square } from "phosphor-react";
+import SectionContainer from "../global/SectionContainer";
 
 interface ServicesDetailsT {
   title: string;

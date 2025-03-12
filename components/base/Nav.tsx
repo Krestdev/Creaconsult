@@ -113,13 +113,13 @@ const Nav = () => {
             {isOpen ? <X size={24} /> : <List size={24} />}
           </div>
           <div className="nav__logo">
-            <a href="/">
+            <Link href="/">
               <img
                 src="/ui/creaconsultFootLogo.png"
                 alt="logo"
                 className=" size-20"
               />
-            </a>
+            </Link>
           </div>
           <div className="text-white flex items-center gap-6">
             <Translate size={24} />

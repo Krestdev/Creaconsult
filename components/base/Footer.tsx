@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  FacebookLogo,
-  GoogleLogo,
-  LinkedinLogo,
-  TwitterLogo,
-} from "phosphor-react";
-import React from "react";
+import Link from "next/link";
+import { FacebookLogo, GoogleLogo, LinkedinLogo } from "phosphor-react";
 
 const Footer = () => {
   return (
@@ -27,8 +22,9 @@ const Footer = () => {
                 className="w-[150px] h-[50px]"
               />
               <p>
-                Des solutions innovantes en ingénierie et maîtrise d'œuvre pour
-                des projets d'exception.
+                {
+                  "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+                }
               </p>
             </div>
 
@@ -46,11 +42,11 @@ const Footer = () => {
           {/* footer body */}
           <div className="flex-1 space-y-4">
             <div className="text-white items-center gap-4 hidden sm:flex">
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/services">Services</a>
-              <a href="/news">News</a>
-              <a href="/contact">Contact</a>
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/news">News</Link>
+              <Link href="/contact">Contact</Link>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
               <div className="space-y-2">
@@ -60,13 +56,13 @@ const Footer = () => {
                 </h6>
                 <ul>
                   <li>
-                    <a href="/about">About us</a>
+                    <Link href="/about">About us</Link>
                   </li>
                   <li>
-                    <a href="/news">News</a>
+                    <Link href="/news">News</Link>
                   </li>
                   <li>
-                    <a href="/#">Testimonials</a>
+                    <Link href="/#">Testimonials</Link>
                   </li>
                 </ul>
               </div>
@@ -77,13 +73,13 @@ const Footer = () => {
                 </h6>
                 <ul>
                   <li>
-                    <a href="/service">Services</a>
+                    <Link href="/service">Services</Link>
                   </li>
                   <li>
-                    <a href="/#">Terms $ Condition</a>
+                    <Link href="/#">Terms $ Condition</Link>
                   </li>
                   <li>
-                    <a href="/#">Privacy Policy</a>
+                    <Link href="/#">Privacy Policy</Link>
                   </li>
                 </ul>
               </div>
@@ -94,13 +90,13 @@ const Footer = () => {
                 </h6>
                 <ul>
                   <li>
-                    <a href="/services">Expertise</a>
+                    <Link href="/services">Expertise</Link>
                   </li>
                   <li>
-                    <a href="/#">Projects</a>
+                    <Link href="/#">Projects</Link>
                   </li>
                   <li>
-                    <a href="/#">Case study</a>
+                    <Link href="/#">Case study</Link>
                   </li>
                 </ul>
               </div>
@@ -111,10 +107,10 @@ const Footer = () => {
                 </h6>
                 <ul>
                   <li>
-                    <a href="/#">+91 9999 9999 999</a>
+                    <Link href="/#">+91 9999 9999 999</Link>
                   </li>
                   <li>
-                    <a href="/#">yahoomail@yahoo.fr</a>
+                    <Link href="/#">yahoomail@yahoo.fr</Link>
                   </li>
                 </ul>
               </div>
@@ -137,9 +133,9 @@ const Footer = () => {
           <p>© 2023 CreaConsult. All rights reserved.</p>
           <p>
             Designed by{" "}
-            <a href="https://creaconsult.com" className="text-blue-500">
+            <Link href="https://creaconsult.com" className="text-blue-500">
               KrestDev
-            </a>
+            </Link>
           </p>
         </div>
       </div>
