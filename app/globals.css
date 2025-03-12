@@ -4,30 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #9c1b20;
-  --primary-transparent: #9c1b1f46;
+  --foreground: #000000;
+  --primary: #700032;
   
   --base-size: 16px;
   --scale-ratio: 1.25;
-  --body-weight: 400;
-  --body-line-height: 1.5;
-  --body-letter-spacing: normal;
-  --body-color: #222222;
-  --body-background: #FFFFFF;
-  
-  --heading-font: var(--body-font);
-  --heading-weight: 700;
-  --heading-line-height: 1.15;
-  --heading-letter-spacing: normal;
-  --heading-color: var(--body-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-  }
+  --line-height: 1.25;
 }
 
 /* styles/globals.css */
@@ -42,241 +24,64 @@
 }
 
 body {
-  color: var(--foreground);
   box-sizing: border-box;
-  font-family: var(--font-DM-sans);
-  
-  line-height: var(--body-line-height);
-  letter-spacing: var(--body-letter-spacing);
-  color: var(--body-color);
-  background: var(--body-background);
+  line-height: var(--line-height);
+  background: var(--background);
+  font-size: var(--base-size);
 }
 
 @layer base {
-  html, body {
-    @apply text-[14px] md:text-[16px] lg:text-[18px];
+  h1, h2, h3, h4, h5, h6 {
+    line-height: var(--line-height);
+    color: #700032;
   }
+
   h1{
-    @apply text-[3.815rem];
+    font-size: 3.813rem;
   }
   h2{
-    @apply text-[3.052rem];
+    font-size: 3.063rem;
   }
   h3{
-    @apply text-[2.441rem];
+    font-size: 2.438rem;
   }
   h4{
-    @apply text-[1.953rem];
+    font-size: 1.938rem;
   }
   h5{
-    @apply text-[1.563rem];
+    font-size: 1.563rem;
   }
   h6{
-    @apply text-[1.25rem];
+    font-size: 1.25rem;
   }
-  .caption{
-    @apply text-[0.8rem];
+  p{
+    font-size: 1rem;
   }
   small{
-    @apply text-[0.64rem] font-semibold;
+    font-size: 0.813rem;
+  }
+  em{
+    font-size: 0.625rem;
   }
 
-  h1,h2,h3,h4,h5,h6{
-    font-weight: var(--heading-weight);
+  .containerParent,nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .formInput{
-    @apply flex flex-col items-start gap-1 w-full;
-  }
-  input{
-    @apply px-[15px] py-[8px] w-full text-black bg-[#a3a3a360];
-    outline: none;
+  .containerParent {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
-  input:focus, textarea:focus{
-    @apply bg-[--primary-transparent] border border-[--primary];
-  }
-  textarea{
-    @apply p-[15px] min-h-[150px] w-full bg-[#a3a3a360] mb-[40px];
-    outline: none;
+  /* link button */
+  .link_button {
+    @apply px-4 py-1 bg-[var(--primary)] text-white;
   }
 
-  /* Hero styling */
-  .herobg{
-    z-index: 2;
-    background-image: url('/ui/hero.jpg');
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;    
+  .link_button_outline{
+    @apply px-2 py-1 border bg-white border-[var(--primary)] text-[var(--primary)]
   }
-
-  .bgStyle{
-    z-index: 3;
-    background-image: url('/ui/shape.svg');
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-
-  .bgLines{
-    z-index: 3;
-    opacity: .12;
-    background-image: url('/ui/shape2.avif');
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-
-  .bgLines_black{
-    z-index: 3;
-    /* opacity: .12; */
-    background: 
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url('/ui/shape2.avif');
-    backdrop-filter: "op";
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-  
-
-  .buttonLines{
-    background-image: url('/ui/button.svg');
-    background-size: cover;
-  }
-
-  /* bg decoration styling*/
-
-  .bgStyle_Revers{
-    z-index: 3;
-    background-image: url('/ui/shape.svg');
-    background-position: 100% 100%;
-    transform: scaleY(-1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-
-  .bgLines_Revers{
-    z-index: 3;
-    opacity: .5;
-    background-image: url('/ui/shape2.avif');
-    transform: scaleY(-1);
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-
-  /* page header styling */
-
-  .bgStyle_Header{
-    z-index: 3;
-    background-image: url('/ui/shape.svg');
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-
-  .bgLines_Header{
-    z-index: 3;
-    opacity: .512;
-    background-image: url('/ui/shape2.avif');
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    inset: 0%;
-  }
-
-  /* service styling */
-
-  .image-box{
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .image-box img:first-child{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    clip-path: polygon(100px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100px);
-  }
-
-  .mission{  
-    background-image: url("/ui/services/mission.jpeg");
-  }
-
-  .vission{  
-    background-image: url("/ui/services/vission.jpeg");
-  }
-
-  /* mission */
-  .mission,.vission {
-    z-index: -1;
-    position: relative;
-    border-radius: 100%;
-    overflow: hidden;
-    width: 20rem;
-    height: 20rem;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* Pseudo-element for Blurred Border */
-  .mission::before,.vission::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 50%; /* Match container's shape */
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.432) 20%,
-      rgba(255, 255, 255, 0.671) 40%,
-      rgba(255, 253, 253, 0.904) 60%,
-      rgb(255, 254, 254) 100%
-    );
-    z-index: 0;
- }
-
- .line_decoration{
-  position: relative;
- }
-
- .line_decoration::after{
-  content: "";
-  z-index: -1;
-  position: absolute;
-  opacity: 0.15;
-  background-image: url('/ui/deco.png');
-  /* background-position: 50%; */
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  /* inset: 0%; */
-  top: 0px;
-  /* right: 0; */
-  /* bottom: 0; */
-  left: -220px;
-  height: 100vh;
-  width: 60vw;
- }
 }

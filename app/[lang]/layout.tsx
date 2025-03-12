@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "../globals.css";
 import React from "react";
 import { Locale } from "@/lib/i18n";
-import NavBar from "@/components/global/NavBar";
-import Footer from "@/components/global/Footer";
+import Nav from "@/components/base/Nav";
+import Footer from "@/components/base/Footer";
 
-const dm_sans = DM_Sans({
-  variable: "--font-DM-sans",
-  subsets: ["latin"],
+const POPPINS = Poppins({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: "normal",
 });
 
 export const metadata: Metadata = {
@@ -35,10 +35,12 @@ export default async function RootLayout({
   const lang = (await params).lang;
   return (
     <html lang={lang}>
-      <body className={`${dm_sans.variable} antialiased`}>
-        <NavBar lang={lang} />
+      <body className={`${POPPINS.className} antialiased`}>
+        {/* Navbar */}
+        <Nav />
         {children}
-        <Footer lang={lang} />
+        {/* footer */}
+        <Footer />
       </body>
     </html>
   );

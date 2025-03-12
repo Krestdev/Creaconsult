@@ -1,8 +1,12 @@
-import PartnersDetails from "@/components/about/PartnersDetails";
-import ContactUs from "@/components/home/ContactUs";
+import ContactUs from "@/components/global/ContactUs";
+import LatestNews from "@/components/global/LatestNews";
+import Partners from "@/components/global/Partners";
+import Projects from "@/components/global/Projects";
+import Subscription from "@/components/global/Subscription";
+import WhyChooseUs from "@/components/global/WhyChooseUs";
+import Certifications from "@/components/home/Certifications";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
-import Whyus from "@/components/home/Whyus";
 import { Locale } from "@/lib/i18n";
 
 interface HomePageProps {
@@ -14,12 +18,26 @@ interface HomePageProps {
 export default async function Home({ params }: HomePageProps) {
   const lang = (await params).lang;
   return (
-    <main className=" font-[family-name:var(--font-DM-sans)]">
-      <Hero lang={lang} />
+    <main>
+      {/* Hero */}
+      <Hero />
+      {/* certification carousele */}
+      <Certifications />
+      {/* services */}
       <Services />
-      <Whyus lang={lang} />
+      {/* Projects */}
+      <Projects />
+      {/* why choose us */}
+      <WhyChooseUs />
+      {/* partners */}
+      <Partners />
+      {/* contact */}
       <ContactUs />
-      <PartnersDetails />
+      {/* Job Offers adds list */}
+      {/* latest news */}
+      <LatestNews />
+      {/* news letter */}
+      <Subscription />
     </main>
   );
 }

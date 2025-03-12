@@ -1,5 +1,7 @@
 import ContactUs from "@/components/global/ContactUs";
-import Subscription from "@/components/global/Subscription";
+import Partners from "@/components/global/Partners";
+import WhyChooseUs from "@/components/global/WhyChooseUs";
+import ServicesDetails from "@/components/services/ServicesDetails";
 import { getDictionary, Locale } from "@/lib/i18n";
 import React from "react";
 
@@ -16,12 +18,14 @@ const Page = async ({ params }: contactPageProps) => {
 
   return (
     <main>
-      {/* Contact */}
+      {/* Services */}
+      <ServicesDetails />
+      {/* Pourquoi nous choisir */}
+      <WhyChooseUs />
+      {/* Partners */}
+      <Partners />
+      {/* Contact us */}
       <ContactUs />
-      {/* socials */}
-      {/* map */}
-      {/* newsletter */}
-      <Subscription />
     </main>
   );
 };

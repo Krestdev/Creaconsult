@@ -1,37 +1,39 @@
-import AboutIntro from "@/components/about/AboutIntro";
-import Mission from "@/components/about/Mission";
-import PartnersDetails from "@/components/about/PartnersDetails";
-import Structure from "@/components/about/Structure";
+import Achievements from "@/components/about/Achievements";
+import Story from "@/components/about/Story";
 import Team from "@/components/about/Team";
-import Values from "@/components/about/Values";
-import Vission from "@/components/about/Vission";
-import PageHeader from "@/components/global/PageHeader";
+import ContactUs from "@/components/global/ContactUs";
+import Partners from "@/components/global/Partners";
+import WhyChooseUs from "@/components/global/WhyChooseUs";
 import { getDictionary, Locale } from "@/lib/i18n";
+import React from "react";
 
-interface AboutPageProps {
+interface contactPageProps {
   params: Promise<{
     lang: Locale;
   }>;
 }
 
-export default async function Page({ params }: AboutPageProps) {
+const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
-  console.log(lang);
   const dictionary = await getDictionary(lang);
-  const page = dictionary.pages.about;
+  const page = dictionary.pages.contact;
 
   return (
     <main>
-      <PageHeader page={page} />
-      <AboutIntro />
-      <Structure />
-      <div className="">
-        <Vission />
-        <Mission />
-      </div>
-      <PartnersDetails />
-      <Values />
+      {/* our story */}
+      <Story />
+      {/* history timeline */}
+      <Achievements />
+      {/* why choose use */}
+      <WhyChooseUs />
+      {/* team */}
       <Team />
+      {/* partners */}
+      <Partners />
+      {/* contact us */}
+      <ContactUs />
     </main>
   );
-}
+};
+
+export default Page;

@@ -1,88 +1,52 @@
+import Link from "next/link";
 import React from "react";
-import ButtonLine from "../utils/ButtonLine";
-import { getDictionary, Locale } from "@/lib/i18n";
 
-interface HeroProps {
-  lang: Locale;
-}
-
-const Hero = async ({ lang }: HeroProps) => {
-  const dictionary = await getDictionary(lang);
+const Hero = () => {
   return (
-    <section className="min-h-screen h-fit relative text-white">
-      <div>
-        <div className="herobg" />
-        <div className="bgLines" />
-        {/* <div className="bgStyle" /> */}
-        <div className="absolute z-[2] top-0 w-full h-screen bg-gradient-to-b from-black via-transparent to-transparent" />
-      </div>
-      <div className="absolute z-[5] w-full flex justify-center items-center py-[180px] h-screen">
-        <div className="max-w-7xl w-full grid md:grid-cols-2 grid-cols-1 items-center">
-          <div className="col-span-1 space-y-4">
-            <p className=" uppercase small font-extrabold">
-              {dictionary.hero.title.small}
-            </p>
-            <h1 className="leading-[100%]">{dictionary.hero.title.main}</h1>
-            <p>{dictionary.hero.title.sub}</p>
-            <div className="flex gap-10">
-              <ButtonLine text="Contactez-nous" />
-              <ButtonLine text="Demandez un devis" />
-            </div>
+    <section className="containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center">
+      <div className="container flex justify-between items-center gap-4">
+        <div className="flex flex-col gap-2 text-white mx-4">
+          <small className="font-bold uppercase">
+            Bureau d’Étude Catégorie A
+          </small>
+          <h3 className="font-semibold max-w-[600px] md:hidden w-full text-white">
+            Transformez vos projets en réalité avec Creaconsult.
+          </h3>
+          <h1 className="font-semibold max-w-[600px] hidden md:block text-white">
+            Transformez vos projets en réalité avec Creaconsult.
+          </h1>
+          <p className="max-w-[300px]">
+            Experts en études sectorielles, contrôle technique et
+            infrastructures.
+          </p>
+          <div className="flex gap-2 flex-col md:flex-row">
+            <Link href={"/"} className="link_button w-fit">
+              Contacter nous
+            </Link>
+            <Link href={"/"} className="link_button_outline w-fit">
+              Demandez un devis
+            </Link>
           </div>
-          <div className="col-span-1">
-            <div className="ml-auto w-full space-y-10">
-              <div className=" text-right">
-                <h1 className="extra">{dictionary.hero.experience.years}</h1>
-                <p className="leading-[100%]">
-                  {dictionary.hero.experience.message}
-                </p>
-              </div>
-              <div className=" text-right">
-                <h1 className="extra">{dictionary.hero.workers.number}</h1>
-                <p className="leading-[100%]">
-                  {dictionary.hero.workers.number}
-                </p>
-              </div>
-              <div className="text-right">
-                <h5>{dictionary.hero.certification.title}</h5>
-                <div className="flex gap-4 w-full justify-end">
-                  <div className="flex flex-col items-center">
-                    <img
-                      src="/ui/isoveritas.png"
-                      className="w-[150px] h-[70px] object-cover"
-                      alt="veritas sertificate iso 14001"
-                    />
-                    <p className="small">
-                      ISO 14001:2015 <br />
-                      <span className="mariyam">Veritas</span>
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="w-[160px] h-[70px] object-cover"
-                      src="/ui/isoveritas2.png"
-                      alt="veritas sertificate iso 9001"
-                    />
-                    <p className="small">
-                      ISO 9001:2015 <br />
-                      <span className="mariyam">Veritas</span>
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="w-[40px] h-[70px] object-cover"
-                      src="/ui/ukasMS.png"
-                      alt="ukas managment system certificate 0006"
-                    />
-                    <p className="small">
-                      0006 <br />
-                      <span className="mariyam">Ukas</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        {/* image */}
+        <div className="hidden md:flex gap-4 ">
+          <div className="flex flex-col gap-4 mt-[50px] w-fit">
+            <img
+              src="/ui/home/luxry_hous.jpeg"
+              className="size-[250px] shadow-black shadow-lg"
+              alt=""
+            />
+            <img
+              src="/ui/home/hero_building2.jpeg"
+              className="size-[250px] shadow-black shadow-lg"
+              alt=""
+            />
           </div>
+          <img
+            src="/ui/home/hero_building1.jpeg"
+            className="w-[250px] h-[516px] mb-[50px] shadow-black shadow-lg"
+            alt=""
+          />
         </div>
       </div>
     </section>
