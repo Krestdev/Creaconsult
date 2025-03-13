@@ -96,6 +96,7 @@ const ServicesDetails = () => {
                 {service.imgs.map((img, index) => {
                   return (
                     <img
+                      key={index}
                       src={img}
                       alt=""
                       className={clsx(

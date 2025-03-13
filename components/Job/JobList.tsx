@@ -140,7 +140,6 @@ const JobList = () => {
                   <ul className="flex gap-2 my-4 flex-wrap">
                     {["cv", "Architecture", "Bac+15", "letter"].map(
                       (filter, index) => {
-                        const selected = index == 0;
                         return (
                           <li key={index}>
                             <button
