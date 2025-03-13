@@ -1,3 +1,5 @@
+import JobBanner from "@/components/Job/JobBanner";
+import JobList from "@/components/Job/JobList";
 import { getDictionary, Locale } from "@/lib/i18n";
 
 interface contactPageProps {
@@ -15,7 +17,9 @@ const Page = async ({ params }: contactPageProps) => {
   return (
     <main>
       {/* Job Offers adds list */}
+      <JobBanner />
       {/* Job Offers list */}
+      <JobList />
       {/* News Letter */}
     </main>
   );

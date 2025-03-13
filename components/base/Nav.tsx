@@ -49,7 +49,7 @@ const Nav = () => {
                     className={clsx(
                       "transition-all duration-300 cursor-pointer",
                       isActive
-                        ? "border-b-4 border-[var(--primary)] text-[var(--primary)] bg-white py-2 px-4"
+                        ? "border-b-4 border-[var(--primary)] text-[var(--primary)] bg-white py-2 px-4 shadow-md shadow-black"
                         : "hover:bg-[var(--primary)] hover:text-white hover:px-4 text-white hover:py-2"
                     )}
                   >
@@ -69,7 +69,10 @@ const Nav = () => {
             </Link>
           </div>
           <div className="text-white flex items-center gap-6">
-            {[{ href: "/News", label: "News" }].map((item) => {
+            {[
+              { href: "/Jobs", label: "Jobs" },
+              { href: "/News", label: "News" },
+            ].map((item) => {
               const href = `/en${item.href.toLowerCase()}`;
               const isActive = pathname === href;
 
@@ -79,7 +82,7 @@ const Nav = () => {
                     className={clsx(
                       "transition-all duration-300 cursor-pointer",
                       isActive
-                        ? "border-b-4 border-[var(--primary)] text-[var(--primary)] bg-white py-2 px-4"
+                        ? "border-b-4 border-[var(--primary)] text-[var(--primary)] bg-white py-2 px-4 shadow-md shadow-black"
                         : "hover:bg-[var(--primary)] hover:text-white hover:px-4 text-white hover:py-2"
                     )}
                   >
@@ -89,7 +92,7 @@ const Nav = () => {
               );
             })}
             <Link href={"/contact"}>
-              <span className="bg-[var(--primary)] text-white hover:px-4 px-4 py-2">
+              <span className="bg-[var(--primary)] text-white hover:px-4 px-4 py-2 shadow-md shadow-black">
                 Contact
               </span>
             </Link>

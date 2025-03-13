@@ -1,3 +1,4 @@
+import PageIntro from "@/components/global/PageIntro";
 import { Locale } from "@/lib/i18n";
 import React from "react";
 
@@ -13,5 +14,9 @@ export async function generateStaticParams() {
 }
 
 export default async function Layout({ children }: LayoutProps) {
-  return <>{children}</>;
+  return (
+    <PageIntro title="Job Offers" img="/ui/intro/jobsintro.jpg">
+      {children}
+    </PageIntro>
+  );
 }

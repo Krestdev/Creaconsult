@@ -7,6 +7,7 @@ import WhyChooseUs from "@/components/global/WhyChooseUs";
 import Certifications from "@/components/home/Certifications";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
+import JobBanner from "@/components/Job/JobBanner";
 import { Locale } from "@/lib/i18n";
 
 interface HomePageProps {
@@ -35,6 +36,7 @@ export default async function Home({ params }: HomePageProps) {
       {/* contact */}
       <ContactUs />
       {/* Job Offers adds list */}
+      <JobBanner />
       {/* latest news */}
       <LatestNews />
       {/* news letter */}

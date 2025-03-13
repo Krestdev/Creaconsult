@@ -6,7 +6,7 @@ import { FacebookLogo, GoogleLogo, LinkedinLogo } from "phosphor-react";
 const Footer = () => {
   return (
     <footer
-      className="containerParent bg-[var(--primary)] text-white bg-cover bg-center"
+      className="containerParent bg-[var(--primary)] text-white bg-cover bg-center py-[24px]"
       style={{
         backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/footer/bglines.png')`,
       }}
@@ -115,13 +115,13 @@ const Footer = () => {
                 </ul>
               </div>
               <div className=" flex gap-2">
-                <div className="flex p-1 md:p-2 lg:p-4 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
+                <div className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
                   <GoogleLogo size={24} />
                 </div>
-                <div className="flex p-1 md:p-2 lg:p-4 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
+                <div className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
                   <FacebookLogo size={24} />
                 </div>
-                <div className="flex p-1 md:p-2 lg:p-4 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
+                <div className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
                   <LinkedinLogo size={24} />
                 </div>
               </div>
