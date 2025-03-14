@@ -8,13 +8,13 @@ const Footer = () => {
     <footer
       className="containerParent bg-[var(--primary)] text-white bg-cover bg-center py-[24px]"
       style={{
-        backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/footer/bglines.png')`,
+        backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.0),rgba(0,0,0,0.6)),url('/ui/global/bglinesDeco2.png')`,
       }}
     >
       <div className="container ">
-        <div className="w-full flex flex-col md:flex-row justify-between items-start p-6 gap-6">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start p-6 gap-10">
           {/* body */}
-          <div className="space-y-8 max-w-[400px]">
+          <div className="flex flex-col justify-between max-w-[400px] h-full min-h-[250px]">
             <div className="space-y-4">
               <img
                 src="/ui/CreaConsultLogoLine.png"
@@ -32,9 +32,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="@ Enter your email"
-                className="px-4 py-2 border-b bg-transparent focus:outline-none focus:border-[var(--primary)]"
+                className="px-4 py-2 border-b bg-transparent focus:outline-none focus:border-[var(--primary)] w-full"
               />
-              <button className="px-6 py-2 text-[var(--primary)] bg-white mt-2 md:mt-0 md:ml-2">
+              <button className="w-full px-6 py-2 text-[var(--primary)] bg-white mt-2 md:mt-0 md:ml-2">
                 Subscribe
               </button>
             </div>
@@ -48,7 +48,7 @@ const Footer = () => {
               <Link href="/news">News</Link>
               <Link href="/contact">Contact</Link>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-end">
               <div className="space-y-2">
                 <h4 className="hidden md:block text-white">Information</h4>
                 <h6 className="font-semibold md:hidden text-white">

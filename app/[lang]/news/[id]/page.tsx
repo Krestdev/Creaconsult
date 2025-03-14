@@ -1,3 +1,6 @@
+import Subscription from "@/components/global/Subscription";
+import NewsDetails from "@/components/news/NewsDetails";
+import NewsList from "@/components/news/NewsList";
 import { getDictionary, Locale } from "@/lib/i18n";
 
 interface contactPageProps {
@@ -15,8 +18,11 @@ const Page = async ({ params }: contactPageProps) => {
   return (
     <main>
       {/* Job description */}
+      <NewsDetails />
       {/* Job Offers adds list */}
+      <NewsList />
       {/* News Letter */}
+      <Subscription />
     </main>
   );
 };
