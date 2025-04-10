@@ -16,7 +16,7 @@ interface contactPageProps {
 async function getJob(id: number) {
   return directus.request(readItem("Job", id));
 }
-async function getJobs(id: number) {
+async function getJobs() {
   return directus.request(readItems("Job"));
 }
 
@@ -27,7 +27,7 @@ const Page = async ({ params }: contactPageProps) => {
   console.log(dictionary == dictionary);
 
   const job = await getJob(parseInt(id));
-  const jobs = await getJobs(parseInt(id));
+  const jobs = await getJobs();
 
   return (
     <main>
