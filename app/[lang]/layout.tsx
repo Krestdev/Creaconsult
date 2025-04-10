@@ -9,8 +9,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import QueryClientContext from "@/context/QueryClientContext";
 
 const POPPINS = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  style: "normal",
+  weight: ["300"],
   subsets: ["latin"],
 });
 
