@@ -20,10 +20,10 @@ const Hero = () => {
             infrastructures.
           </p>
           <div className="flex gap-2 flex-col md:flex-row">
-            <Link href={"/"} className="link_button w-fit">
+            <Link href={"/contact"} className="link_button w-fit">
               Contacter nous
             </Link>
-            <Link href={"/"} className="link_button_outline w-fit">
+            <Link href={"/contact"} className="link_button_outline w-fit">
               Demandez un devis
             </Link>
           </div>

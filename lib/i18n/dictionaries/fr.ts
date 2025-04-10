@@ -4,30 +4,30 @@ export const fr: Dictionary = {
   title: "CreaConsult",
   navbar: [
     { link: "/", title: "Creaconsult" },
-    { link: "/", title: "Acceuille" },
-    { link: "/about", title: "A Propos" },
+    { link: "/", title: "Home" },
+    { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
-    { link: "/contact", title: "contacte nous" },
+    { link: "/contact", title: "contact us" },
   ],
   footer: [
     { link: "/", title: "Creaconsult" },
-    { link: "/", title: "Acceuille" },
-    { link: "/about", title: "A Propos" },
+    { link: "/", title: "Home" },
+    { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
-    { link: "/contact", title: "contacte nous" },
+    { link: "/contact", title: "contact us" },
   ],
   pages: {
     about: {
-      title: "A props de nous",
+      title: "About Us",
       subtitle: "About us title",
     },
     service: {
-      title: "Nos Service",
+      title: "Service",
       subtitle:
         "Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des projets d’exception.",
     },
     contact: {
-      title: "Contactez nous",
+      title: "Contact Us",
       subtitle: "Contact us title",
     },
   },

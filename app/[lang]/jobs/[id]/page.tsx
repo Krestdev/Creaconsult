@@ -1,23 +1,35 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import JobBanner from "@/components/Job/JobBanner";
 import JobDetail from "@/components/Job/JobDetail";
+import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
+import { readItem } from "@directus/sdk";
 
 interface contactPageProps {
   params: Promise<{
     lang: Locale;
+    id: string;
   }>;
 }
 
+async function getJob(id: number) {
+  return directus.request(readItem("Job", id));
+}
+
 const Page = async ({ params }: contactPageProps) => {
-  const { lang } = await params;
+  const { lang, id } = await params;
   const dictionary = await getDictionary(lang);
   // const page = dictionary.pages.contact;
-  console.log(dictionary);
+  console.log(dictionary == dictionary);
+
+  const job = await getJob(parseInt(id));
+  console.log(job);
 
   return (
     <main>
       {/* Job description */}
-      <JobDetail />
+      <JobDetail JobData={job} />
       {/* Job Offers adds list */}
       <JobBanner />
       {/* News Letter */}

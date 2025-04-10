@@ -21,11 +21,7 @@ const Footer = () => {
                 alt="logo"
                 className="w-[150px] h-[50px]"
               />
-              <p>
-                {
-                  "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
-                }
-              </p>
+              <p className="italic">{"Performing for real progress"}</p>
             </div>
 
             <div className="flex flex-col md:flex-row">
@@ -61,9 +57,9 @@ const Footer = () => {
                   <li>
                     <Link href="/news">News</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/#">Testimonials</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="space-y-2">
@@ -76,7 +72,7 @@ const Footer = () => {
                     <Link href="/service">Services</Link>
                   </li>
                   <li>
-                    <Link href="/#">Terms $ Condition</Link>
+                    <Link href="/terms">Terms & Condition</Link>
                   </li>
                   <li>
                     <Link href="/#">Privacy Policy</Link>

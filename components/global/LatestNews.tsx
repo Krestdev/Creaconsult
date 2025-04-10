@@ -1,14 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
 
 import { ArrowRight } from "phosphor-react";
 import SectionContainer from "./SectionContainer";
+import { useEffect, useState } from "react";
 
-const LatestNews = () => {
+const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
+  const [news, setNews] = useState<Record<string, any>[]>([]);
+  console.log(news);
+
+  useEffect(() => {
+    setNews(LatestNews);
+  }, []);
   return (
     <SectionContainer>
       <div className="flex flex-col gap-12">
-        <h2 className="font-semibold hidden md:block">Our Latest News</h2>
-        <h4 className="font-bold md:hidden">Our Latest News</h4>
+        <h2 className="font-semibold hidden md:block">Headlines</h2>
+        <h4 className="font-bold md:hidden">Headlines</h4>
         <div className="flex gap-8 flex-col xl:flex-row">
           <div className="xl:w-1/2">
             <div className="w-full flex flex-col gap-4 mb-4">

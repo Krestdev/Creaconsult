@@ -1,10 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import clsx from "clsx";
 import { ArrowRight } from "phosphor-react";
 import SectionContainer from "../global/SectionContainer";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import directus from "@/lib/directus/directus";
 
-const NewsList = () => {
+const NewsList = ({ NewsListData }: { NewsListData: any }) => {
+  const [news, setNews] = useState<Record<string, any>[]>([]);
+
+  useEffect(() => {
+    setNews(NewsListData);
+  }, []);
+
+  console.log(news);
+
   return (
     <SectionContainer>
       <div className="space-y-2 mb-4">
@@ -37,35 +49,40 @@ const NewsList = () => {
           })}
         </ul>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((news, index) => {
-            return (
-              <div key={index}>
-                <div className="w-full flex flex-col gap-4 mb-4">
-                  <img
-                    src="/ui/news/main1.jpeg"
-                    alt="articel"
-                    className="w-full h-[250px] object-cover bg-slate-300  shadow-md shadow-black"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold hidden md:block">
-                    Etude de Cas et Realisations
-                  </h4>
-                  <h6 className="font-semibold md:hidden">
-                    Etude de Cas et Realisations
-                  </h6>
-                  <p>
-                    Nous mettons en avant des projets concrets, illustrant notre
-                    savoir-faire à travers des études de cas détaillées, avec
-                    images avant/après et résultats obtenus.
-                  </p>
-                  <div className="flex gap-2 items-center text-[var(--primary)] font-semibold">
-                    <p>Read More</p> <ArrowRight size={24} />
+          {news.length > 0 &&
+            news.map((news, index) => {
+              return (
+                <div key={index}>
+                  <div className="w-full flex flex-col gap-4 mb-4">
+                    <img
+                      // src={news.images[0],"/ui/news/main1.jpeg"}
+                      src={
+                        news.cover
+                          ? `${directus.url}assets/${news.cover}`
+                          : "/ui/creamotif unique red.svg"
+                      }
+                      alt="articel"
+                      className="w-full h-[250px] object-cover bg-slate-300  shadow-md shadow-black"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold hidden md:block line-clamp-1">
+                      {news.title}
+                    </h4>
+                    <h6 className="font-semibold md:hidden line-clamp-1">
+                      {news.title}
+                    </h6>
+                    <p className=" line-clamp-5">{news.summary}</p>
+                    <Link
+                      href={`news/${news.id}`}
+                      className="flex gap-2 items-center text-[var(--primary)] font-semibold"
+                    >
+                      <p>Read More</p> <ArrowRight size={24} />
+                    </Link>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </SectionContainer>

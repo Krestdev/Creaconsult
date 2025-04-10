@@ -1,4 +1,4 @@
-import ContactUs from "@/components/global/ContactUs";
+import ContacLink from "@/components/global/ContacLink";
 import Partners from "@/components/global/Partners";
 import WhyChooseUs from "@/components/global/WhyChooseUs";
 import ServicesDetails from "@/components/services/ServicesDetails";
@@ -14,7 +14,7 @@ const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
   // const page = dictionary.pages.contact;
-  console.log(dictionary);
+  console.log(dictionary == dictionary);
 
   return (
     <main>
@@ -25,7 +25,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* Partners */}
       <Partners />
       {/* Contact us */}
-      <ContactUs />
+      <ContacLink />
     </main>
   );
 };

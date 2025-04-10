@@ -1,4 +1,4 @@
-import ContactUs from "@/components/global/ContactUs";
+import ContacLink from "@/components/global/ContacLink";
 import LatestNews from "@/components/global/LatestNews";
 import Partners from "@/components/global/Partners";
 import Projects from "@/components/global/Projects";
@@ -8,7 +8,9 @@ import Certifications from "@/components/home/Certifications";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import JobBanner from "@/components/Job/JobBanner";
+import directus from "@/lib/directus/directus";
 import { Locale } from "@/lib/i18n";
+import { readItems } from "@directus/sdk";
 
 interface HomePageProps {
   params: Promise<{
@@ -16,9 +18,20 @@ interface HomePageProps {
   }>;
 }
 
+async function getNews() {
+  return directus.request(readItems("News"));
+}
+
+async function getJobOffers() {
+  return directus.request(readItems("Job"));
+}
+
 export default async function Home({ params }: HomePageProps) {
+  const News = await getNews();
+  const Jobs = await getJobOffers();
   // const lang = (await params).lang;
-  console.log(params);
+  console.log(params == params);
+  console.log(Jobs);
   return (
     <main>
       {/* Hero */}
@@ -34,11 +47,11 @@ export default async function Home({ params }: HomePageProps) {
       {/* partners */}
       <Partners />
       {/* contact */}
-      <ContactUs />
+      <ContacLink />
       {/* Job Offers adds list */}
-      <JobBanner />
+      <JobBanner Jobs={Jobs} />
       {/* latest news */}
-      <LatestNews />
+      <LatestNews LatestNews={News} />
       {/* news letter */}
       <Subscription />
     </main>

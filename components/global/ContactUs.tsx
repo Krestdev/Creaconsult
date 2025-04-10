@@ -3,7 +3,65 @@
 import { BoundingBox, Envelope, MapPin, Phone } from "phosphor-react";
 import SectionContainer from "./SectionContainer";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+// Zod schema
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email"),
+  profession: z.string().optional(),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
 const ContactUs = () => {
+  // const ContactUs = ({
+  //   createContacts,
+  // }: {
+  //   createContacts: (data: {
+  //     name: string;
+  //     profession: string;
+  //     subject: string;
+  //     message: string;
+  //     email: string;
+  //   }) => Promise<{
+  //     name: string;
+  //     email: string;
+  //     message: string;
+  //     subject: string;
+  //     profession: string;
+  //   }>;
+  // }) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const [status, setStatus] = useState("");
+
+  const onSubmit = async (data: ContactFormData) => {
+    setStatus("Sending...");
+    try {
+      // createContactMessage(data);
+      // await directus.request(createItem("Contacts", data));
+      console.log(data);
+      setStatus("Message sent successfully!");
+      reset();
+    } catch (error) {
+      console.error(error);
+      setStatus("Failed to send message.");
+    }
+  };
+
   return (
     <SectionContainer color="white" img="/ui/global/bglinesDeco.png">
       <div className="flex flex-col md:flex-row gap-4 py-[24px]">
@@ -13,10 +71,10 @@ const ContactUs = () => {
           <div className="space-y-8">
             <div className="max-w-[500px]">
               <h4 className=" font-semibold hidden md:block">
-                Shear your projects and lets work togrther
+                {`Share your projects and let's work together`}
               </h4>
               <h6 className=" font-semibold md:hidden">
-                Shear your projects and lets work togrther
+                {`Share your projects and let's work together`}
               </h6>
               <p>
                 {
@@ -40,69 +98,96 @@ const ContactUs = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col gap-4 md:w-1/2">
-          <div className=" flex flex-col sm:flex-row gap-4 w-full">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-4 md:w-1/2"
+        >
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
             <div className="w-full">
-              <label htmlFor="name">
-                <h4 className="hidden md:block">Name</h4>
-                <h6 className="md:hidden">Name</h6>
-              </label>
+              <label htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
-                placeholder="Your Name"
+                {...register("name")}
                 className="bg-gray-200 shadow-md p-4 w-full"
               />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name.message}</p>
+              )}
             </div>
+
             <div className="w-full">
-              <label htmlFor="email">
-                <h4 className="hidden md:block">Email</h4>
-                <h6 className="md:hidden">Email</h6>
-              </label>
+              <label htmlFor="email">Email</label>
               <input
-                type="text"
+                type="email"
                 id="email"
-                placeholder="Your@email.com"
+                {...register("email")}
                 className="bg-gray-200 shadow-md p-4 w-full"
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email.message}</p>
+              )}
             </div>
           </div>
 
           <div>
-            <label htmlFor="subject">
-              <h4 className="hidden md:block">Subject</h4>
-              <h6 className="md:hidden">Subject</h6>
-            </label>
+            <label htmlFor="profession">Profession</label>
             <input
               type="text"
-              id="subject"
-              placeholder="Your Subject"
+              id="profession"
+              {...register("profession")}
               className="bg-gray-200 shadow-md p-4 w-full"
             />
           </div>
 
           <div>
-            <label htmlFor="message">
-              <h4 className="hidden md:block">Message</h4>
-              <h6 className="md:hidden">Message</h6>
-            </label>
-            <textarea
-              id="message"
-              placeholder="Your Message"
-              className="bg-gray-200 shadow-md p-4 w-full min-h-[250px]"
+            <label htmlFor="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              {...register("subject")}
+              className="bg-gray-200 shadow-md p-4 w-full"
             />
+            {errors.subject && (
+              <p className="text-red-500 text-sm">{errors.subject.message}</p>
+            )}
           </div>
 
-          <div className=" flex gap-4">
-            <button className="px-4 py-2 bg-[var(--primary)] text-white w-1/2 shadow-md">
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              {...register("message")}
+              className="bg-gray-200 shadow-md p-4 w-full min-h-[250px]"
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message.message}</p>
+            )}
+          </div>
+
+          <div className="flex gap-4">
+            <button
+              type="button"
+              onClick={() => {
+                reset();
+                setStatus("");
+              }}
+              className="p-4 bg-[var(--primary)] text-white w-1/2 shadow-md"
+            >
               Reset
             </button>
 
-            <button className="px-4 py-2 bg-green-600 w-1/2 text-white shadow-md shadow-black/30">
-              Send
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="p-4 bg-gray-600 w-1/2 text-white shadow-md shadow-black/30"
+            >
+              {isSubmitting ? "Sending..." : "Send"}
             </button>
           </div>
-        </div>
+
+          {status && <p className="text-sm text-gray-600">{status}</p>}
+        </form>
       </div>
     </SectionContainer>
   );

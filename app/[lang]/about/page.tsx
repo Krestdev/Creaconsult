@@ -1,7 +1,7 @@
 import Achievements from "@/components/about/Achievements";
 import Story from "@/components/about/Story";
 import Team from "@/components/about/Team";
-import ContactUs from "@/components/global/ContactUs";
+import ContacLink from "@/components/global/ContacLink";
 import Partners from "@/components/global/Partners";
 import WhyChooseUs from "@/components/global/WhyChooseUs";
 import { getDictionary, Locale } from "@/lib/i18n";
@@ -16,7 +16,7 @@ const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
   // const page = dictionary.pages.contact;
-  console.log(dictionary);
+  console.log(dictionary == dictionary);
 
   return (
     <main>
@@ -31,7 +31,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* partners */}
       <Partners />
       {/* contact us */}
-      <ContactUs />
+      <ContacLink />
     </main>
   );
 };

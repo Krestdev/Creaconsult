@@ -5,6 +5,8 @@ import React from "react";
 import { Locale } from "@/lib/i18n";
 import Nav from "@/components/base/Nav";
 import Footer from "@/components/base/Footer";
+import { AuthProvider } from "@/context/AuthContext";
+import QueryClientContext from "@/context/QueryClientContext";
 
 const POPPINS = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -36,13 +38,17 @@ export default async function RootLayout({
   const lang = (await params).lang;
   return (
     <html lang={lang}>
-      <body className={`${POPPINS.className} antialiased`}>
-        {/* Navbar */}
-        <Nav />
-        {children}
-        {/* footer */}
-        <Footer />
-      </body>
+      <AuthProvider>
+        <QueryClientContext>
+          <body className={`${POPPINS.className} antialiased`}>
+            {/* Navbar */}
+            <Nav />
+            {children}
+            {/* footer */}
+            <Footer />
+          </body>
+        </QueryClientContext>
+      </AuthProvider>
     </html>
   );
 }

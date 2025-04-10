@@ -11,7 +11,7 @@ const Services = () => {
       <div className="flex flex-col items-center gap-6">
         {/* web */}
         <div className="w-full">
-          <h2 className="font-semibold hidden md:block">Nos Service</h2>
+          <h2 className="font-semibold hidden md:block">Nos Services</h2>
           <h5 className="max-w-[600px] hidden md:block">
             {
               "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
@@ -20,7 +20,7 @@ const Services = () => {
         </div>
         {/* mobile */}
         <div className="w-full">
-          <h4 className="font-semibold md:hidden">Nos Service</h4>
+          <h4 className="font-semibold md:hidden">Nos Services</h4>
           <p className="max-w-[600px] md:hidden">
             {
               "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
@@ -32,7 +32,7 @@ const Services = () => {
             {
               title: "Ingénierie et Études Techniques",
               description:
-                "Nous réalisons des études approfondies pour garantir la viabilitéet l'optimisation de chaque projet.",
+                "Nous réalisons des études approfondies pour garantir la viabilité et l'optimisation de chaque projet.",
               link: "ingenierie-et-etudes-techniques",
               img: "/ui/home/service1.jpg",
             },
