@@ -4,7 +4,7 @@ import JobBanner from "@/components/Job/JobBanner";
 import JobDetail from "@/components/Job/JobDetail";
 import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { readItem } from "@directus/sdk";
+import { readItem, readItems } from "@directus/sdk";
 
 interface contactPageProps {
   params: Promise<{
@@ -16,6 +16,9 @@ interface contactPageProps {
 async function getJob(id: number) {
   return directus.request(readItem("Job", id));
 }
+async function getJobs(id: number) {
+  return directus.request(readItems("Job"));
+}
 
 const Page = async ({ params }: contactPageProps) => {
   const { lang, id } = await params;
@@ -24,14 +27,14 @@ const Page = async ({ params }: contactPageProps) => {
   console.log(dictionary == dictionary);
 
   const job = await getJob(parseInt(id));
-  console.log(job);
+  const jobs = await getJobs(parseInt(id));
 
   return (
     <main>
       {/* Job description */}
       <JobDetail JobData={job} />
       {/* Job Offers adds list */}
-      <JobBanner />
+      <JobBanner Jobs={jobs} />
       {/* News Letter */}
     </main>
   );
