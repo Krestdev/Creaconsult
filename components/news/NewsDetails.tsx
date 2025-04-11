@@ -2,9 +2,8 @@
 
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
-import directus from "@/lib/directus/directus";
 
 const NewsDetails = ({ NewsData }: { NewsData: any }) => {
   const [news, setNews] = useState<Record<string, any>>();
@@ -24,7 +23,7 @@ const NewsDetails = ({ NewsData }: { NewsData: any }) => {
             </h6>
             <div className="space-y-4">
               <img
-                src={`${directus.url}assets/${news.images[0].directus_files_id}`}
+                src={`${process.env.NEXT_IMAGE_BASE}assets/${news.images[0].directus_files_id}`}
                 alt="news"
                 className="w-full max-h-[300px] object-cover object-center"
               />
@@ -40,7 +39,7 @@ const NewsDetails = ({ NewsData }: { NewsData: any }) => {
                   return (
                     <div className="relative w-full h-fit" key={index}>
                       <img
-                        src={`${directus.url}assets/${imgData.directus_files_id}`}
+                        src={`${process.env.NEXT_IMAGE_BASE}assets/${imgData.directus_files_id}`}
                         alt={`${imgData.directus_files_id}`}
                         className="w-full h-full max-h-[200px] object-cover"
                       />

@@ -2,11 +2,10 @@
 "use client";
 
 import clsx from "clsx";
-import { ArrowRight } from "phosphor-react";
-import SectionContainer from "../global/SectionContainer";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import directus from "@/lib/directus/directus";
+import { ArrowRight } from "phosphor-react";
+import { useEffect, useState } from "react";
+import SectionContainer from "../global/SectionContainer";
 
 const NewsList = ({ NewsListData }: { NewsListData: any }) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
@@ -58,7 +57,7 @@ const NewsList = ({ NewsListData }: { NewsListData: any }) => {
                       // src={news.images[0],"/ui/news/main1.jpeg"}
                       src={
                         news.cover
-                          ? `${directus.url}assets/${news.cover}`
+                          ? `${process.env.NEXT_IMAGE_BASE}assets/${news.cover}`
                           : "/ui/creamotif unique red.svg"
                       }
                       alt="articel"

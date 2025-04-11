@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useEffect, useState } from "react";
-import SectionContainer from "../global/SectionContainer";
 import clsx from "clsx";
-import { ArrowRight } from "phosphor-react";
-import directus from "@/lib/directus/directus";
 import Link from "next/link";
+import { ArrowRight } from "phosphor-react";
+import { useEffect, useState } from "react";
+import SectionContainer from "../global/SectionContainer";
 
 const JobList = ({ Jobs }: { Jobs: any }) => {
   const [jobs, setJobs] = useState<Record<string, any>[]>([]);
@@ -54,7 +53,7 @@ const JobList = ({ Jobs }: { Jobs: any }) => {
                 <div key={index} className="shadow-md shadow-black">
                   <div className="w-full flex flex-col gap-4 mb-4">
                     <img
-                      src={`${directus.url}assets/${job.illustration}`}
+                      src={`${process.env.NEXT_IMAGE_BASE}assets/${job.illustration}`}
                       alt="articel"
                       className="w-full h-[250px] object-cover bg-slate-300"
                     />

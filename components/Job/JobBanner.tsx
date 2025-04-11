@@ -2,7 +2,6 @@
 
 "use client";
 
-import directus from "@/lib/directus/directus";
 import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
@@ -55,7 +54,7 @@ const JobBanner = ({ Jobs }: { Jobs: any }) => {
                   key={index}
                   className="flex flex-col justify-between bg-[#700032]/10 p-4 bg-cover bg-center text-white"
                   style={{
-                    backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(255,0,0,0.5)),url('${directus.url}assets/${job.illustration}')`,
+                    backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(255,0,0,0.5)),url('${process.env.NEXT_IMAGE_BASE}assets/${job.illustration}')`,
                   }}
                 >
                   <div className="space-y-2">

@@ -4,9 +4,8 @@
 
 import clsx from "clsx";
 import { FilePdf, Link, Suitcase } from "phosphor-react";
-import SectionContainer from "../global/SectionContainer";
 import { useEffect, useState } from "react";
-import directus from "@/lib/directus/directus";
+import SectionContainer from "../global/SectionContainer";
 
 const JobDetail = ({ JobData }: { JobData: any }) => {
   const [Job, setJob] = useState<Record<string, any>>();
@@ -20,7 +19,7 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
         <>
           <div className="flex gap-4 justify-center items-start flex-col">
             <img
-              src={`${directus.url}assets/${Job.illustration}`}
+              src={`${process.env.NEXT_IMAGE_BASE}assets/${Job.illustration}`}
               alt="job"
               className="md:w-1/2 h-[300px] object-cover"
             />
