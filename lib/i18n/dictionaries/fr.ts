@@ -3,18 +3,20 @@ import type { Dictionary } from "../types";
 export const fr: Dictionary = {
   title: "CreaConsult",
   navbar: [
-    { link: "/", title: "Creaconsult" },
-    { link: "/", title: "Home" },
-    { link: "/about", title: "About us" },
-    { link: "/service", title: "Service" },
-    { link: "/contact", title: "contact us" },
+    { link: "/", title: "Acceuille" },
+    { link: "/about", title: "A Propos" },
+    { link: "/service", title: "Nos Service" },
+    { link: "/jobs", title: "Emploi" },
+    { link: "/news", title: "Actualite" },
+    { link: "/contact", title: "Contact" },
   ],
   footer: [
-    { link: "/", title: "Creaconsult" },
     { link: "/", title: "Home" },
     { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
-    { link: "/contact", title: "contact us" },
+    { link: "/jobs", title: "Jobs" },
+    { link: "/news", title: "news" },
+    { link: "/contact", title: "Contact" },
   ],
   pages: {
     about: {
@@ -37,21 +39,42 @@ export const fr: Dictionary = {
       main: "Transformez vos projets en réalité avec Creaconsult.",
       sub: "Experts en études sectorielles, contrôle technique et infrastructures.",
     },
-    experience: {
-      years: "2007",
-      message: "15+ anns d'experience",
-    },
-    workers: {
-      number: "300+",
-      message: "Employees",
-    },
-    certification: {
-      title: "Certification International",
-    },
     action: {
       contact: "contactez-nous",
       devis: "demandez un devis",
     },
+  },
+  service: {
+    title: {
+      main: "Nos Services",
+      sub: "Expertises techniques pour la conception et la mise en œuvre d’infrastructures.",
+    },
+    serviceList: [
+      {
+        title: "Engineering and Technical Studies",
+        sub: "Technical expertise for infrastructure design and implementation.",
+        link: "ingenierie-et-etudes-techniques",
+        img: "/ui/home/service1.jpg",
+      },
+      {
+        title: "Project Ownership and Management",
+        sub: "Overall management of projects, from planning to execution in the field",
+        link: "maitrise-d-oeuvre",
+        img: "/ui/home/service2.jpg",
+      },
+      {
+        title: "Design and Optimisation Consultancy",
+        sub: "Preliminary studies to guide, plan and secure the feasibility of projects",
+        link: "controle-technique",
+        img: "/ui/home/service3.jpg",
+      },
+      {
+        title: "Sustainable Development and Certifications",
+        sub: "Solutions focused on sustainability, environmental management and optimisation of natural resources.",
+        link: "controle-technique",
+        img: "/ui/home/service4.jpg",
+      },
+    ],
   },
   why: {
     title: {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
 import React from "react";
-import { Locale } from "@/lib/i18n";
+import { getDictionary, Locale } from "@/lib/i18n";
 import Nav from "@/components/base/Nav";
 import Footer from "@/components/base/Footer";
 import { AuthProvider } from "@/context/AuthContext";
@@ -35,13 +35,14 @@ export default async function RootLayout({
   params,
 }: RootLayoutProps) {
   const lang = (await params).lang;
+  const dictionary = await getDictionary(lang);
   return (
     <html lang={lang}>
       <AuthProvider>
         <QueryClientContext>
           <body className={`${POPPINS.className} antialiased`}>
             {/* Navbar */}
-            <Nav />
+            <Nav lang={lang} dictionary={dictionary} />
             {children}
             {/* footer */}
             <Footer />

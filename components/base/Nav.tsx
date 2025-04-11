@@ -6,8 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { List, Translate, X } from "phosphor-react";
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "../global/LanguageSwitcher";
+import { Dictionary } from "@/lib/i18n";
 
-const Nav = () => {
+interface NavBarType {
+  lang: "en" | "fr";
+  dictionary: Dictionary;
+}
+
+const Nav = ({ lang, dictionary }: NavBarType) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -34,17 +41,14 @@ const Nav = () => {
       <div className="container hidden md:block">
         <div className="flex justify-between items-center">
           <div className="text-white flex items-center gap-6 ">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/About", label: "About" },
-              { href: "/Services", label: "Services" },
-            ].map((item) => {
-              const href = item.href.toLowerCase();
+            {dictionary.navbar.slice(0, 3).map((item) => {
+              const href = item.link;
               const isActive =
-                pathname === "/en" + href || `${pathname}/` === `/en${href}`;
+                pathname === `/${lang}${href}` ||
+                `${pathname}/` === `/${lang}${href}`;
 
               return (
-                <Link key={item.label} href={href}>
+                <Link key={item.title} href={href}>
                   <span
                     className={clsx(
                       "transition-all duration-300 cursor-pointer",
@@ -53,7 +57,7 @@ const Nav = () => {
                         : "hover:bg-[var(--primary)] hover:text-white hover:px-4 text-white hover:py-2"
                     )}
                   >
-                    {item.label}
+                    {item.title}
                   </span>
                 </Link>
               );
@@ -69,15 +73,14 @@ const Nav = () => {
             </Link>
           </div>
           <div className="text-white flex items-center gap-6">
-            {[
-              { href: "/Jobs", label: "Jobs" },
-              { href: "/News", label: "News" },
-            ].map((item) => {
-              const href = `/en${item.href.toLowerCase()}`;
-              const isActive = pathname === href;
+            {dictionary.navbar.slice(3, 6).map((item) => {
+              const href = item.link;
+              const isActive =
+                pathname === `/${lang}${href}` ||
+                `${pathname}/` === `/${lang}${href}`;
 
               return (
-                <Link key={item.label} href={href}>
+                <Link key={item.title} href={href}>
                   <span
                     className={clsx(
                       "transition-all duration-300 cursor-pointer",
@@ -86,7 +89,7 @@ const Nav = () => {
                         : "hover:bg-[var(--primary)] hover:text-white hover:px-4 text-white hover:py-2"
                     )}
                   >
-                    {item.label}
+                    {item.title}
                   </span>
                 </Link>
               );
@@ -97,8 +100,9 @@ const Nav = () => {
               </span>
             </Link>
             <div className="flex items-center gap-2">
-              <Translate size={24} />
-              <Link href="/#">English</Link>
+              <LanguageSwitcher text={true} lang={lang}>
+                <Translate size={24} />
+              </LanguageSwitcher>
             </div>
           </div>
         </div>
@@ -124,7 +128,9 @@ const Nav = () => {
             </Link>
           </div>
           <div className="text-white flex items-center gap-6">
-            <Translate size={24} />
+            <LanguageSwitcher text={false} lang={lang}>
+              <Translate size={24} />
+            </LanguageSwitcher>
           </div>
         </div>
         <motion.div
@@ -136,9 +142,11 @@ const Nav = () => {
             isOpen ? "block" : "hidden"
           )}
         >
-          {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`}>
-              <span className="block py-2 hover:text-gray-400">{item}</span>
+          {dictionary.navbar.map((item) => (
+            <Link key={item.title} href={item.link}>
+              <span className="block py-2 hover:text-gray-400">
+                {item.title}
+              </span>
             </Link>
           ))}
         </motion.div>

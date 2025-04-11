@@ -28,17 +28,6 @@ export interface Dictionary {
       main: string;
       sub: string;
     };
-    experience: {
-      years: string;
-      message: string;
-    };
-    workers: {
-      number: string;
-      message: string;
-    };
-    certification: {
-      title: string;
-    };
     action: {
       contact: string;
       devis: string;
@@ -50,5 +39,17 @@ export interface Dictionary {
       sub: string;
     };
     reasons: Array<{ title: string; desc: string }>;
+  };
+  service: {
+    title: {
+      main: string;
+      sub: string;
+    };
+    serviceList: {
+      title: string;
+      sub: string;
+      link: string;
+      img: string;
+    }[];
   };
 }

@@ -1,7 +1,12 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
+import { Dictionary } from "@/lib/i18n";
 
-const WhyChooseUs = () => {
+interface ServiceType {
+  dictionary: Dictionary;
+}
+
+const WhyChooseUs = ({ dictionary }: ServiceType) => {
   return (
     <SectionContainer
       color="white"
@@ -11,11 +16,9 @@ const WhyChooseUs = () => {
       <div className="flex flex-col justify-between gap-4 xl:flex-row">
         <div className="space-y-4 p-2 md:w-1/2 max-w-[600px]">
           <h2 className=" font-semibold hidden md:block">
-            Pourquoi choisir Creaconsult ?
+            {dictionary.why.title.main}
           </h2>
-          <h5 className=" font-bold md:hidden">
-            Pourquoi choisir Creaconsult ?
-          </h5>
+          <h5 className=" font-bold md:hidden">{dictionary.why.title.main}</h5>
           {/* <p>
             Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des
             projets d’exception.
@@ -24,24 +27,24 @@ const WhyChooseUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full xl:w-1/2 gap-6">
           {[
             {
-              title: "Une Expertise Reconnue",
+              title: "Recognised expertise",
               description:
-                "Avec plus de 15 ans d'expérience sur le terrain, notamment en Afrique subsaharienne et au Cameroun, Crea Consult ne se contente pas de participer aux projets – elle les fait réussir. Nos experts interviennent uniquement dans les domaines que nous maîtrisons à 100 %. Objectifs clairs, résultats concrets. Zéro improvisation.",
+                "With over 15 years' experience in the field, particularly in sub-Saharan Africa and Cameroon, Crea Consult doesn't just take part in projects - it makes them succeed. Our experts only work in areas where we have 100% expertise. Clear objectives, concrete results. No improvisation.",
             },
             {
-              title: "Certifications et Engagement Qualité",
+              title: "Certifications and Quality Commitment",
               description:
-                "Certifiée ISO 9001 et 14001 (référentiel 2015), Crea Consult s’impose par une rigueur de gestion et un engagement environnemental exemplaire. Notre système d’amélioration continue garantit des livrables impeccables, dans les délais, avec des standards élevés. Ici, la qualité n’est pas un mot, c’est une méthode.",
+                "Certified to ISO 9001 and 14001 (2015 standard), Crea Consult is renowned for its rigorous management and exemplary environmental commitment. Our continuous improvement system guarantees impeccable deliverables, on time and to the highest standards. Here, quality is not just a word, it's a method.",
             },
             {
-              title: "Références et Projets Réussis",
+              title: "References and Successful Projects",
               description:
-                "Nous avons gagné la confiance d’institutions, d’entreprises commerciales, industrielles et académiques à travers des projets d’envergure. Au-delà du conseil, nous sommes un partenaire stratégique : réactif, engagé, et toujours orienté solution. Nous accompagnons aussi la formation et l’insertion des jeunes, parce que l’avenir se construit aujourd’hui.",
+                "We have won the trust of institutions, commercial, industrial and academic companies through large-scale projects. As well as providing advice, we are a strategic partner: responsive, committed and always solution-oriented. We also support the training and integration of young people, because the future is being built today.",
             },
             {
-              title: "Études de Cas et Réalisations",
+              title: "Case studies and achievements",
               description:
-                "Nos études de cas sont notre meilleure preuve : avant/après, résultats chiffrés, transformation réelle. Crea Consult, c’est du concret, pas du théorique. Chaque projet est une réussite visible, documentée et reproductible.",
+                "Our case studies are our best proof: before and after, quantified results, real transformation. Crea Consult is about concrete results, not theory. Each project is a visible, documented and reproducible success.",
             },
           ].map((item, index) => (
             <div

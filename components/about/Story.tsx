@@ -10,20 +10,21 @@ const Story = () => {
           <h2 className="font-semibold hidden md:block">Our Story</h2>
           <h4 className="font-bold md:hidden">Our Story</h4>
           <p>
-            {`CREACONSULT, cabinet d’ingénierie et de maîtrise d’œuvre fondé en 2006, façonne durablement le cadre de vie grâce à une expertise éprouvée. Résolument tournés vers l’amélioration continue, nous simplifions chaque étape pour les porteurs et investisseurs de projets.`}
-            <p />
+            {`CREACONSULT, an engineering and project management company founded in 2006, uses its proven expertise to create sustainable living environments. Committed to continuous improvement, we simplify every stage for project owners and investors.`}
+          </p>
 
-            <p>
-              {`
-              Certifié ISO 9001 et 14001 (référentiel 2015), notre management allie rigueur, qualité et engagement environnemental. Spécialistes des projets institutionnels, commerciaux et industriels, nous mettons notre savoir-faire technique pointu au service de réalisations ambitieuses.`}{" "}
-            </p>
+          <p>
+            {`
+              Certified ISO 9001 and 14001 (2015 standard), our management combines rigour, quality and environmental commitment. As specialists in institutional, commercial and industrial projects, we apply our cutting-edge technical expertise to ambitious projects.`}
+          </p>
 
-            <p>{`
-              Chez CREACONSULT, l’excellence repose sur des valeurs professionnelles et éthiques fortes, garantissant à nos clients et partenaires une collaboration privilégiée et efficace.`}</p>
+          <p>
+            {`
+              At CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our customers and partners a privileged and efficient collaboration.`}
           </p>
           <p>
             {
-              "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception. Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
+              "Innovative engineering and project management solutions for exceptional projects."
             }
           </p>
         </div>

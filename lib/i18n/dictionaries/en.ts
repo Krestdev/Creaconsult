@@ -3,18 +3,20 @@ import type { Dictionary } from "../types";
 export const en: Dictionary = {
   title: "CreaConsult",
   navbar: [
-    { link: "/", title: "Creaconsult" },
     { link: "/", title: "Home" },
     { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
-    { link: "/contact", title: "contact us" },
+    { link: "/jobs", title: "Jobs" },
+    { link: "/news", title: "news" },
+    { link: "/contact", title: "Contact" },
   ],
   footer: [
-    { link: "/", title: "Creaconsult" },
     { link: "/", title: "Home" },
     { link: "/about", title: "About us" },
     { link: "/service", title: "Service" },
-    { link: "/contact", title: "contact us" },
+    { link: "/jobs", title: "Jobs" },
+    { link: "/news", title: "news" },
+    { link: "/contact", title: "Contact" },
   ],
   pages: {
     about: {
@@ -34,23 +36,12 @@ export const en: Dictionary = {
   hero: {
     title: {
       small: "Bureau d’Étude Catégorie A",
-      main: "Transformez vos projets en réalité avec Creaconsult.",
-      sub: "Experts en études sectorielles, contrôle technique et infrastructures.",
-    },
-    experience: {
-      years: "2007",
-      message: "15+ anns d'experience",
-    },
-    workers: {
-      number: "300+",
-      message: "Employees",
-    },
-    certification: {
-      title: "Certification International",
+      main: "Turn your projects into reality with Creaconsult.",
+      sub: "Experts in sector studies, technical control and infrastructure.",
     },
     action: {
-      contact: "contactez-nous",
-      devis: "demandez un devis",
+      contact: "Contact us",
+      devis: "Request a quote",
     },
   },
   why: {
@@ -74,6 +65,38 @@ export const en: Dictionary = {
       {
         title: "Études de Cas et Réalisations",
         desc: `Nous mettons en avant des projets concrets, illustrant notre savoir-faire à travers des études de cas détaillées, avec images avant/après et résultats obtenus.`,
+      },
+    ],
+  },
+  service: {
+    title: {
+      main: "Our Services",
+      sub: "Innovative engineering and project management solutions for exceptional projects",
+    },
+    serviceList: [
+      {
+        title: "Engineering and Technical Studies",
+        sub: "Technical expertise for infrastructure design and implementation.",
+        link: "ingenierie-et-etudes-techniques",
+        img: "/ui/home/service1.jpg",
+      },
+      {
+        title: "Project Ownership and Management",
+        sub: "Overall management of projects, from planning to execution in the field",
+        link: "maitrise-d-oeuvre",
+        img: "/ui/home/service2.jpg",
+      },
+      {
+        title: "Design and Optimisation Consultancy",
+        sub: "Preliminary studies to guide, plan and secure the feasibility of projects",
+        link: "controle-technique",
+        img: "/ui/home/service3.jpg",
+      },
+      {
+        title: "Sustainable Development and Certifications",
+        sub: "Solutions focused on sustainability, environmental management and optimisation of natural resources.",
+        link: "controle-technique",
+        img: "/ui/home/service4.jpg",
       },
     ],
   },

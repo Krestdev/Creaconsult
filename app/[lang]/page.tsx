@@ -9,7 +9,7 @@ import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import JobBanner from "@/components/Job/JobBanner";
 import directus from "@/lib/directus/directus";
-import { Locale } from "@/lib/i18n";
+import { getDictionary, Locale } from "@/lib/i18n";
 import { readItems } from "@directus/sdk";
 
 interface HomePageProps {
@@ -29,21 +29,20 @@ async function getJobOffers() {
 export default async function Home({ params }: HomePageProps) {
   const News = await getNews();
   const Jobs = await getJobOffers();
-  // const lang = (await params).lang;
-  console.log(params == params);
-  console.log(Jobs);
+  const lang = (await params).lang;
+  const dictionary = await getDictionary(lang);
   return (
     <main>
       {/* Hero */}
-      <Hero />
+      <Hero dictionary={dictionary} />
       {/* certification carousele */}
       <Certifications />
       {/* services */}
-      <Services />
+      <Services dictionary={dictionary} />
       {/* Projects */}
       <Projects />
       {/* why choose us */}
-      <WhyChooseUs />
+      <WhyChooseUs dictionary={dictionary} />
       {/* partners */}
       <Partners />
       {/* contact */}

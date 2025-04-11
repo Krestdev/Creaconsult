@@ -48,6 +48,8 @@ const Partners = () => {
         <h2 className="font-semibold hidden md:block">Partners</h2>
         <h4 className="font-bold md:hidden">Partners</h4>
 
+        <h5>{`they put their trust in us, then and now`}</h5>
+
         <Marquee speed={100} gradient={false} pauseOnHover={true}>
           {slides.map((img, index) => (
             <div

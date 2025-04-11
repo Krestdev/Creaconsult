@@ -27,7 +27,7 @@ const JobList = ({ Jobs }: { Jobs: any }) => {
       </div>
       <div className="space-y-4">
         <ul className="flex gap-2 flex-wrap">
-          {["All", "New", "Last Week", "Date"].map((filter, index) => {
+          {["All", "Active", "Today"].map((filter, index) => {
             const selected = index == 0;
             return (
               <li key={index}>
