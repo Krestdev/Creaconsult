@@ -16,7 +16,6 @@ const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
   // const page = dictionary.pages.contact;
-  console.log(dictionary == dictionary);
 
   return (
     <main>
@@ -25,7 +24,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* history timeline */}
       <Achievements />
       {/* why choose use */}
-      <WhyChooseUs />
+      <WhyChooseUs dictionary={dictionary} />
       {/* team */}
       <Team />
       {/* partners */}

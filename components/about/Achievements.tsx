@@ -28,14 +28,17 @@ const Achievements = () => {
             <img
               src="/ui/certificates/isoveritas.png"
               className="object-cover md:w-full h-full"
+              alt="crea1"
             />
             <img
               src="/ui/certificates/isoveritas2.png"
               className="object-cover md:w-full h-full"
+              alt="crea2"
             />
           </div>
           <img
             src="/ui/certificates/ukasMs.png"
+            alt="crea3"
             className="md:w-[200px] object-cover "
           />
         </div>

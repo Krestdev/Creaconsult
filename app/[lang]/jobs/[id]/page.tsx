@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import JobBanner from "@/components/Job/JobBanner";
 import JobDetail from "@/components/Job/JobDetail";
 import directus from "@/lib/directus/directus";

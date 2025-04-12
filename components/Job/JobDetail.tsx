@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 "use client";
 
 import clsx from "clsx";
-import { FilePdf, Link, Suitcase } from "phosphor-react";
+import Link from "next/link";
+import { Suitcase } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 
@@ -11,7 +10,22 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
   const [Job, setJob] = useState<Record<string, any>>();
   useEffect(() => {
     setJob(JobData);
-  }, []);
+  }, [JobData]);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    const url = window.location.href;
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+  };
 
   return (
     <SectionContainer className="pb-0">
@@ -26,41 +40,41 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
 
             <div className="w-1/2 space-y-2 hidden md:block">
               <h3>{Job.title}</h3>
-              {/* <h5>
-                <span className="font-semibold">Posts:</span> 3
+              <h5>
+                <span className="font-semibold">Posts: </span>{" "}
+                {Job.applications}
               </h5>
               <h5>
-                <span className="font-semibold">Education:</span>BAC+5
+                <span className="font-semibold">Location: </span>
+                {Job.location}
               </h5>
               <h5>
-                <span className="font-semibold">Address:</span>CircleBox
-                Creative
+                <span className="font-semibold">Contract: </span>
+                {Job.type}
               </h5>
               <h5>
-                <span className="font-semibold">Contract:</span>CDD
+                <span className="font-semibold">Expire Date: </span>
+                {Job.expire ? new Date(Job.expire).toUTCString() : ""}
               </h5>
-              <h5>
-                <span className="font-semibold">Due Date:</span> 23/07/2025
-              </h5> */}
             </div>
             <div className="space-y-2 md:hidden">
               <h5 className="font-bold">{Job.title}</h5>
-              {/* <h6>
-                <span className="font-semibold">Posts:</span> 3
+              <h6>
+                <span className="font-semibold">Posts: </span>{" "}
+                {Job.applications}
               </h6>
               <h6>
-                <span className="font-semibold">Education:</span>BAC+5
+                <span className="font-semibold">Location: </span>
+                {Job.location}
               </h6>
               <h6>
-                <span className="font-semibold">Address:</span>CircleBox
-                Creative
+                <span className="font-semibold">Contract: </span>
+                {Job.type}
               </h6>
               <h6>
-                <span className="font-semibold">Contract:</span>CDD
+                <span className="font-semibold">Expire Date: </span>
+                {Job.expire ? new Date(Job.expire).toUTCString() : ""}
               </h6>
-              <h6>
-                <span className="font-semibold">Due Date:</span> 23/07/2025
-              </h6> */}
             </div>
           </div>
           <hr className="w-full border-1 mt-4 border-[#700032]/50" />
@@ -95,28 +109,26 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
                 </div>
               </div>
               <div className="flex gap-4 flex-col md:flex-row">
-                {[
-                  { title: "Apply for this job", icon: <Suitcase size={16} /> },
-                  { title: "Copy Job URL", icon: <Link size={16} /> },
-                  { title: "Download PDF", icon: <FilePdf size={16} /> },
-                ].map((btn, index) => {
-                  return (
-                    <button
-                      key={index}
-                      className={clsx(
-                        "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",
-                        btn.title.toLocaleLowerCase().includes("apply")
-                          ? "bg-[var(--primary)]"
-                          : btn.title.toLocaleLowerCase().includes("pdf")
-                          ? "bg-green-500"
-                          : "bg-blue-500"
-                      )}
-                    >
-                      {btn.icon}
-                      {btn.title}
-                    </button>
-                  );
-                })}
+                <Link
+                  href={`https://www.krestholding.com/offres`}
+                  className={clsx(
+                    "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",
+                    "bg-[var(--primary)]"
+                  )}
+                >
+                  <Suitcase size={16} />
+                  Apply for this job
+                </Link>
+                <button
+                  onClick={copyToClipboard}
+                  className={clsx(
+                    "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",
+                    "bg-green-500"
+                  )}
+                >
+                  <Suitcase size={16} />
+                  {isCopied ? "Copied!" : "Copy Link"}
+                </button>
               </div>
             </div>
           </div>

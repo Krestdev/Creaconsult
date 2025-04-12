@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -9,7 +7,7 @@ const NewsDetails = ({ NewsData }: { NewsData: any }) => {
   const [news, setNews] = useState<Record<string, any>>();
   useEffect(() => {
     setNews(NewsData);
-  }, []);
+  }, [NewsData]);
 
   return (
     <SectionContainer>

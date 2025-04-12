@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import clsx from "clsx";
@@ -12,9 +11,7 @@ const NewsList = ({ NewsListData }: { NewsListData: any }) => {
 
   useEffect(() => {
     setNews(NewsListData);
-  }, []);
-
-  console.log(news);
+  }, [NewsListData]);
 
   return (
     <SectionContainer>

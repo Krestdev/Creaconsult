@@ -11,7 +11,31 @@ interface contactPageProps {
 }
 
 async function getNews() {
-  return directus.request(readItems("News"));
+  return directus.request(
+    readItems("News", {
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
+    })
+  );
+}
+
+async function getFiles(fileIds: number[]) {
+  if (!fileIds.length) return [];
+
+  try {
+    const files = await directus.request(
+      readItems("News_files", {
+        fields: ["id", "directus_files_id"],
+        filter: { id: { _in: fileIds } },
+      })
+    );
+    return files;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 const Page = async ({ params }: contactPageProps) => {
@@ -21,6 +45,10 @@ const Page = async ({ params }: contactPageProps) => {
   console.log(dictionary == dictionary);
 
   const News = await getNews();
+  if (News.length > 0) {
+    News[0].images = await getFiles(News[0].images);
+  }
+
   return (
     <main>
       {/* Lattest news topics */}

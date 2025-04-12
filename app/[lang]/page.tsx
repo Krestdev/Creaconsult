@@ -19,11 +19,27 @@ interface HomePageProps {
 }
 
 async function getNews() {
-  return directus.request(readItems("News"));
+  return directus.request(
+    readItems("News", {
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
+    })
+  );
 }
 
 async function getJobOffers() {
-  return directus.request(readItems("Job"));
+  return directus.request(
+    readItems("Job", {
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
+    })
+  );
 }
 
 export default async function Home({ params }: HomePageProps) {

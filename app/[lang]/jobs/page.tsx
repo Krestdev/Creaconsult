@@ -10,8 +10,16 @@ interface contactPageProps {
   }>;
 }
 
-async function getJobs() {
-  return directus.request(readItems("Job"));
+async function getJobOffers() {
+  return directus.request(
+    readItems("Job", {
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
+    })
+  );
 }
 
 const Page = async ({ params }: contactPageProps) => {
@@ -20,13 +28,12 @@ const Page = async ({ params }: contactPageProps) => {
   // const page = dictionary.pages.contact;
   console.log(dictionary == dictionary);
 
-  const jobs = await getJobs();
-  console.log(jobs);
+  const jobs = await getJobOffers();
 
   return (
     <main>
       {/* Job Offers adds list */}
-      <JobBanner Jobs={jobs} />
+      {jobs.length > 0 && <JobBanner Jobs={jobs} />}
       {/* Job Offers list */}
       <JobList Jobs={jobs} />
       {/* News Letter */}
