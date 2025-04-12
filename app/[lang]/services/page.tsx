@@ -21,7 +21,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* Services */}
       <ServicesDetails />
       {/* Pourquoi nous choisir */}
-      <WhyChooseUs />
+      <WhyChooseUs dictionary={dictionary} />
       {/* Partners */}
       <Partners />
       {/* Contact us */}
