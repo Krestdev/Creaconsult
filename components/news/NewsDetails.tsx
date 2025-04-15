@@ -20,7 +20,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
     <SectionContainer>
       {news && (
         <div className="flex">
-          <div className="space-y-4 md:max-w-4xl">
+          <div className="space-y-12 md:max-w-4xl w-full md:mr-8">
             <h2 className="font-semibold hidden md:block">{news.title}</h2>
             <h5 className="font-semibold md:hidden">{news.title}</h5>
             <h6>
@@ -68,7 +68,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
             </div>
             <div dangerouslySetInnerHTML={{ __html: news.content }} />
           </div>
-          <div className="xl:w-1/2 space-y-4">
+          <div className="xl:w-1/2 space-y-8">
             {newsList &&
               newsList.map((article) => {
                 return (
@@ -77,7 +77,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                     key={article.id}
                   >
                     <img
-                      className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-black"
+                      className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-gray-400"
                       src={`${process.env.NEXT_IMAGE_BASE}assets/${article.cover}`}
                       onError={(e) => {
                         e.currentTarget.src = "/ui/creamotif unique red.svg";
