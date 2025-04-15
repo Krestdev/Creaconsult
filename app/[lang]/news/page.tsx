@@ -18,6 +18,13 @@ async function getNews() {
           _eq: "published",
         },
       },
+      fields: [
+        "*",
+        {
+          user_created: ["id", "first_name", "last_name", "email"],
+          images: ["id", "directus_files_id"],
+        },
+      ],
     })
   );
 }
@@ -45,9 +52,6 @@ const Page = async ({ params }: contactPageProps) => {
   console.log(dictionary == dictionary);
 
   const News = await getNews();
-  if (News.length > 0) {
-    News[0].images = await getFiles(News[0].images);
-  }
 
   return (
     <main>

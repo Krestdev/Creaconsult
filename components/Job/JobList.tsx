@@ -10,10 +10,10 @@ import { filterJobs } from "@/lib/FilterJobs";
 const JobList = ({ Jobs }: { Jobs: any }) => {
   const [jobs, setJobs] = useState<Record<string, any>[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Record<string, any>[]>([]);
-  const [filter, setFilter] = useState<"today" | "active" | "all">("active");
+  const [filter, setFilter] = useState<"active" | "all">("active");
   const now = new Date();
 
-  const filters: ("today" | "active" | "all")[] = ["all", "active", "today"];
+  const filters: ("active" | "all")[] = ["all", "active"];
 
   useEffect(() => {
     setJobs(Jobs);
@@ -25,7 +25,6 @@ const JobList = ({ Jobs }: { Jobs: any }) => {
     }
   }, [filter, jobs]);
 
-  // console.log(jobs);
   return (
     <SectionContainer>
       <div className="space-y-2 mb-4">
@@ -63,26 +62,20 @@ const JobList = ({ Jobs }: { Jobs: any }) => {
             filteredJobs.map((job, index) => {
               return (
                 <div key={index} className="shadow-md shadow-black">
-                  <div className="w-full flex flex-col gap-4 mb-4">
+                  <div className="w-full flex flex-col gap-4 mb-4 relative">
                     <img
                       src={`${process.env.NEXT_IMAGE_BASE}assets/${job.illustration}`}
                       alt="articel"
                       className="w-full h-[250px] object-cover bg-slate-300"
                     />
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-semibold hidden md:block">
-                      {job.title}
-                    </h4>
-
                     <button
                       className={clsx(
-                        "rounded-full px-2 py-1",
-                        "text-white",
+                        "rounded px-2 py-1 absolute top-2 right-2",
+                        "text-[var(--primary)]",
                         `${
                           !job.expire || new Date(job.expire) > now
-                            ? "bg-green-500"
-                            : "bg-red-500"
+                            ? "bg-green-200"
+                            : "bg-red-200"
                         }`
                       )}
                     >
@@ -92,6 +85,11 @@ const JobList = ({ Jobs }: { Jobs: any }) => {
                         ? "Active"
                         : "Expired"}
                     </button>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-semibold hidden md:block">
+                      {job.title}
+                    </h4>
 
                     {/* <h6 className="font-semibold md:hidden">{job.title}</h6> */}
                     <ul className="flex gap-2 my-4 flex-wrap">

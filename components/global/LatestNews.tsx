@@ -9,8 +9,9 @@ const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
 
   useEffect(() => {
-    setNews(LatestNews);
+    setNews(LatestNews.filter((article: any) => article.headline === true));
   }, [LatestNews]);
+
   return (
     <SectionContainer>
       <div className="flex flex-col gap-12">
@@ -21,7 +22,7 @@ const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
             <div className="xl:w-1/2">
               <div className="w-full flex flex-col gap-4 mb-4">
                 <img
-                  src={news[0].cover}
+                  src={`${process.env.NEXT_IMAGE_BASE}assets/${news[0].cover}`}
                   alt="articel"
                   className="w-full h-[350px] object-cover bg-slate-300  shadow-md shadow-black"
                 />
@@ -45,14 +46,22 @@ const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
                 </div>
               </div>
               <div>
+                <small className=" italic">
+                  created by{" "}
+                  <b className=" text-[var(--primary)]">
+                    {news[0].user_created.first_name}
+                  </b>
+                  {" -- "}
+                  {new Date(news[0].date_created).toDateString()}
+                </small>
                 <h4 className="font-semibold hidden md:block">
                   {news[0].title}
                 </h4>
                 <h6 className="font-semibold md:hidden">{news[0].title}</h6>
                 <p>{news[0].summary}</p>
                 <Link
-                  href={`/news/${news[0].id}`}
-                  className="flex gap-2 items-center text-[var(--primary)] font-semibold"
+                  href={`/news/${news[0].slug}`}
+                  className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                 >
                   <p>Read More</p> <ArrowRight size={24} />
                 </Link>
@@ -63,26 +72,37 @@ const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
           <div className="xl:w-1/2 space-y-4">
             {news.map((article) => {
               return (
-                <>
-                  <div className="flex gap-4 flex-col md:flex-row">
-                    <img
-                      className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-black"
-                      src={article.cover}
-                      alt="img"
-                    />
-                    <div className="flex-1 flex flex-col">
-                      <h4 className="hidden md:block">{article.title}</h4>
-                      <h6 className="md:hidden">{article.title}</h6>
-                      <p className="line-clamp-4">{article.summary}</p>
-                      <Link
-                        href={`/news/${article.id}`}
-                        className="flex gap-2 items-center text-[var(--primary)] font-semibold mt-auto"
-                      >
-                        <p>Read More</p> <ArrowRight size={24} />
-                      </Link>
-                    </div>
+                <div
+                  className="flex gap-4 flex-col md:flex-row"
+                  key={article.id}
+                >
+                  <img
+                    className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-black"
+                    src={`${process.env.NEXT_IMAGE_BASE}assets/${news[0].cover}`}
+                    alt="img"
+                  />
+                  <div className="flex-1 flex flex-col">
+                    <h4 className="hidden md:block !line-clamp-3">
+                      {article.title}
+                    </h4>
+                    <h6 className="md:hidden !line-clamp-3">{article.title}</h6>
+                    <small className="pb-2 italic">
+                      created by{" "}
+                      <b className=" text-[var(--primary)]">
+                        {article.user_created.first_name}
+                      </b>
+                      {" -- "}
+                      {new Date(article.date_created).toDateString()}
+                    </small>
+                    <p className="line-clamp-4">{article.summary}</p>
+                    <Link
+                      href={`/news/${article.slug}`}
+                      className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
+                    >
+                      <p>Read More</p> <ArrowRight size={24} />
+                    </Link>
                   </div>
-                </>
+                </div>
               );
             })}
           </div>

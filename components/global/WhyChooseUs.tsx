@@ -25,35 +25,14 @@ const WhyChooseUs = ({ dictionary }: ServiceType) => {
           </p> */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 w-full xl:w-1/2 gap-6">
-          {[
-            {
-              title: "Recognised expertise",
-              description:
-                "With over 15 years' experience in the field, particularly in sub-Saharan Africa and Cameroon, Crea Consult doesn't just take part in projects - it makes them succeed. Our experts only work in areas where we have 100% expertise. Clear objectives, concrete results. No improvisation.",
-            },
-            {
-              title: "Certifications and Quality Commitment",
-              description:
-                "Certified to ISO 9001 and 14001 (2015 standard), Crea Consult is renowned for its rigorous management and exemplary environmental commitment. Our continuous improvement system guarantees impeccable deliverables, on time and to the highest standards. Here, quality is not just a word, it's a method.",
-            },
-            {
-              title: "References and Successful Projects",
-              description:
-                "We have won the trust of institutions, commercial, industrial and academic companies through large-scale projects. As well as providing advice, we are a strategic partner: responsive, committed and always solution-oriented. We also support the training and integration of young people, because the future is being built today.",
-            },
-            {
-              title: "Case studies and achievements",
-              description:
-                "Our case studies are our best proof: before and after, quantified results, real transformation. Crea Consult is about concrete results, not theory. Each project is a visible, documented and reproducible success.",
-            },
-          ].map((item, index) => (
+          {dictionary.why.reasons.map((item, index) => (
             <div
               key={index}
               className="space-y-2 p-2 bg-[#700032]/10 min-h-[250px]"
             >
               <h4 className="hidden md:block">{item.title}</h4>
               <h5 className=" md:hidden">{item.title}</h5>
-              <p>{item.description}</p>
+              <p>{item.desc}</p>
             </div>
           ))}
         </div>

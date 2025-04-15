@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { Dictionary } from "@/lib/i18n";
 
 // Zod schema
 const contactSchema = z.object({
@@ -19,7 +20,11 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const ContactUs = () => {
+interface ContactProps {
+  dictionary: Dictionary;
+}
+
+const ContactUs = ({ dictionary }: ContactProps) => {
   // const ContactUs = ({
   //   createContacts,
   // }: {
@@ -66,21 +71,21 @@ const ContactUs = () => {
     <SectionContainer color="white" img="/ui/global/bglinesDeco.png">
       <div className="flex flex-col md:flex-row gap-4 py-[24px]">
         <div className="flex flex-col gap-6 md:w-1/2">
-          <h2 className="font-semibold hidden md:block">Contact us</h2>
-          <h4 className="font-bold md:hidden">Contact us</h4>
+          <h2 className="font-semibold hidden md:block">
+            {dictionary.contact.title.main}
+          </h2>
+          <h4 className="font-bold md:hidden">
+            {dictionary.contact.title.main}
+          </h4>
           <div className="space-y-8">
             <div className="max-w-[500px]">
               <h4 className=" font-semibold hidden md:block">
-                {`Share your projects and let's work together`}
+                {dictionary.contact.title.sub}
               </h4>
               <h6 className=" font-semibold md:hidden">
-                {`Share your projects and let's work together`}
+                {dictionary.contact.title.sub}
               </h6>
-              <p>
-                {
-                  "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
-                }
-              </p>
+              <p>{dictionary.contact.title.slogan}</p>
             </div>
             <ul className="space-y-2">
               <li className="flex gap-2">
@@ -104,7 +109,7 @@ const ContactUs = () => {
         >
           <div className="flex flex-col sm:flex-row gap-4 w-full">
             <div className="w-full">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{dictionary.contact.form.name}</label>
               <input
                 type="text"
                 id="name"
@@ -117,7 +122,7 @@ const ContactUs = () => {
             </div>
 
             <div className="w-full">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{dictionary.contact.form.email}</label>
               <input
                 type="email"
                 id="email"
@@ -131,7 +136,9 @@ const ContactUs = () => {
           </div>
 
           <div>
-            <label htmlFor="profession">Profession</label>
+            <label htmlFor="profession">
+              {dictionary.contact.form.profession}
+            </label>
             <input
               type="text"
               id="profession"
@@ -141,7 +148,7 @@ const ContactUs = () => {
           </div>
 
           <div>
-            <label htmlFor="subject">Subject</label>
+            <label htmlFor="subject">{dictionary.contact.form.subject}</label>
             <input
               type="text"
               id="subject"
@@ -154,7 +161,7 @@ const ContactUs = () => {
           </div>
 
           <div>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{dictionary.contact.form.message}</label>
             <textarea
               id="message"
               {...register("message")}

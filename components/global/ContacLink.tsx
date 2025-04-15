@@ -4,26 +4,33 @@ import React from "react";
 import SectionContainer from "./SectionContainer";
 import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
+import { Dictionary } from "@/lib/i18n";
 
-const ContacLink = () => {
+interface ContactLinkProps {
+  dictionary: Dictionary;
+}
+
+const ContacLink = ({ dictionary }: ContactLinkProps) => {
   return (
     <SectionContainer color="white" img="/ui/global/bglinesDeco.png">
       <div className="p-6">
         <div className="flex flex-col items-center justify-center min-h-[350px] space-y-[30px]">
           <h2 className="font-semibold hidden md:block text-center">
-            Contact us
+            {dictionary.contact.title.main}
           </h2>
-          <h4 className="font-semibold md:hidden text-center">Contact us</h4>
+          <h4 className="font-semibold md:hidden text-center">
+            {dictionary.contact.title.main}
+          </h4>
           <div className="space-y-8">
             <h5 className=" text-center mt-2">
-              {`Share your projects and let's work together`}
+              {dictionary.contact.title.sub}
             </h5>
             <h4 className="flex flex-col md:flex-row items-center justify-center mt-4">
               <Link
                 href={"/contact"}
                 className="px-6 py-2 bg-[var(--primary)] text-white mt-2 md:mt-0 md:ml-2 w-fit flex items-center"
               >
-                Contact us{" "}
+                {dictionary.contact.buttons.link}
                 <ArrowRight size={24} weight="bold" className="ml-2" />
               </Link>
             </h4>

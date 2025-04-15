@@ -23,8 +23,6 @@ async function createContacts(data: {
 const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  // const page = dictionary.pages.contact;
-  console.log(dictionary == dictionary);
 
   const Contacts = createContacts;
   console.log(Contacts);
@@ -32,12 +30,12 @@ const Page = async ({ params }: contactPageProps) => {
   return (
     <main>
       {/* Contact */}
-      <ContactUs />
+      <ContactUs dictionary={dictionary} />
       {/* <ContactUs createContacts={createContacts} /> */}
       {/* socials */}
       {/* map */}
       {/* newsletter */}
-      <Subscription />
+      <Subscription dictionary={dictionary} />
     </main>
   );
 };

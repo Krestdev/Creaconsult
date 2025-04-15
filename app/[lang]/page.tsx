@@ -62,13 +62,13 @@ export default async function Home({ params }: HomePageProps) {
       {/* partners */}
       <Partners />
       {/* contact */}
-      <ContacLink />
+      <ContacLink dictionary={dictionary} />
       {/* Job Offers adds list */}
       <JobBanner Jobs={Jobs} />
       {/* latest news */}
       <LatestNews LatestNews={News} />
       {/* news letter */}
-      <Subscription />
+      <Subscription dictionary={dictionary} />
     </main>
   );
 }

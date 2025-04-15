@@ -13,19 +13,17 @@ interface contactPageProps {
 const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-  // const page = dictionary.pages.contact;
-  console.log(dictionary == dictionary);
 
   return (
     <main>
       {/* Services */}
-      <ServicesDetails />
+      <ServicesDetails dictionary={dictionary} />
       {/* Pourquoi nous choisir */}
       <WhyChooseUs dictionary={dictionary} />
       {/* Partners */}
       <Partners />
       {/* Contact us */}
-      <ContacLink />
+      <ContacLink dictionary={dictionary} />
     </main>
   );
 };

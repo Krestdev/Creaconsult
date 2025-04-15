@@ -45,7 +45,7 @@ export default async function RootLayout({
             <Nav lang={lang} dictionary={dictionary} />
             {children}
             {/* footer */}
-            <Footer />
+            <Footer dictionary={dictionary} />
           </body>
         </QueryClientContext>
       </AuthProvider>

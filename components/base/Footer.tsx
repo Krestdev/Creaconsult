@@ -1,9 +1,14 @@
 "use client";
 
+import { Dictionary } from "@/lib/i18n";
 import Link from "next/link";
 import { FacebookLogo, GoogleLogo, LinkedinLogo } from "phosphor-react";
 
-const Footer = () => {
+interface FooterProps {
+  dictionary: Dictionary;
+}
+
+const Footer = ({ dictionary }: FooterProps) => {
   return (
     <footer
       className="containerParent bg-[var(--primary)] text-white bg-cover bg-center py-[24px]"
@@ -14,7 +19,7 @@ const Footer = () => {
       <div className="container ">
         <div className="w-full flex flex-col md:flex-row justify-between items-start p-6 gap-10">
           {/* body */}
-          <div className="flex flex-col justify-between max-w-[400px] h-full min-h-[250px]">
+          <div className="flex flex-col justify-between w-full max-w-[400px] h-full min-h-[250px]">
             <div className="space-y-4">
               <img
                 src="/ui/CreaConsultLogoLine.png"
@@ -23,91 +28,79 @@ const Footer = () => {
               />
               <p className="italic">{"Performing for real progress"}</p>
             </div>
-
-            <div className="flex flex-col md:flex-row">
-              <input
-                type="email"
-                placeholder="@ Enter your email"
-                className="px-4 py-2 border-b bg-transparent focus:outline-none focus:border-[var(--primary)] w-full"
-              />
-              <button className="w-full px-6 py-2 text-[var(--primary)] bg-white mt-2 md:mt-0 md:ml-2">
-                Subscribe
-              </button>
-            </div>
           </div>
           {/* footer body */}
           <div className="flex-1 space-y-4">
             <div className="text-white items-center gap-4 hidden sm:flex">
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/news">News</Link>
-              <Link href="/contact">Contact</Link>
+              {dictionary.footer.links.map((link, index) => (
+                <Link key={index} href={link.link}>
+                  {link.title}
+                </Link>
+              ))}
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-end">
               <div className="space-y-2">
-                <h4 className="hidden md:block text-white">Information</h4>
+                <h4 className="hidden md:block text-white">
+                  {dictionary.footer.info.title}
+                </h4>
                 <h6 className="font-semibold md:hidden text-white">
-                  Information
+                  {dictionary.footer.info.title}
                 </h6>
                 <ul>
-                  <li>
-                    <Link href="/about">About us</Link>
-                  </li>
-                  <li>
-                    <Link href="/news">News</Link>
-                  </li>
-                  {/* <li>
-                    <Link href="/#">Testimonials</Link>
-                  </li> */}
+                  {dictionary.footer.info.links.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.href} key={index}>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="space-y-2">
-                <h4 className="hidden md:block text-white">Helpful Links</h4>
+                <h4 className="hidden md:block text-white">
+                  {dictionary.footer.help.title}
+                </h4>
                 <h6 className="font-semibold md:hidden text-white">
-                  Helpful Links
+                  {dictionary.footer.help.title}
                 </h6>
                 <ul>
-                  <li>
-                    <Link href="/service">Services</Link>
-                  </li>
-                  <li>
-                    <Link href="/terms">Terms & Condition</Link>
-                  </li>
-                  <li>
-                    <Link href="/#">Privacy Policy</Link>
-                  </li>
+                  {dictionary.footer.help.links.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.href} key={index}>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="space-y-2">
-                <h4 className="hidden md:block text-white">Our Services</h4>
+                <h4 className="hidden md:block text-white">
+                  {dictionary.footer.service.title}
+                </h4>
                 <h6 className="font-semibold md:hidden text-white">
-                  Our Services
+                  {dictionary.footer.service.title}
                 </h6>
                 <ul>
-                  <li>
-                    <Link href="/services">Expertise</Link>
-                  </li>
-                  <li>
-                    <Link href="/#">Projects</Link>
-                  </li>
-                  <li>
-                    <Link href="/#">Case study</Link>
-                  </li>
+                  {dictionary.footer.service.links.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="space-y-2">
-                <h4 className="hidden md:block text-white">Contact Us</h4>
+                <h4 className="hidden md:block text-white">
+                  {dictionary.footer.contact.title}
+                </h4>
                 <h6 className="font-semibold md:hidden text-white ">
-                  Contact Us
+                  {dictionary.footer.contact.title}
                 </h6>
                 <ul>
-                  <li>
-                    <Link href="/#">+91 9999 9999 999</Link>
-                  </li>
-                  <li>
-                    <Link href="/#">yahoomail@yahoo.fr</Link>
-                  </li>
+                  {dictionary.footer.contact.links.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className=" flex gap-2">

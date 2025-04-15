@@ -5,19 +5,50 @@ export const fr: Dictionary = {
   navbar: [
     { link: "/", title: "Acceuille" },
     { link: "/about", title: "A Propos" },
-    { link: "/service", title: "Nos Service" },
+    { link: "/services", title: "Nos Services" },
     { link: "/jobs", title: "Emploi" },
     { link: "/news", title: "Actualite" },
     { link: "/contact", title: "Contact" },
   ],
-  footer: [
-    { link: "/", title: "Home" },
-    { link: "/about", title: "About us" },
-    { link: "/service", title: "Service" },
-    { link: "/jobs", title: "Jobs" },
-    { link: "/news", title: "news" },
-    { link: "/contact", title: "Contact" },
-  ],
+  footer: {
+    links: [
+      { link: "/", title: "Acceuille" },
+      { link: "/about", title: "A Propos" },
+      { link: "/services", title: "Nos Services" },
+      { link: "/jobs", title: "Emploi" },
+      { link: "/news", title: "Actualite" },
+      { link: "/contact", title: "Contact" },
+    ],
+    info: {
+      title: "Informations",
+      links: [
+        { href: "/about", label: "À propos de nous" },
+        { href: "/news", label: "Actualités" },
+      ],
+    },
+    service: {
+      title: "Services",
+      links: [
+        { href: "/services", label: "Nos services" },
+        { href: "/terms", label: "Conditions générales" },
+      ],
+    },
+    help: {
+      title: "Liens utiles",
+      links: [
+        { href: "/services", label: "Expertise" },
+        { href: "/services", label: "Projets" },
+        { href: "/services", label: "Étude de cas" },
+      ],
+    },
+    contact: {
+      title: "Contactez-nous",
+      links: [
+        { href: "tel:+237 233 426 385", label: "+237 233 426 385" },
+        { href: "mailto:creaconsult@yahoo.fr", label: "creaconsult@yahoo.fr" },
+      ],
+    },
+  },
   pages: {
     about: {
       title: "About Us",
@@ -51,28 +82,71 @@ export const fr: Dictionary = {
     },
     serviceList: [
       {
-        title: "Engineering and Technical Studies",
-        sub: "Technical expertise for infrastructure design and implementation.",
+        title: "Ingénierie et Études Techniques",
+        sub: "Expertises techniques pour la conception et la mise en œuvre d’infrastructures.",
+        imgList: [
+          "/ui/services/TechnicalStudies_pic1.jpg",
+          "/ui/services/TechnicalStudies_pic2.jpg",
+          "/ui/services/TechnicalStudies_pic3.jpg",
+        ],
         link: "ingenierie-et-etudes-techniques",
         img: "/ui/home/service1.jpg",
+        sublist: [
+          "-	Les études de voiries et réseaux divers",
+          "L’ingénierie électrique",
+          "Les études topographiques et SIG",
+          "Les études géotechniques",
+        ],
       },
       {
-        title: "Project Ownership and Management",
-        sub: "Overall management of projects, from planning to execution in the field",
+        title: "Maîtrise d’Œuvre et Gestion de Projets",
+        sub: "Pilotage global des projets, de la planification à l’exécution sur le terrain Les maîtrises d'œuvre",
         link: "maitrise-d-oeuvre",
         img: "/ui/home/service2.jpg",
+        imgList: [
+          "/ui/services/ProjectManagmant_pic1.jpg",
+          "/ui/services/ProjectManagmant_pic2.jpg",
+          "/ui/services/ProjectManagmant_pic3.jpg",
+        ],
+        sublist: [
+          "-	La planification opérationnelle",
+          "Les suivis opérationnels des travaux",
+          "La rédaction des cahiers de charges",
+        ],
       },
       {
-        title: "Design and Optimisation Consultancy",
-        sub: "Preliminary studies to guide, plan and secure the feasibility of projects",
+        title: "Conseil en Conception et Optimisation",
+        sub: "Études préliminaires pour orienter, planifier et sécuriser la faisabilité des projets.",
         link: "controle-technique",
         img: "/ui/home/service3.jpg",
+        imgList: [
+          "/ui/services/Conception_pic1.jpg",
+          "/ui/services/Conception_pic2.jpg",
+          "/ui/services/Conception_pic3.jpg",
+        ],
+        sublist: [
+          "Les études d'opportunité",
+          "Les études de préfaisabilité",
+          "Les études de faisabilité",
+          "Les études socioéconomiques",
+        ],
       },
       {
-        title: "Sustainable Development and Certifications",
-        sub: "Solutions focused on sustainability, environmental management and optimisation of natural resources.",
+        title: "Développement Durable et Certifications",
+        sub: "Solutions axées sur la durabilité, la gestion environnementale et l’optimisation des ressources naturelles.",
         link: "controle-technique",
         img: "/ui/home/service4.jpg",
+        imgList: [
+          "/ui/services/EcoDevelopment_pic1.jpg",
+          "/ui/services/EcoDevelopment_pic2.jpg",
+          "/ui/services/EcoDevelopment_pic3.jpg",
+        ],
+        sublist: [
+          "Les métiers de l'environnement",
+          "Le génie rural",
+          "Les études hydrogéologie et hydrologie",
+          "Les techniques d'analyse des données",
+        ],
       },
     ],
   },
@@ -97,6 +171,140 @@ export const fr: Dictionary = {
       {
         title: "Études de Cas et Réalisations",
         desc: `Nous mettons en avant des projets concrets, illustrant notre savoir-faire à travers des études de cas détaillées, avec images avant/après et résultats obtenus.`,
+      },
+    ],
+  },
+  Partners: {
+    title: {
+      main: "Partenaires",
+      sub: "ils nous ont fait confiance, hier comme aujourd'hui",
+    },
+  },
+  contact: {
+    title: {
+      main: "Contactez-nous",
+      sub: "Partagez vos projets et travaillons ensemble",
+      slogan: "performants pour un progrès réel",
+    },
+    buttons: {
+      link: "Contactez-nous",
+      reset: "Réinitialiser",
+      send: "Envoyer",
+    },
+    form: {
+      name: "Nom",
+      email: "Address mail",
+      profession: "Profession",
+      subject: "Sujet",
+      message: "Mesage",
+    },
+  },
+  newsLetter: {
+    title: {
+      main: "Abonnez-vous à notre newsletter",
+      sub: "Recevez les dernières actualités et mises à jour de Creacosult",
+    },
+    buttons: {
+      link: "S'abonner",
+    },
+  },
+  Jobs: {
+    title: {
+      title: {
+        main: "Offres d'emploi",
+        sub: "Rejoignez notre équipe d'experts",
+      },
+    },
+    filters: {
+      all: "Tous",
+      active: "Actives",
+    },
+    banner: {
+      title: "Nouvelles opportunités",
+      message: "Postuler maintenant",
+    },
+  },
+  about: {
+    story: {
+      title: "Our Story",
+      desc: `
+      CREACONSULT, an engineering and project management company founded in 2006, uses its proven expertise to create sustainable living environments. Committed to continuous improvement, we simplify every stage for project owners and investors. \n\n Certified ISO 9001 and 14001 (2015 standard), our management combines rigour, quality and environmental commitment. As specialists in institutional, commercial and industrial projects, we apply our cutting-edge technical expertise to ambitious projects. \n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our customers and partners a privileged and efficient collaboration. \n\nInnovative engineering and project management solutions for exceptional projects.
+      `,
+      boxImages: [
+        {
+          img: "/ui/services/Conception_pic1.jpg",
+          title: "Ingénierie et Études Techniques",
+        },
+        {
+          img: "/ui/services/EcoDevelopment_pic2.jpg",
+          title: "Développement Durable et Certifications",
+        },
+        {
+          img: "/ui/services/ProjectManagmant_pic3.jpg",
+          title: "Conseil en Conception et Optimisation",
+        },
+      ],
+    },
+    certification: {
+      title: "Certifications",
+      sub: "Une Expertise Reconnue",
+      desc: `<p class="text-justify">
+  Certifiée <strong>ISO 9001 et ISO 14001</strong>, et détentrice de <strong>l'Agrément pour les études d'impact environnemental</strong>, CREACONSULT affirme son engagement pour la qualité, la performance durable et la responsabilité environnementale. Ces reconnaissances consolident la rigueur de ses processus internes, valorisent son image auprès des partenaires, facilitent l'accès aux marchés et assurent une meilleure gestion des risques dans un environnement économique de plus en plus exigeant.
+</p>`,
+    },
+  },
+  team: {
+    title: "Equipe",
+    posts: [
+      {
+        name: "Mr. Désiré FOTSO",
+        post: "Directeur des Opérations",
+        img: "/ui/team/Ceo.png",
+        links: {
+          linkedin: "https://linkedin.com/in/desire-fotso",
+          facebook: "https://facebook.com/desire.fotso",
+          email: "dfotso@creaconsult.com",
+        },
+      },
+      {
+        name: "Mr. Brice LEKIAGNI",
+        post: "Technicien d’Étude et de Suivi",
+        img: "/ui/team/Etude.png",
+        links: {
+          linkedin: "https://linkedin.com/in/brice-lekiagni",
+          facebook: "https://facebook.com/brice.lekiagni",
+          email: "blekiagni@creaconsult.com",
+        },
+      },
+      {
+        name: "Carole TEMOU HEUME",
+        post: "Responsable Qualité",
+        img: "/ui/team/qualite.png",
+        links: {
+          linkedin: "https://linkedin.com/in/carole-temou",
+          facebook: "https://facebook.com/carole.temou",
+          email: "ctemou@creaconsult.com",
+        },
+      },
+      {
+        name: "Mme. Amougou Mbassi",
+        post: "Responsable Déclaration et Télédéclaration",
+        img: "/ui/team/Declaration.png",
+        links: {
+          linkedin: "https://linkedin.com/in/amougou-mbassi",
+          facebook: "https://facebook.com/amougou.mbassi",
+          email: "ambassi@creaconsult.com",
+        },
+      },
+      {
+        name: "Mme. Gladys Ngono",
+        post: "Responsable du Volet Environnemental",
+        img: "/ui/team/Environnement.png",
+        links: {
+          linkedin: "https://linkedin.com/in/gladys-ngono",
+          facebook: "https://facebook.com/gladys.ngono",
+          email: "gngono@creaconsult.com",
+        },
       },
     ],
   },

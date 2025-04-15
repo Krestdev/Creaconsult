@@ -25,10 +25,10 @@ const Hero = ({ dictionary }: HeroType) => {
           <p className="max-w-[300px]">{dictionary.hero.title.sub}</p>
           <div className="flex gap-2 flex-col md:flex-row">
             <Link href={"/contact"} className="link_button w-fit">
-              Contact us
+              {dictionary.hero.action.contact}
             </Link>
             <Link href={"/contact"} className="link_button_outline w-fit">
-              Request a quote
+              {dictionary.hero.action.devis}
             </Link>
           </div>
         </div>

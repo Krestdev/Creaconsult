@@ -8,6 +8,8 @@ import SectionContainer from "../global/SectionContainer";
 
 const JobDetail = ({ JobData }: { JobData: any }) => {
   const [Job, setJob] = useState<Record<string, any>>();
+  const now = new Date();
+
   useEffect(() => {
     setJob(JobData);
   }, [JobData]);
@@ -76,6 +78,21 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
                 {Job.expire ? new Date(Job.expire).toUTCString() : ""}
               </h6>
             </div>
+            <button
+              className={clsx(
+                "rounded px-2 py-1",
+                "text-[var(--primary)]",
+                `${
+                  !Job.expire || new Date(Job.expire) > now
+                    ? "bg-green-200"
+                    : "bg-red-200"
+                }`
+              )}
+            >
+              {/* Active expire */}
+
+              {!Job.expire || new Date(Job.expire) > now ? "Active" : "Expired"}
+            </button>
           </div>
           <hr className="w-full border-1 mt-4 border-[#700032]/50" />
           <div className="flex">

@@ -79,6 +79,15 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
                 pathname === `/${lang}${href}` ||
                 `${pathname}/` === `/${lang}${href}`;
 
+              if (item.title.toLocaleLowerCase().includes("contact")) {
+                return (
+                  <Link href={"/contact"} key={item.title}>
+                    <span className="bg-[var(--primary)] text-white hover:px-4 px-4 py-2 shadow-md shadow-black">
+                      Contact
+                    </span>
+                  </Link>
+                );
+              }
               return (
                 <Link key={item.title} href={href}>
                   <span
@@ -94,11 +103,11 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
                 </Link>
               );
             })}
-            <Link href={"/contact"}>
+            {/* <Link href={"/contact"}>
               <span className="bg-[var(--primary)] text-white hover:px-4 px-4 py-2 shadow-md shadow-black">
                 Contact
               </span>
-            </Link>
+            </Link> */}
             <div className="flex items-center gap-2">
               <LanguageSwitcher text={true} lang={lang}>
                 <Translate size={24} />
@@ -142,13 +151,31 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
             isOpen ? "block" : "hidden"
           )}
         >
-          {dictionary.navbar.map((item) => (
-            <Link key={item.title} href={item.link}>
-              <span className="block py-2 hover:text-gray-400">
-                {item.title}
-              </span>
-            </Link>
-          ))}
+          {dictionary.navbar.map((item) => {
+            if (item.title.toLocaleLowerCase().includes("contact")) {
+              return (
+                <Link
+                  key={item.title}
+                  href={"/contact"}
+                  className="bg-[var(--primary)] text-white hover:px-4 px-4 py-2 shadow-md shadow-black flex justify-center w-[60vw] mx-auto"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  <span className="">Contact</span>
+                </Link>
+              );
+            }
+            return (
+              <Link
+                key={item.title}
+                href={item.link}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <span className="block py-2 hover:text-gray-400">
+                  {item.title}
+                </span>
+              </Link>
+            );
+          })}
         </motion.div>
       </div>
       {/* mobile navbar version end */}

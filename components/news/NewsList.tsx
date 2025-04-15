@@ -8,9 +8,57 @@ import SectionContainer from "../global/SectionContainer";
 
 const NewsList = ({ NewsListData }: { NewsListData: any }) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
+  const [filteredNews, setFilteredNews] = useState<Record<string, any>[]>(news);
+
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const handleFilter = (
+    filterType: "all" | "today" | "this-week" | "this-month" | "headline"
+  ) => {
+    setActiveFilter(filterType);
+    const filtered = filterNews(filterType);
+    setFilteredNews(filtered);
+  };
+
+  const filterNews = (
+    filterType: "all" | "today" | "this-week" | "this-month" | "headline"
+  ) => {
+    const now = new Date();
+    const today = new Date(now.setHours(0, 0, 0, 0));
+
+    switch (filterType) {
+      case "today":
+        return news.filter((item) => {
+          const itemDate = new Date(item.date_created);
+          return itemDate >= today;
+        });
+
+      case "this-week":
+        const weekStart = new Date(today);
+        weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of week (Sunday)
+        return news.filter((item) => {
+          const itemDate = new Date(item.date_created);
+          return itemDate >= weekStart;
+        });
+
+      case "this-month":
+        const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+        return news.filter((item) => {
+          const itemDate = new Date(item.date_created);
+          return itemDate >= monthStart;
+        });
+
+      case "headline":
+        return news.filter((item) => item.headline);
+
+      default:
+        return news;
+    }
+  };
 
   useEffect(() => {
     setNews(NewsListData);
+    setFilteredNews(NewsListData);
   }, [NewsListData]);
 
   return (
@@ -25,19 +73,34 @@ const NewsList = ({ NewsListData }: { NewsListData: any }) => {
       </div>
       <div className="space-y-4">
         <ul className="flex gap-2">
-          {["All", "New", "Last Week", "Date"].map((filter, index) => {
-            const selected = index == 0;
+          {[
+            { picker: "all", label: "All" },
+            { picker: "today", label: "Toay" },
+            { picker: "this-week", label: "This Week" },
+            { picker: "this-month", label: "This Month" },
+            { picker: "headline", label: "Headline" },
+          ].map((filter, index) => {
             return (
               <li key={index}>
                 <button
+                  onClick={() =>
+                    handleFilter(
+                      filter.picker as
+                        | "all"
+                        | "today"
+                        | "this-week"
+                        | "this-month"
+                        | "headline"
+                    )
+                  }
                   className={clsx(
                     "rounded-full px-4 py-2",
-                    selected
+                    activeFilter === filter.picker
                       ? "bg-[var(--primary)] text-white"
                       : "bg-[#700032]/10"
                   )}
                 >
-                  {filter}
+                  {filter.label}
                 </button>
               </li>
             );
@@ -45,13 +108,12 @@ const NewsList = ({ NewsListData }: { NewsListData: any }) => {
           })}
         </ul>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {news.length > 0 &&
-            news.map((news, index) => {
+          {filteredNews.length > 0 &&
+            filteredNews.map((news, index) => {
               return (
                 <div key={index}>
                   <div className="w-full flex flex-col gap-4 mb-4">
                     <img
-                      // src={news.images[0],"/ui/news/main1.jpeg"}
                       src={
                         news.cover
                           ? `${process.env.NEXT_IMAGE_BASE}assets/${news.cover}`
@@ -62,16 +124,26 @@ const NewsList = ({ NewsListData }: { NewsListData: any }) => {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold hidden md:block line-clamp-1">
-                      {news.title}
-                    </h4>
-                    <h6 className="font-semibold md:hidden line-clamp-1">
-                      {news.title}
-                    </h6>
+                    <small className=" italic">
+                      created by{" "}
+                      <b className=" text-[var(--primary)]">
+                        {news.user_created.first_name}
+                      </b>
+                      {" -- "}
+                      {new Date(news.date_created).toDateString()}
+                    </small>
+                    <Link href={`news/${news.slug}`}>
+                      <h4 className="font-semibold hidden md:block line-clamp-1">
+                        {news.title}
+                      </h4>
+                      <h6 className="font-semibold md:hidden line-clamp-1">
+                        {news.title}
+                      </h6>
+                    </Link>
                     <p className=" line-clamp-5">{news.summary}</p>
                     <Link
-                      href={`news/${news.id}`}
-                      className="flex gap-2 items-center text-[var(--primary)] font-semibold"
+                      href={`news/${news.slug}`}
+                      className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>Read More</p> <ArrowRight size={24} />
                     </Link>
