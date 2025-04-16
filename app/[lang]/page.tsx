@@ -26,6 +26,13 @@ async function getNews() {
           _eq: "published",
         },
       },
+      fields: [
+        "*",
+        {
+          user_created: ["id", "first_name", "last_name", "email"],
+          images: ["id", "directus_files_id"],
+        },
+      ],
     })
   );
 }

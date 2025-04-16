@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Sacramento } from "next/font/google";
 import "../globals.css";
 import React from "react";
 import { getDictionary, Locale } from "@/lib/i18n";
@@ -30,17 +30,31 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "fr" }];
 }
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-poppins",
+});
+
+// Configure Sacramento (handwriting)
+const sacramento = Sacramento({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-sacramento",
+});
+
 export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
   const lang = (await params).lang;
   const dictionary = await getDictionary(lang);
+
   return (
     <html lang={lang}>
       <AuthProvider>
         <QueryClientContext>
-          <body className={`${POPPINS.className} antialiased`}>
+          <body className={`${poppins.className} antialiased`}>
             {/* Navbar */}
             <Nav lang={lang} dictionary={dictionary} />
             {children}

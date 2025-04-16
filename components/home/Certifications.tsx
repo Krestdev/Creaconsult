@@ -2,25 +2,29 @@ import SectionContainer from "../global/SectionContainer";
 
 const Certifications = () => {
   return (
-    <SectionContainer className="py-10">
-      <div className="flex gap-4 overflow-hidden">
-        <div className="flex flex-col gap-4">
+    <SectionContainer
+      className="py-10"
+      color="white"
+      img="/ui/global/bglinesDeco.png"
+    >
+      <div className="flex gap-4 overflow-hidden justify-center">
+        <div className="flex gap-4 items-center">
           <img
             src="/ui/certificates/isoveritas.png"
             alt="certificates"
             className="h-[4rem] "
           />
-          <p className="w-[140px]">Veritas Certification Iso 14001</p>
+          <p className="w-[160px]">Veritas Certification Iso 14001</p>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex gap-4 items-center">
           <img
             src="/ui/certificates/isoveritas2.png"
             alt="certificates"
             className="h-[4rem] object-cover"
           />
-          <p className="w-[140px]">Veritas Certification Iso 9001</p>
+          <p className="w-[160px]">Veritas Certification Iso 9001</p>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex gap-4 items-center">
           <img
             src="/ui/certificates/ukasMS.png"
             alt="certificates"

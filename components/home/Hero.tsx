@@ -9,9 +9,9 @@ interface HeroType {
 const Hero = ({ dictionary }: HeroType) => {
   return (
     <section className="containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center">
-      <div className="container flex justify-between items-center gap-4 min-h-[500px]">
+      <div className="container flex justify-between items-center gap-4 min-h-[700px]">
         <div className="flex flex-col gap-2 text-white mx-4">
-          <small className="font-bold uppercase">
+          <small className="font-bold uppercase link_button w-fit border-b-white border-b-4">
             {dictionary.hero.title.small}
           </small>
           <h3 className="font-semibold max-w-[600px] md:hidden w-full text-white">
@@ -22,7 +22,9 @@ const Hero = ({ dictionary }: HeroType) => {
             {/* Turn your projects into reality with Creaconsult. */}
             {dictionary.hero.title.main}
           </h1>
-          <p className="max-w-[300px]">{dictionary.hero.title.sub}</p>
+          <p className="max-w-[650px] text-5xl font-handwriting mb-4">
+            {dictionary.hero.title.sub}
+          </p>
           <div className="flex gap-2 flex-col md:flex-row">
             <Link href={"/contact"} className="link_button w-fit">
               {dictionary.hero.action.contact}

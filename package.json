@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@directus/sdk": "^19.1.0",
+    "@formatjs/intl-localematcher": "^0.6.1",
     "@hookform/resolvers": "^4.1.0",
     "@tanstack/react-query": "^5.72.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.10",
     "jiti": "^2.4.2",
+    "negotiator": "^1.0.0",
     "next": "^15.2.4",
     "phosphor-react": "^1.4.1",
     "react": "^19.0.0",
@@ -27,6 +29,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/eslint__eslintrc": "^2.1.2",
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

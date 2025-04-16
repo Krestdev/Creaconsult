@@ -19,7 +19,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
   return (
     <SectionContainer>
       {news && (
-        <div className="flex">
+        <div className="flex flex-col xl:flex-row gap-24">
           <div className="space-y-12 md:max-w-4xl w-full md:mr-8">
             <h2 className="font-semibold hidden md:block">{news.title}</h2>
             <h5 className="font-semibold md:hidden">{news.title}</h5>

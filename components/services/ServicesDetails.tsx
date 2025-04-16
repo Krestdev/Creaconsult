@@ -28,6 +28,7 @@ const ServicesDetails = ({ dictionary }: ServiceType) => {
           const revert = index % 2 == 0;
           return (
             <div
+              id={`${service.link}`}
               className={clsx(
                 "flex gap-[50px] justify-between flex-col",
                 revert ? " lg:flex-row-reverse" : "lg:flex-row"

@@ -29,22 +29,6 @@ async function getNews() {
   );
 }
 
-async function getFiles(fileIds: number[]) {
-  if (!fileIds.length) return [];
-
-  try {
-    const files = await directus.request(
-      readItems("News_files", {
-        fields: ["id", "directus_files_id"],
-        filter: { id: { _in: fileIds } },
-      })
-    );
-    return files;
-  } catch (err) {
-    console.log(err);
-  }
-}
-
 const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);

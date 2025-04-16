@@ -10,6 +10,9 @@
   --base-size: 16px;
   --scale-ratio: 1.25;
   --line-height: 1.25;
+
+  --font-poppins: 'Poppins', sans-serif;
+  --font-sacramento: 'Sacramento', cursive;
 }
 
 /* styles/globals.css */
@@ -17,6 +20,14 @@
   font-family: 'mariyam';
   src: url('./Mariyam.otf') format('opentype'),
        url('./Mariyam.ttf') format('truetype');
+}
+
+.font-sans {
+  font-family: var(--font-poppins);
+}
+
+.font-handwriting {
+  font-family: var(--font-sacramento);
 }
 
 .mariyam {

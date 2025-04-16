@@ -78,7 +78,7 @@ export const en: Dictionary = {
   },
   why: {
     title: {
-      main: "Why Choisir Creaconsult ?",
+      main: "Why Choose Creaconsult ?",
       sub: "Chez CREACONSULT, nous mettons notre expertise et notre engagement au service de vos projets, garantissant des solutions innovantes et adaptées à vos besoins.",
     },
     reasons: [

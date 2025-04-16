@@ -34,13 +34,15 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
     <nav
       className={clsx(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-black bg-opacity-50 shadow-md" : "bg-transparent"
+        scrolled
+          ? "bg-black bg-opacity-50 shadow-md backdrop-blur-lg"
+          : "bg-transparent"
       )}
     >
       {/* web navbar version start */}
       <div className="container hidden md:block">
-        <div className="flex justify-between items-center">
-          <div className="text-white flex items-center gap-6 ">
+        <div className="flex justify-between items-center h-fit">
+          <div className="text-white flex items-center gap-6">
             {dictionary.navbar.slice(0, 3).map((item) => {
               const href = item.link;
               const isActive =
@@ -63,12 +65,12 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
               );
             })}
           </div>
-          <div className="nav__logo">
+          <div>
             <Link href="/">
               <img
                 src="/ui/creaconsultFootLogo.png"
                 alt="logo"
-                className=" size-20"
+                className="h-[80px] w-[120px] object-cover my-2"
               />
             </Link>
           </div>
@@ -132,7 +134,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
               <img
                 src="/ui/creaconsultFootLogo.png"
                 alt="logo"
-                className=" size-20"
+                className=" h-[100px]"
               />
             </Link>
           </div>
