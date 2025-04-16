@@ -21,8 +21,6 @@ async function getJobs() {
 const Page = async ({ params }: contactPageProps) => {
   const { lang, id } = await params;
   const dictionary = await getDictionary(lang);
-  // const page = dictionary.pages.contact;
-  console.log(dictionary == dictionary);
 
   const job = await getJob(parseInt(id));
   const jobs = await getJobs();
@@ -32,7 +30,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* Job description */}
       <JobDetail JobData={job} />
       {/* Job Offers adds list */}
-      <JobBanner Jobs={jobs} />
+      <JobBanner Jobs={jobs} dicrionary={dictionary} />
       {/* News Letter */}
     </main>
   );
