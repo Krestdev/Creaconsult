@@ -210,6 +210,7 @@ export const en: Dictionary = {
       link: "Subscribe",
     },
   },
+  actu: "Headlines",
   Jobs: {
     title: {
       title: {

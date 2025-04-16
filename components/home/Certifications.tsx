@@ -7,7 +7,7 @@ const Certifications = () => {
       color="white"
       img="/ui/global/bglinesDeco.png"
     >
-      <div className="flex gap-4 overflow-hidden justify-center">
+      <div className="flex gap-4 overflow-hidden justify-center flex-col md:flex-row">
         <div className="flex gap-4 items-center">
           <img
             src="/ui/certificates/isoveritas.png"

@@ -4,8 +4,14 @@ import { ArrowRight } from "phosphor-react";
 import SectionContainer from "./SectionContainer";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Dictionary } from "@/lib/i18n";
 
-const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
+interface LatestNewsProps {
+  LatestNews: any;
+  dicrionary: Dictionary;
+}
+
+const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
 
   useEffect(() => {
@@ -15,8 +21,8 @@ const LatestNews = ({ LatestNews }: { LatestNews: any }) => {
   return (
     <SectionContainer>
       <div className="flex flex-col gap-12">
-        <h2 className="font-semibold hidden md:block">Headlines</h2>
-        <h4 className="font-bold md:hidden">Headlines</h4>
+        <h2 className="font-semibold hidden md:block">{dicrionary.actu}</h2>
+        <h4 className="font-bold md:hidden">{dicrionary.actu}</h4>
         <div className="flex gap-8 flex-col xl:flex-row">
           {news.length > 0 && (
             <div className="xl:w-1/2">

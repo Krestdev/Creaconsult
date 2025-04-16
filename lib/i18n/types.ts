@@ -94,6 +94,7 @@ export interface Dictionary {
       link: string;
     };
   };
+  actu: string;
   Jobs: {
     title: {
       title: {

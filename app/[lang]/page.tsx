@@ -73,7 +73,7 @@ export default async function Home({ params }: HomePageProps) {
       {/* Job Offers adds list */}
       <JobBanner Jobs={Jobs} dicrionary={dictionary} />
       {/* latest news */}
-      <LatestNews LatestNews={News} />
+      <LatestNews LatestNews={News} dicrionary={dictionary} />
       {/* news letter */}
       <Subscription dictionary={dictionary} />
     </main>

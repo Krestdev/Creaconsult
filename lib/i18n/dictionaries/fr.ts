@@ -208,6 +208,7 @@ export const fr: Dictionary = {
       link: "S'abonner",
     },
   },
+  actu: "À la Une",
   Jobs: {
     title: {
       title: {
