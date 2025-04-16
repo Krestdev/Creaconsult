@@ -4,8 +4,14 @@ import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
+import { Dictionary } from "@/lib/i18n";
 
-const JobBanner = ({ Jobs }: { Jobs: any }) => {
+interface JobOBannerProps {
+  Jobs: any;
+  dicrionary: Dictionary;
+}
+
+const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
   const [jobs, setJobs] = useState<Record<string, any>[]>([]);
 
   useEffect(() => {
@@ -15,8 +21,12 @@ const JobBanner = ({ Jobs }: { Jobs: any }) => {
   return (
     <SectionContainer className="pb-[24px]">
       <div className="space-y-8">
-        <h2 className="font-semibold hidden md:block">New Job Offers</h2>
-        <h4 className="font-semibold md:hidden">New Job Offers</h4>
+        <h2 className="font-semibold hidden md:block">
+          {dicrionary.Jobs.banner.title}
+        </h2>
+        <h4 className="font-semibold md:hidden">
+          {dicrionary.Jobs.banner.title}
+        </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {jobs.map((job, index) => {
             return (

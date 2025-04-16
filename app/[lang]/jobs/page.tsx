@@ -33,9 +33,9 @@ const Page = async ({ params }: contactPageProps) => {
   return (
     <main>
       {/* Job Offers adds list */}
-      {jobs.length > 0 && <JobBanner Jobs={jobs} />}
+      {jobs.length > 0 && <JobBanner Jobs={jobs} dicrionary={dictionary} />}
       {/* Job Offers list */}
-      <JobList Jobs={jobs} />
+      <JobList Jobs={jobs} dicrionary={dictionary} />
       {/* News Letter */}
     </main>
   );

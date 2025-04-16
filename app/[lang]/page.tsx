@@ -71,7 +71,7 @@ export default async function Home({ params }: HomePageProps) {
       {/* contact */}
       <ContacLink dictionary={dictionary} />
       {/* Job Offers adds list */}
-      <JobBanner Jobs={Jobs} />
+      <JobBanner Jobs={Jobs} dicrionary={dictionary} />
       {/* latest news */}
       <LatestNews LatestNews={News} />
       {/* news letter */}

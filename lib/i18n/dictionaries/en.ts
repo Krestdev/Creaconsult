@@ -67,7 +67,7 @@ export const en: Dictionary = {
   },
   hero: {
     title: {
-      small: "Bureau d’Étude Catégorie A",
+      small: "Category A Consulting Office",
       main: "Turn your projects into reality with Creaconsult.",
       sub: "Experts in sector studies, technical control and infrastructure.",
     },

@@ -6,8 +6,14 @@ import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import { filterJobs } from "@/lib/FilterJobs";
+import { Dictionary } from "@/lib/i18n";
 
-const JobList = ({ Jobs }: { Jobs: any }) => {
+interface JobOfferProps {
+  Jobs: any;
+  dicrionary: Dictionary;
+}
+
+const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
   const [jobs, setJobs] = useState<Record<string, any>[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Record<string, any>[]>([]);
   const [filter, setFilter] = useState<"active" | "all">("active");
@@ -28,8 +34,12 @@ const JobList = ({ Jobs }: { Jobs: any }) => {
   return (
     <SectionContainer>
       <div className="space-y-2 mb-4">
-        <h2 className="font-semibold hidden md:block">Job Offers</h2>
-        <h4 className="font-semibold md:hidden">Job Offers</h4>
+        <h2 className="font-semibold hidden md:block">
+          {dicrionary.Jobs.title.title.main}
+        </h2>
+        <h4 className="font-semibold md:hidden">
+          {dicrionary.Jobs.title.title.main}
+        </h4>
         <h6 className="max-w-[700px]">
           {
             "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."
