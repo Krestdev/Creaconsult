@@ -1,3 +1,4 @@
+// "use client";
 import ContacLink from "@/components/global/ContacLink";
 import LatestNews from "@/components/global/LatestNews";
 import Partners from "@/components/global/Partners";
@@ -10,7 +11,7 @@ import Services from "@/components/home/Services";
 import JobBanner from "@/components/Job/JobBanner";
 import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { readItems } from "@directus/sdk";
+import { createItem, readItems } from "@directus/sdk";
 
 interface HomePageProps {
   params: Promise<{
