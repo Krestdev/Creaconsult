@@ -75,7 +75,7 @@ const Page = async ({ params }: contactPageProps) => {
       <NewsDetails NewsData={news} newsList={newsList} />
       {/* Job Offers adds list */}
       {/* News Letter */}
-      <Subscription dictionary={dictionary} />
+      <Subscription dictionary={dictionary} lang={lang} />
     </main>
   );
 };
