@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Dictionary } from "@/lib/i18n";
+import { Dictionary, Locale } from "@/lib/i18n";
 
 // Zod schema
 const contactSchema = z.object({
@@ -22,9 +22,10 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 interface ContactProps {
   dictionary: Dictionary;
+  lang: Locale;
 }
 
-const ContactUs = ({ dictionary }: ContactProps) => {
+const ContactUs = ({ dictionary, lang }: ContactProps) => {
   // const ContactUs = ({
   //   createContacts,
   // }: {
@@ -56,14 +57,25 @@ const ContactUs = ({ dictionary }: ContactProps) => {
   const onSubmit = async (data: ContactFormData) => {
     setStatus("Sending...");
     try {
-      // createContactMessage(data);
-      // await directus.request(createItem("Contacts", data));
-      console.log(data);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data, lang: lang }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       setStatus("Message sent successfully!");
       reset();
+      return await response.json();
     } catch (error) {
-      console.error(error);
+      console.error("Failed to subscribe:", error);
       setStatus("Failed to send message.");
+      throw error;
     }
   };
 

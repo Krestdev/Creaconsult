@@ -76,7 +76,7 @@ export default async function Home({ params }: HomePageProps) {
       {/* latest news */}
       <LatestNews LatestNews={News} dicrionary={dictionary} />
       {/* news letter */}
-      <Subscription dictionary={dictionary} />
+      <Subscription dictionary={dictionary} lang={lang} />
     </main>
   );
 }

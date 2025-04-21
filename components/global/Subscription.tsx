@@ -1,15 +1,19 @@
 "use client";
 
-import { Dictionary } from "@/lib/i18n";
+import { Dictionary, Locale } from "@/lib/i18n";
 import SectionContainer from "./SectionContainer";
 import { useQueryContext } from "@/context/DataRequest";
+import { useState } from "react";
+import { DotsThree } from "phosphor-react";
 
 interface SubscriptionProps {
   dictionary: Dictionary;
+  lang: Locale;
 }
 
-const Subscription = ({ dictionary }: SubscriptionProps) => {
+const Subscription = ({ dictionary, lang }: SubscriptionProps) => {
   // const { subscribeClient } = useQueryContext();
+  const [status, setStatus] = useState("");
 
   const subscribeClient = async (data: {
     name: string;
@@ -17,9 +21,11 @@ const Subscription = ({ dictionary }: SubscriptionProps) => {
     subject: string;
     message: string;
     email: string;
+    lang: string;
   }) => {
     try {
-      const response = await fetch("/api/newsleter", {
+      setStatus("sending...");
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,12 +37,17 @@ const Subscription = ({ dictionary }: SubscriptionProps) => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
+      setStatus("sent");
+
       return await response.json();
     } catch (error) {
       console.error("Failed to subscribe:", error);
+      setStatus("Failed to send Email");
       throw error;
     }
   };
+
+  const [email, setEmail] = useState("");
 
   return (
     <SectionContainer color="black" img="/ui/global/hands_up.jpg">
@@ -53,21 +64,28 @@ const Subscription = ({ dictionary }: SubscriptionProps) => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 border border-gray-300 focus:outline-none focus:border-gray-500"
+              className="px-4 py-2 border border-gray-300 focus:outline-none focus:border-gray-500 text-black"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button
               className="px-6 py-2 bg-[var(--primary)] text-white mt-2 md:mt-0 md:ml-2 w-full md:w-fit"
+              disabled={status == "sending..."}
               onClick={() =>
                 subscribeClient({
-                  name: "string",
-                  profession: "string",
-                  subject: "string",
+                  name: "none",
+                  profession: "none",
+                  subject: "News letter",
                   message: "string",
-                  email: "string",
+                  email: email,
+                  lang: lang as string,
                 })
               }
             >
-              {dictionary.newsLetter.buttons.link}
+              {status == "sending..." ? (
+                <DotsThree />
+              ) : (
+                dictionary.newsLetter.buttons.link
+              )}
             </button>
           </div>
         </div>

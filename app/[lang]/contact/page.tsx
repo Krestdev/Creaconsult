@@ -24,18 +24,15 @@ const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
-  const Contacts = createContacts;
-  console.log(Contacts);
-
   return (
     <main>
       {/* Contact */}
-      <ContactUs dictionary={dictionary} />
+      <ContactUs dictionary={dictionary} lang={lang} />
       {/* <ContactUs createContacts={createContacts} /> */}
       {/* socials */}
       {/* map */}
       {/* newsletter */}
-      <Subscription dictionary={dictionary} />
+      <Subscription dictionary={dictionary} lang={lang} />
     </main>
   );
 };
