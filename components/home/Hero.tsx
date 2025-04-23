@@ -38,7 +38,7 @@ const Hero = ({ dictionary }: HeroType) => {
         <div className="hidden md:flex gap-4 ">
           <div className="flex flex-col gap-4 mt-[50px] w-fit">
             <img
-              src="/ui/home/luxry_hous.jpeg"
+              src="/ui/home/hero_sky_scapers.jpeg"
               className="size-[250px] shadow-black shadow-lg"
               alt=""
             />
