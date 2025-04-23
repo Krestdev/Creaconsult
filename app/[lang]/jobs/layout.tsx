@@ -13,9 +13,12 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "fr" }];
 }
 
-export default async function Layout({ children }: LayoutProps) {
+export default async function Layout({ children, params }: LayoutProps) {
   return (
-    <PageIntro title="Job Offers" img="/ui/intro/jobsintro.jpg">
+    <PageIntro
+      title={(await params).lang == "en" ? "Job Offers" : "Emploi"}
+      img="/ui/intro/jobsintro.jpg"
+    >
       {children}
     </PageIntro>
   );

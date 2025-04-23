@@ -40,7 +40,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* Lattest news topics */}
       <LatestNews LatestNews={News} dicrionary={dictionary} />
       {/* News list */}
-      <NewsList NewsListData={News} />
+      <NewsList NewsListData={News} dictionary={dictionary} />
       {/* adds */}
       {/* events list */}
       {/* News Letter */}

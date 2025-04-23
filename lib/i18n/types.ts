@@ -27,6 +27,10 @@ export interface Dictionary {
       title: string;
       subtitle: string;
     };
+    news: {
+      title: string;
+      subtitle: string;
+    };
   };
   hero: {
     title: {

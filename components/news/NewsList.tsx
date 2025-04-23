@@ -5,8 +5,15 @@ import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
+import { Dictionary } from "@/lib/i18n";
 
-const NewsList = ({ NewsListData }: { NewsListData: any }) => {
+const NewsList = ({
+  NewsListData,
+  dictionary,
+}: {
+  NewsListData: any;
+  dictionary: Dictionary;
+}) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
   const [filteredNews, setFilteredNews] = useState<Record<string, any>[]>(news);
 
@@ -64,7 +71,7 @@ const NewsList = ({ NewsListData }: { NewsListData: any }) => {
   return (
     <SectionContainer>
       <div className="space-y-2 mb-4">
-        <h2 className="font-semibold">News</h2>
+        <h2 className="font-semibold">{dictionary.pages.news.title}</h2>
         <h6 className="max-w-[700px]">
           {
             "Des solutions innovantes en ingénierie et maîtrise d'œuvre pour des projets d'exception."

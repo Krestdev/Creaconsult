@@ -63,6 +63,10 @@ export const fr: Dictionary = {
       title: "Contact Us",
       subtitle: "Contact us title",
     },
+    news: {
+      title: "Actualités",
+      subtitle: "sous titres Actualités",
+    },
   },
   hero: {
     title: {
