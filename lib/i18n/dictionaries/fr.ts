@@ -66,7 +66,7 @@ export const fr: Dictionary = {
   },
   hero: {
     title: {
-      small: "Bureau d’Étude Catégorie A",
+      small: "Bureau d’Études Catégorie A",
       main: "Transformez vos projets en réalité avec Creaconsult.",
       sub: "Experts en études sectorielles, contrôle technique et infrastructures.",
     },

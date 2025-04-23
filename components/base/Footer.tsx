@@ -28,9 +28,32 @@ const Footer = ({ dictionary }: FooterProps) => {
               />
               <p className="italic">{"Performing for real progress"}</p>
             </div>
+            <div className="flex gap-2 overflow-hidden justify-start flex-col md:flex-row">
+              <div className="flex gap-4 items-center">
+                <img
+                  src="/ui/certificates/isoveritas.png"
+                  alt="certificates"
+                  className="h-[4rem] "
+                />
+              </div>
+              <div className="flex gap-4 items-center">
+                <img
+                  src="/ui/certificates/isoveritas2.png"
+                  alt="certificates"
+                  className="h-[4rem] object-cover"
+                />
+              </div>
+              <div className="flex gap-4 items-center">
+                <img
+                  src="/ui/certificates/ukasMS.png"
+                  alt="certificates"
+                  className="h-[4rem] w-[3rem] object-cover"
+                />
+              </div>
+            </div>
           </div>
           {/* footer body */}
-          <div className="flex-1 space-y-4">
+          <div className="w-fit space-y-4">
             <div className="text-white items-center gap-4 hidden sm:flex">
               {dictionary.footer.links.map((link, index) => (
                 <Link key={index} href={link.link}>
@@ -38,7 +61,7 @@ const Footer = ({ dictionary }: FooterProps) => {
                 </Link>
               ))}
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div className="space-y-2">
                 <h4 className="hidden md:block text-white">
                   {dictionary.footer.info.title}
@@ -54,33 +77,6 @@ const Footer = ({ dictionary }: FooterProps) => {
                       </Link>
                     </li>
                   ))}
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h4 className="hidden md:block text-white">
-                  {dictionary.footer.help.title}
-                </h4>
-                <h6 className="font-semibold md:hidden text-white">
-                  {dictionary.footer.help.title}
-                </h6>
-                <ul>
-                  {dictionary.footer.help.links.map((link, index) => (
-                    <li key={index}>
-                      <Link href={link.href} key={index}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h4 className="hidden md:block text-white">
-                  {dictionary.footer.service.title}
-                </h4>
-                <h6 className="font-semibold md:hidden text-white">
-                  {dictionary.footer.service.title}
-                </h6>
-                <ul>
                   {dictionary.footer.service.links.map((link, index) => (
                     <li key={index}>
                       <Link href={link.href}>{link.label}</Link>
@@ -88,6 +84,7 @@ const Footer = ({ dictionary }: FooterProps) => {
                   ))}
                 </ul>
               </div>
+
               <div className="space-y-2">
                 <h4 className="hidden md:block text-white">
                   {dictionary.footer.contact.title}
@@ -102,16 +99,21 @@ const Footer = ({ dictionary }: FooterProps) => {
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className=" flex gap-2">
-                <div className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
-                  <GoogleLogo size={24} />
-                </div>
-                <div className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
-                  <FacebookLogo size={24} />
-                </div>
-                <div className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit">
-                  <LinkedinLogo size={24} />
+                <div className=" flex gap-2 !mt-4">
+                  <Link
+                    href={
+                      "https://www.facebook.com/share/15VLXDHCRP/?mibextid=wwXIfr"
+                    }
+                    className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit"
+                  >
+                    <FacebookLogo size={24} />
+                  </Link>
+                  <Link
+                    href={"https://www.linkedin.com/company/betcreaconsult/"}
+                    className="flex p-1 md:p-2 justify-center items-center bg-white text-[var(--primary)] rounded-full w-fit h-fit"
+                  >
+                    <LinkedinLogo size={24} />
+                  </Link>
                 </div>
               </div>
             </div>

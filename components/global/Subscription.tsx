@@ -50,7 +50,7 @@ const Subscription = ({ dictionary, lang }: SubscriptionProps) => {
   const [email, setEmail] = useState("");
 
   return (
-    <SectionContainer color="black" img="/ui/global/hands_up.jpg">
+    <SectionContainer color="black" img="/ui/global/hands_up.jpeg">
       <div className="p-6">
         <div className="flex flex-col items-center justify-center min-h-[350px] text-white">
           <h2 className="font-semibold hidden md:block text-center text-white">

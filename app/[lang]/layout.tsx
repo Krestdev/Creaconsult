@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Sacramento } from "next/font/google";
+import { Poppins, Sacramento, Poiret_One } from "next/font/google";
 import "../globals.css";
 import React from "react";
 import { getDictionary, Locale } from "@/lib/i18n";
@@ -41,6 +41,12 @@ const sacramento = Sacramento({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-sacramento",
+});
+
+const poiret_One = Poiret_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-poiret_One",
 });
 
 export default async function RootLayout({

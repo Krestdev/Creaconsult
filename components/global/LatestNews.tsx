@@ -91,7 +91,9 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                     <h4 className="hidden md:block !line-clamp-3">
                       {article.title}
                     </h4>
-                    <h6 className="md:hidden !line-clamp-3">{article.title}</h6>
+                    <h6 className="md:hidden !line-clamp-3">
+                      {article.subtitle}
+                    </h6>
                     <small className="pb-2 italic">
                       created by{" "}
                       <b className=" text-[var(--primary)]">

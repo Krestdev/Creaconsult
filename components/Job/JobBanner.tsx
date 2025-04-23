@@ -57,7 +57,7 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
             }}
           >
             <h5 className="text-white font-light flex justify-center items-center">
-              <span className="text-7xl">4</span> New Jobs
+              <span className="text-7xl">{jobs.length}</span> New Jobs
             </h5>
             <h2 className="text-white mariyam text-center">Apply Now</h2>
           </div>

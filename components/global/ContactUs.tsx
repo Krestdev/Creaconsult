@@ -126,7 +126,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
                 type="text"
                 id="name"
                 {...register("name")}
-                className="bg-gray-200 shadow-md p-4 w-full"
+                className="bg-gray-100 border-black border-b-2 focus:outline-none p-4 w-full"
               />
               {errors.name && (
                 <p className="text-red-500 text-sm">{errors.name.message}</p>
@@ -139,7 +139,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
                 type="email"
                 id="email"
                 {...register("email")}
-                className="bg-gray-200 shadow-md p-4 w-full"
+                className="bg-gray-100 border-black border-b-2 focus:outline-none p-4 w-full"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -155,7 +155,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
               type="text"
               id="profession"
               {...register("profession")}
-              className="bg-gray-200 shadow-md p-4 w-full"
+              className="bg-gray-100 border-black border-b-2 focus:outline-none p-4 w-full"
             />
           </div>
 
@@ -165,7 +165,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
               type="text"
               id="subject"
               {...register("subject")}
-              className="bg-gray-200 shadow-md p-4 w-full"
+              className="bg-gray-100 border-black border-b-2 focus:outline-none p-4 w-full"
             />
             {errors.subject && (
               <p className="text-red-500 text-sm">{errors.subject.message}</p>
@@ -177,7 +177,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
             <textarea
               id="message"
               {...register("message")}
-              className="bg-gray-200 shadow-md p-4 w-full min-h-[250px]"
+              className="bg-gray-100 border-black border-b-2 focus:outline-none p-4 w-full min-h-[250px]"
             />
             {errors.message && (
               <p className="text-red-500 text-sm">{errors.message.message}</p>
@@ -191,7 +191,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
                 reset();
                 setStatus("");
               }}
-              className="p-4 bg-[var(--primary)] text-white w-1/2 shadow-md"
+              className=" outline bg-gray-400 p-4 text-[var(--primary)] w-1/2"
             >
               Reset
             </button>
@@ -199,7 +199,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="p-4 bg-gray-600 w-1/2 text-white shadow-md shadow-black/30"
+              className="p-4 bg-[var(--primary)] w-1/2 text-white"
             >
               {isSubmitting ? "Sending..." : "Send"}
             </button>

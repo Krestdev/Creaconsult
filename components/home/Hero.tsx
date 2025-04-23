@@ -22,7 +22,7 @@ const Hero = ({ dictionary }: HeroType) => {
             {/* Turn your projects into reality with Creaconsult. */}
             {dictionary.hero.title.main}
           </h1>
-          <p className="max-w-[650px] text-5xl font-handwriting mb-4">
+          <p className="max-w-[750px] text-3xl mb-4">
             {dictionary.hero.title.sub}
           </p>
           <div className="flex gap-2 flex-col md:flex-row">

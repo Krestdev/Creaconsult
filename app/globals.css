@@ -13,6 +13,7 @@
 
   --font-poppins: 'Poppins', sans-serif;
   --font-sacramento: 'Sacramento', cursive;
+  --font-poiret_One: 'Poiret One', cursive;
 }
 
 /* styles/globals.css */
@@ -27,7 +28,8 @@
 }
 
 .font-handwriting {
-  font-family: var(--font-sacramento);
+  /* font-family: var(--font-sacramento); */
+  font-family: var(--font-poiret_One);
 }
 
 .mariyam {

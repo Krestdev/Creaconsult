@@ -8,20 +8,20 @@ import "swiper/css";
 
 const slides = [
   {
-    image: "/ui/projects/project1.jpeg",
-    title: "Duplex Renovation",
+    image: "/ui/projects/project3.jpg",
+    title: "Batiment RTC",
   },
   {
-    image: "/ui/projects/project3.jpeg",
-    title: "Company building project piloting",
+    image: "/ui/projects/project1.jpg",
+    title: "Le Carino",
   },
   {
-    image: "/ui/projects/project2.jpeg",
-    title: "Djapoma Stadium Construction",
+    image: "/ui/projects/project4.png",
+    title: "Japoma Stadium Construction",
   },
   {
-    image: "/ui/projects/project3.jpeg",
-    title: "Big building Construction",
+    image: "/ui/projects/project2.jpg",
+    title: "Projet PAK",
   },
 ];
 

@@ -28,7 +28,7 @@ const WhyChooseUs = ({ dictionary }: ServiceType) => {
           {dictionary.why.reasons.map((item, index) => (
             <div
               key={index}
-              className="space-y-2 p-2 bg-[#700032]/10 min-h-[250px]"
+              className="space-y-2 p-2 bg-[#700032]/10 min-h-[250px] hover:scale-105 transition-all duration-500 ease-in-out"
             >
               <h4 className="hidden md:block">{item.title}</h4>
               <h5 className=" md:hidden">{item.title}</h5>

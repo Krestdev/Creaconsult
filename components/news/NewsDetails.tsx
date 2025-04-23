@@ -21,18 +21,24 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
       {news && (
         <div className="flex flex-col xl:flex-row gap-24">
           <div className="space-y-12 md:max-w-4xl w-full md:mr-8">
-            <h2 className="font-semibold hidden md:block">{news.title}</h2>
-            <h5 className="font-semibold md:hidden">{news.title}</h5>
-            <h6>
-              Created by{" "}
-              <span className="font-bold">
-                <b className=" text-[var(--primary)]">
-                  {news.user_created.first_name}
-                </b>
-                {" . "}
-              </span>
-              {new Date(news.date_created).toDateString()}
-            </h6>
+            <div>
+              <h2 className="text-black font-semibold hidden md:block">
+                {news.title}
+              </h2>
+              <h5 className="text-black font-semibold md:hidden">
+                {news.title}
+              </h5>
+              <h6 className="text-gray-500 font-semibold text-sm md:text-base">
+                Created by{" "}
+                <span className="font-bold">
+                  <b className=" text-[var(--primary)]">
+                    {news.user_created.first_name}
+                  </b>
+                  {" . "}
+                </span>
+                {new Date(news.date_created).toDateString()}
+              </h6>
+            </div>
             <div className="space-y-4">
               <img
                 src={`${process.env.NEXT_IMAGE_BASE}assets/${news.cover}`}
@@ -40,7 +46,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                 className="w-full max-h-[300px] object-cover object-center"
               />
 
-              <h4>{news.subtitle}</h4>
+              <h4 className="text-black">{news.subtitle}</h4>
               <p>{news.summary}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-8">
@@ -72,12 +78,9 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
             {newsList &&
               newsList.map((article) => {
                 return (
-                  <div
-                    className="flex gap-4 flex-col md:flex-row"
-                    key={article.id}
-                  >
+                  <div className="flex gap-4 flex-col" key={article.id}>
                     <img
-                      className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-gray-400"
+                      className="w-full h-[200px] object-cover bg-slate-300 shadow-md shadow-gray-400"
                       src={`${process.env.NEXT_IMAGE_BASE}assets/${article.cover}`}
                       onError={(e) => {
                         e.currentTarget.src = "/ui/creamotif unique red.svg";
