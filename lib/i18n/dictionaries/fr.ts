@@ -3,27 +3,27 @@ import type { Dictionary } from "../types";
 export const fr: Dictionary = {
   title: "CreaConsult",
   navbar: [
-    { link: "/", title: "Acceuille" },
-    { link: "/about", title: "A Propos" },
+    { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
+    { link: "/about", title: "À Propos" }, // Added the accent on "À"
     { link: "/services", title: "Nos Services" },
     { link: "/jobs", title: "Emploi" },
-    { link: "/news", title: "Actualite" },
+    { link: "/news", title: "Actualité" }, // Corrected from "Actualite" with the accent
     { link: "/contact", title: "Contact" },
   ],
   footer: {
     links: [
-      { link: "/", title: "Acceuille" },
-      { link: "/about", title: "A Propos" },
+      { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
+      { link: "/about", title: "À Propos" }, // Added the accent on "À"
       { link: "/services", title: "Nos Services" },
       { link: "/jobs", title: "Emploi" },
-      { link: "/news", title: "Actualite" },
+      { link: "/news", title: "Actualité" }, // Corrected from "Actualite" with the accent
       { link: "/contact", title: "Contact" },
     ],
     info: {
       title: "Informations",
       links: [
         { href: "/about", label: "À propos de nous" },
-        { href: "/news", label: "Actualités" },
+        { href: "/news", label: "Actualité" },
       ],
     },
     service: {
@@ -44,7 +44,7 @@ export const fr: Dictionary = {
     contact: {
       title: "Contactez-nous",
       links: [
-        { href: "tel:+237 233 426 385", label: "+237 233 426 385" },
+        { href: "tel:+237233426385", label: "+237 233 426 385" },
         { href: "mailto:creaconsult@yahoo.fr", label: "creaconsult@yahoo.fr" },
       ],
     },
@@ -188,7 +188,7 @@ export const fr: Dictionary = {
     title: {
       main: "Contactez-nous",
       sub: "Partagez vos projets et travaillons ensemble",
-      slogan: "performants pour un progrès réel",
+      slogan: "performing for real progress",
     },
     buttons: {
       link: "Contactez-nous",
