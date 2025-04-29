@@ -14,9 +14,9 @@ const POPPINS = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Creacosult website - Home page",
+  title: "Creacosult - overview",
   description:
-    "High class consulting, monioring, support and analysis services",
+    "Turn your projects into reality with Creaconsult. Our team of experts in engineering and project management is here to help you achieve your goals. Explore our services and discover how we can support you.",
 };
 
 interface RootLayoutProps {

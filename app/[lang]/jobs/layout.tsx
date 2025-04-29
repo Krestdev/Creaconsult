@@ -1,5 +1,6 @@
 import PageIntro from "@/components/global/PageIntro";
 import { Locale } from "@/lib/i18n";
+import { Metadata } from "next";
 import React from "react";
 
 interface LayoutProps {
@@ -8,6 +9,12 @@ interface LayoutProps {
     lang: Locale;
   }>;
 }
+
+export const metadata: Metadata = {
+  title: "Creacosult - Jobs offers",
+  description:
+    "Join our team of experts and contribute to innovative projects in engineering and project management. Explore our job offers and become part of our commitment to excellence.",
+};
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "fr" }];
