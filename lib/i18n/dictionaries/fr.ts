@@ -45,7 +45,10 @@ export const fr: Dictionary = {
       title: "Contactez-nous",
       links: [
         { href: "tel:+237233426385", label: "+237 233 426 385" },
-        { href: "mailto:creaconsult@yahoo.fr", label: "creaconsult@yahoo.fr" },
+        {
+          href: "mailto:infos@betcreaconsult.com",
+          label: "infos@betcreaconsult.com",
+        },
       ],
     },
   },

@@ -8,6 +8,7 @@ import { List, Translate, X } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { LanguageSwitcher } from "../global/LanguageSwitcher";
 import { Dictionary } from "@/lib/i18n";
+import { useMyContext } from "@/context/MyContext";
 
 interface NavBarType {
   lang: "en" | "fr";
@@ -15,6 +16,7 @@ interface NavBarType {
 }
 
 const Nav = ({ lang, dictionary }: NavBarType) => {
+  const { hasNewFeed } = useMyContext();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -28,7 +30,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
     return () => {
       return window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [hasNewFeed]);
 
   return (
     <nav
@@ -81,11 +83,23 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
                 pathname === `/${lang}${href}` ||
                 `${pathname}/` === `/${lang}${href}`;
 
+              const isNews = item.link.toLocaleLowerCase().includes("/news");
+
               if (item.title.toLocaleLowerCase().includes("contact")) {
                 return (
                   <Link href={"/contact"} key={item.title}>
                     <span className="bg-[var(--primary)] text-white hover:px-4 px-4 py-2 shadow-md shadow-black">
                       Contact
+                    </span>
+                  </Link>
+                );
+              }
+              if (isNews && hasNewFeed) {
+                return (
+                  <Link key={item.title} href={href}>
+                    <span className="outline-[var(--primary)] text-white hover:px-4 px-4 py-2 flex items-center gap-2">
+                      {item.title}
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
                     </span>
                   </Link>
                 );

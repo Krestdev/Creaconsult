@@ -3,26 +3,23 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface AuthContextType {
-  user: any;
-  login: (userData: any) => void;
-  logout: () => void;
+  hasNewFeed: boolean;
+  setHasNewFeed: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<any>(null);
-  const login = (userData: any) => setUser(userData);
-  const logout = () => setUser(null);
+export const MyContext = ({ children }: { children: React.ReactNode }) => {
+  const [hasNewFeed, setHasNewFeed] = useState(false);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ hasNewFeed, setHasNewFeed }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
+export const useMyContext = () => {
   const context = useContext(AuthContext);
   if (!context) throw new Error("useAuth must be used within an AuthProvider");
   return context;

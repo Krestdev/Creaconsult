@@ -5,6 +5,7 @@ import SectionContainer from "./SectionContainer";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Dictionary } from "@/lib/i18n";
+import { useMyContext } from "@/context/MyContext";
 
 interface LatestNewsProps {
   LatestNews: any;
@@ -14,8 +15,21 @@ interface LatestNewsProps {
 const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
 
+  const { setHasNewFeed } = useMyContext();
+
   useEffect(() => {
     setNews(LatestNews.filter((article: any) => article.headline === true));
+
+    // Check if there are any new feeds in the last 7 days
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const hasNewFeed = LatestNews.some((feed: any) => {
+      const feedDate = new Date(feed.date_created);
+      console.log(feedDate);
+      return feedDate >= sevenDaysAgo;
+    });
+
+    setHasNewFeed(hasNewFeed);
   }, [LatestNews]);
 
   return (

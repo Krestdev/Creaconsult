@@ -5,7 +5,7 @@ import React from "react";
 import { getDictionary, Locale } from "@/lib/i18n";
 import Nav from "@/components/base/Nav";
 import Footer from "@/components/base/Footer";
-import { AuthProvider } from "@/context/AuthContext";
+import { MyContext } from "@/context/MyContext";
 import QueryClientContext from "@/context/QueryClientContext";
 
 const POPPINS = Poppins({
@@ -58,7 +58,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang}>
-      <AuthProvider>
+      <MyContext>
         <QueryClientContext>
           <body className={`${poppins.className} antialiased`}>
             {/* Navbar */}
@@ -68,7 +68,7 @@ export default async function RootLayout({
             <Footer dictionary={dictionary} />
           </body>
         </QueryClientContext>
-      </AuthProvider>
+      </MyContext>
     </html>
   );
 }

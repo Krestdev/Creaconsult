@@ -9,6 +9,7 @@ import Certifications from "@/components/home/Certifications";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import JobBanner from "@/components/Job/JobBanner";
+import { useMyContext } from "@/context/MyContext";
 import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
 import { createItem, readItems } from "@directus/sdk";
