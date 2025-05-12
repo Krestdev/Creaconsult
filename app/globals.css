@@ -67,7 +67,7 @@ body {
   h6{
     font-size: 1.25rem;
   }
-  p{
+  p,i,strong,u,li{
     font-size: 1rem;
   }
   small{
