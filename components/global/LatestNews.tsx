@@ -98,7 +98,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                 >
                   <img
                     className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-black"
-                    src={`${process.env.NEXT_IMAGE_BASE}assets/${news[0].cover}`}
+                    src={`${process.env.NEXT_IMAGE_BASE}assets/${article.cover}`}
                     alt="img"
                   />
                   <div className="flex-1 flex flex-col">
