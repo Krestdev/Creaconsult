@@ -4,6 +4,16 @@ export interface Dictionary {
     title: string;
     link: string;
   }>;
+  apply: string,
+  app: string,
+  new: string,
+  autor: string,
+  voir: string,
+  project: string,
+  partner: {
+    title: string,
+    description: string
+  },
   footer: {
     links: Array<{
       title: string;
@@ -113,6 +123,8 @@ export interface Dictionary {
     banner: {
       title: string;
       message: string;
+      all: string, 
+      active: string,
     };
   };
   about: {

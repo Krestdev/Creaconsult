@@ -67,7 +67,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
               </div>
               <div>
                 <small className=" italic">
-                  created by{" "}
+                  {dicrionary.autor}{" "}
                   <b className=" text-[var(--primary)]">
                     {news[0].user_created.first_name}
                   </b>
@@ -78,12 +78,12 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                   {news[0].title}
                 </h4>
                 <h6 className="font-semibold md:hidden">{news[0].title}</h6>
-                <p>{news[0].summary}</p>
+                <p className="text-[18px]">{news[0].summary}</p>
                 <Link
                   href={`/news/${news[0].slug}`}
                   className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                 >
-                  <p>Read More</p> <ArrowRight size={24} />
+                  <p>{dicrionary.voir}</p> <ArrowRight size={24} />
                 </Link>
               </div>
             </div>
@@ -109,7 +109,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                       {article.subtitle}
                     </h6>
                     <small className="pb-2 italic">
-                      created by{" "}
+                      {dicrionary.autor}{" "}
                       <b className=" text-[var(--primary)]">
                         {article.user_created.first_name}
                       </b>
@@ -121,7 +121,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                       href={`/news/${article.slug}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                     >
-                      <p>Read More</p> <ArrowRight size={24} />
+                      <p>{dicrionary.voir}</p> <ArrowRight size={24} />
                     </Link>
                   </div>
                 </div>

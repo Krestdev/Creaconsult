@@ -1,3 +1,4 @@
+import { title } from "process";
 import type { Dictionary } from "../types";
 
 export const fr: Dictionary = {
@@ -6,8 +7,8 @@ export const fr: Dictionary = {
     { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
     { link: "/about", title: "À Propos" }, // Added the accent on "À"
     { link: "/services", title: "Nos Services" },
-    { link: "/jobs", title: "Emploi" },
-    { link: "/news", title: "Actualité" }, // Corrected from "Actualite" with the accent
+    { link: "/jobs", title: "Emplois" },
+    { link: "/news", title: "Actualités" }, // Corrected from "Actualite" with the accent
     { link: "/contact", title: "Contact" },
   ],
   footer: {
@@ -15,15 +16,15 @@ export const fr: Dictionary = {
       { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
       { link: "/about", title: "À Propos" }, // Added the accent on "À"
       { link: "/services", title: "Nos Services" },
-      { link: "/jobs", title: "Emploi" },
-      { link: "/news", title: "Actualité" }, // Corrected from "Actualite" with the accent
+      { link: "/jobs", title: "Emplois" },
+      { link: "/news", title: "Actualités" }, // Corrected from "Actualite" with the accent
       { link: "/contact", title: "Contact" },
     ],
     info: {
       title: "Informations",
       links: [
         { href: "/about", label: "À propos de nous" },
-        { href: "/news", label: "Actualité" },
+        { href: "/news", label: "Actualités" },
       ],
     },
     service: {
@@ -51,6 +52,16 @@ export const fr: Dictionary = {
         },
       ],
     },
+  },
+  apply: "Postuler",
+  app: "Postuler maintenant",
+  new: "Nouveaux emplois",
+  autor: "Créé par",
+  voir: "Voir plus",
+  project: "Projets",
+  partner: {
+    title: "Partenaires",
+    description: "Ils nous ont fait confiance, hier comme aujourd'hui."
   },
   pages: {
     about: {
@@ -209,7 +220,7 @@ export const fr: Dictionary = {
   newsLetter: {
     title: {
       main: "Abonnez-vous à notre newsletter",
-      sub: "Recevez les dernières actualités et mises à jour de Creacosult",
+      sub: "Recevez les dernières actualités et mises à jour de Creaconsult",
     },
     buttons: {
       link: "S'abonner",
@@ -230,13 +241,15 @@ export const fr: Dictionary = {
     banner: {
       title: "Nouvelles opportunités",
       message: "Postuler maintenant",
+      all: "Tout",
+      active: "Actifs",
     },
   },
   about: {
     story: {
-      title: "Our Story",
+      title: "Notre Histoire",
       desc: `
-      CREACONSULT, an engineering and project management company founded in 2006, uses its proven expertise to create sustainable living environments. Committed to continuous improvement, we simplify every stage for project owners and investors. \n\n Certified ISO 9001 and 14001 (2015 standard), our management combines rigour, quality and environmental commitment. As specialists in institutional, commercial and industrial projects, we apply our cutting-edge technical expertise to ambitious projects. \n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our customers and partners a privileged and efficient collaboration. \n\nInnovative engineering and project management solutions for exceptional projects.
+      CREACONSULT, société d’ingénierie et de gestion de projets fondée en 2006, met son expertise éprouvée au service de la création de cadres de vie durables. Engagés dans une démarche d’amélioration continue, nous simplifions chaque étape pour les maîtres d’ouvrage et les investisseurs.\n\nCertifiée ISO 9001 et 14001 (norme 2015), notre gestion allie rigueur, qualité et engagement environnemental. Spécialistes des projets institutionnels, commerciaux et industriels, nous mobilisons notre expertise technique de pointe pour mener à bien des projets ambitieux. \n\nChez CREACONSULT, l’excellence repose sur des valeurs professionnelles et éthiques fortes, garantissant à nos clients et partenaires une collaboration privilégiée et performante.\n\nDes solutions innovantes en ingénierie et gestion de projets pour des réalisations d’exception.
       `,
       boxImages: [
         {

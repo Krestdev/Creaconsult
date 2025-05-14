@@ -65,11 +65,11 @@ export default async function Home({ params }: HomePageProps) {
       {/* services */}
       <Services dictionary={dictionary} />
       {/* Projects */}
-      <Projects />
+      <Projects dictionary={dictionary}/>
       {/* why choose us */}
       <WhyChooseUs dictionary={dictionary} />
       {/* partners */}
-      <Partners />
+      <Partners dictionary={dictionary}/>
       {/* contact */}
       <ContacLink dictionary={dictionary} />
       {/* Job Offers adds list */}

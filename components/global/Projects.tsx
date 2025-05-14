@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { Dictionary } from "@/lib/i18n";
 
 const slides = [
   {
@@ -24,8 +25,11 @@ const slides = [
     title: "Projet PAK",
   },
 ];
+interface ServiceType {
+  dictionary: Dictionary;
+}
 
-const Projects = () => {
+const Projects = ({dictionary}: ServiceType) => {
   const [activeIndex, setActiveIndex] = useState(1);
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
@@ -40,8 +44,8 @@ const Projects = () => {
     >
       <div className="container h-full px-4 flex justify-between gap-8 flex-col md:flex-row">
         <div className="md:w-fit h-fit space-y-8 backdrop-blur-lg rounded-3xl p-4">
-          <h4 className="font-bold md:hidden">Projects</h4>
-          <h2 className="font-semibold hidden md:block">Projects</h2>
+          <h4 className="font-bold md:hidden">{dictionary.project}</h4>
+          <h2 className="font-semibold hidden md:block">{dictionary.project}</h2>
           <div className="space-y-4 max-w-[500px]">
             <h5 className="font-semibold md:hidden">
               {slides[activeIndex].title}

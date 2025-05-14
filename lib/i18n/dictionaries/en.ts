@@ -53,6 +53,16 @@ export const en: Dictionary = {
       ],
     },
   },
+  apply: "Apply",
+  app: "Apply now",
+  new: "New Jobs",
+  autor: "Created by",
+  voir: "Read more",
+  project: "Projects",
+  partner: {
+    title: "Partners",
+    description: "they put their trust in us, then and now"
+  },
   pages: {
     about: {
       title: "About Us",
@@ -60,8 +70,7 @@ export const en: Dictionary = {
     },
     service: {
       title: "Service",
-      subtitle:
-        "Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des projets d’exception.",
+      subtitle: "Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des projets d’exception.",
     },
     contact: {
       title: "Contact Us",
@@ -211,7 +220,7 @@ export const en: Dictionary = {
   newsLetter: {
     title: {
       main: "Subscribe to our newsletter",
-      sub: "Get the latest news and updates from Creacosult",
+      sub: "Get the latest news and updates from Creaconsult",
     },
     buttons: {
       link: "Subscribe",
@@ -232,6 +241,8 @@ export const en: Dictionary = {
     banner: {
       title: "New Opportunities",
       message: "Apply now",
+      all: "All",
+      active: "Active",
     },
   },
 

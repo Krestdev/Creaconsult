@@ -132,7 +132,7 @@ const NewsList = ({
                   </div>
                   <div>
                     <small className=" italic">
-                      created by{" "}
+                      {dictionary.autor}{" "}
                       <b className=" text-[var(--primary)]">
                         {news.user_created.first_name}
                       </b>
@@ -152,7 +152,7 @@ const NewsList = ({
                       href={`news/${news.slug}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                     >
-                      <p>Read More</p> <ArrowRight size={24} />
+                      <p>{dictionary.voir}</p> <ArrowRight size={24} />
                     </Link>
                   </div>
                 </div>

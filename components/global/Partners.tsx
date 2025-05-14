@@ -4,6 +4,7 @@ import "swiper/css";
 import SectionContainer from "./SectionContainer";
 
 import Marquee from "react-fast-marquee";
+import { Dictionary } from "@/lib/i18n";
 
 const slides = [
   {
@@ -41,14 +42,20 @@ const slides = [
   },
 ];
 
-const Partners = () => {
-  return (
-    <SectionContainer className="bg-gray-300 !py-7">
-      <div className="space-y-6">
-        <h2 className="font-semibold hidden md:block">Partners</h2>
-        <h4 className="font-bold md:hidden">Partners</h4>
+interface ServiceType {
+  dictionary: Dictionary;
+}
 
-        <h5>{`they put their trust in us, then and now`}</h5>
+const Partners = ({ dictionary }: ServiceType) => {
+  return (
+    <SectionContainer className="bg-white !py-7">
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col gap-2 items-center">
+          <h2 className="font-semibold hidden md:block w-fit">{dictionary.partner.title}</h2>
+          <h4 className="font-bold md:hidden">{dictionary.partner.title}</h4>
+          <h5 className="w-fit text-center">{dictionary.partner.description}</h5>
+          <div className="h-[1px] bg-[#E4E4E7] max-w-[300px] w-full" />
+        </div>
 
         <Marquee speed={100} gradient={false} pauseOnHover={true}>
           {slides.map((img, index) => (

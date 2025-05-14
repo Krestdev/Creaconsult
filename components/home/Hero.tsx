@@ -8,8 +8,9 @@ interface HeroType {
 
 const Hero = ({ dictionary }: HeroType) => {
   return (
-    <section className="containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center">
-      <div className="container flex justify-between items-center gap-4 min-h-[700px]">
+    <section className="relative containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center">
+      <div className="absolute inset-0 top-0 left-0 bg-transparent/50"/>
+      <div className="container flex justify-between items-center gap-4 min-h-[700px] z-10">
         <div className="flex flex-col gap-2 text-white mx-4">
           <small className="font-bold uppercase link_button w-fit border-b-white border-b-4">
             {dictionary.hero.title.small}
@@ -35,22 +36,22 @@ const Hero = ({ dictionary }: HeroType) => {
           </div>
         </div>
         {/* image */}
-        <div className="hidden md:flex gap-4 ">
+        <div className="hidden md:grid md:grid-cols-2 gap-4 ">
           <div className="flex flex-col gap-4 mt-[50px] w-fit">
             <img
               src="/ui/home/hero_sky_scapers.jpeg"
-              className="size-[250px] shadow-black shadow-lg"
+              className="max-w-[250px] w-[100%]  aspect-square shadow-black shadow-lg"
               alt=""
             />
             <img
               src="/ui/home/hero_building2.jpeg"
-              className="size-[250px] shadow-black shadow-lg"
+              className="max-w-[250px] w-[100%]  aspect-square shadow-black shadow-lg"
               alt=""
             />
           </div>
           <img
             src="/ui/home/hero_building1.jpeg"
-            className="w-[250px] h-[516px] mb-[50px] shadow-black shadow-lg"
+            className="max-h-[516px] h-auto w-full aspect-auto shadow-black shadow-lg"
             alt=""
           />
         </div>

@@ -14,7 +14,7 @@ const ContacLink = ({ dictionary }: ContactLinkProps) => {
   return (
     <SectionContainer color="white" img="/ui/global/bglinesDeco.png">
       <div className="p-6">
-        <div className="flex flex-col items-center justify-center min-h-[350px] space-y-[30px]">
+        <div className="flex flex-col items-center justify-center">
           <h2 className="font-semibold hidden md:block text-center">
             {dictionary.contact.title.main}
           </h2>
