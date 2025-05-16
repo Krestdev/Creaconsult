@@ -57,7 +57,7 @@ export default async function Home({ params }: HomePageProps) {
   const lang = (await params).lang;
   const dictionary = await getDictionary(lang);
   return (
-    <main>
+    <main className="overflow-clip">
       {/* Hero */}
       <Hero dictionary={dictionary} />
       {/* certification carousele */}

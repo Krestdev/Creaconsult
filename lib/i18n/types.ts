@@ -10,6 +10,9 @@ export interface Dictionary {
   autor: string,
   voir: string,
   project: string,
+  droit: string,
+  design: string,
+  lien: string,
   partner: {
     title: string,
     description: string

@@ -74,7 +74,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                   {" -- "}
                   {new Date(news[0].date_created).toDateString()}
                 </small>
-                <h4 className="font-semibold hidden md:block">
+                <h4 className="font-semibold hidden md:block mt-6">
                   {news[0].title}
                 </h4>
                 <h6 className="font-semibold md:hidden">{news[0].title}</h6>
@@ -102,10 +102,10 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                     alt="img"
                   />
                   <div className="flex-1 flex flex-col">
-                    <h4 className="hidden md:block !line-clamp-3">
+                    <h5 className="hidden md:block !line-clamp-3">
                       {article.title}
-                    </h4>
-                    <h6 className="md:hidden !line-clamp-3">
+                    </h5>
+                    <h6 className="md:hidden !line-clamp-2">
                       {article.subtitle}
                     </h6>
                     <small className="pb-2 italic">
@@ -116,10 +116,10 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                       {" -- "}
                       {new Date(article.date_created).toDateString()}
                     </small>
-                    <p className="line-clamp-4">{article.summary}</p>
+                    <p className="line-clamp-2">{article.summary}</p>
                     <Link
                       href={`/news/${article.slug}`}
-                      className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
+                      className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>{dicrionary.voir}</p> <ArrowRight size={24} />
                     </Link>

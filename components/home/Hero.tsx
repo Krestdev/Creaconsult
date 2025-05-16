@@ -8,7 +8,7 @@ interface HeroType {
 
 const Hero = ({ dictionary }: HeroType) => {
   return (
-    <section className="relative containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center">
+    <section className="relative containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center px-7">
       <div className="absolute inset-0 top-0 left-0 bg-transparent/50"/>
       <div className="container flex justify-between items-center gap-4 min-h-[700px] z-10">
         <div className="flex flex-col gap-2 text-white mx-4">
@@ -19,18 +19,18 @@ const Hero = ({ dictionary }: HeroType) => {
             {/* Turn your projects into reality with Creaconsult. */}
             {dictionary.hero.title.main}
           </h3>
-          <h1 className="font-semibold max-w-[600px] hidden md:block text-white">
+          <h1 className="font-semibold text-[3rem] lg:text-[3.813rem] max-w-[600px] hidden md:block text-white">
             {/* Turn your projects into reality with Creaconsult. */}
             {dictionary.hero.title.main}
           </h1>
-          <p className="max-w-[750px] text-3xl mb-4">
+          <p className="max-w-[750px] text-base lg:text-3xl mb-4">
             {dictionary.hero.title.sub}
           </p>
-          <div className="flex gap-2 flex-col md:flex-row">
-            <Link href={"/contact"} className="link_button w-fit">
+          <div className="flex gap-2 flex-col md:flex-row w-full">
+            <Link href={"/contact"} className="link_button w-fit text-nowrap">
               {dictionary.hero.action.contact}
             </Link>
-            <Link href={"/contact"} className="link_button_outline w-fit">
+            <Link href={"/contact"} className="link_button_outline w-fit text-nowrap">
               {dictionary.hero.action.devis}
             </Link>
           </div>

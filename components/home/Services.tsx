@@ -61,7 +61,7 @@ const SingleServicesItem = ({
 }: SingleServicesItemProps) => {
   return (
     <div
-      className="md h-[400px] md:h-[500px] w-full flex flex-col justify-end gap-2 bg-cover bg-center p-4 text-white shadow-black shadow-lg hover:scale-105 transition-all duration-500 ease-in-out"
+      className="h-[400px] md:h-[400px] lg:h-[500] w-full flex flex-col justify-end gap-2 bg-cover bg-center p-4 text-white shadow-black shadow-lg hover:scale-105 transition-all duration-500 ease-in-out"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,1)), url('${img}')`,
       }}

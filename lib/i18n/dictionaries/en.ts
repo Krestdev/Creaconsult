@@ -31,7 +31,7 @@ export const en: Dictionary = {
       title: "Our Services",
       links: [
         { href: "/services", label: "Services" },
-        { href: "/terms", label: "Terms & Condition" },
+        { href: "/terms", label: "Terms & Conditions" },
       ],
     },
     help: {
@@ -59,6 +59,9 @@ export const en: Dictionary = {
   autor: "Created by",
   voir: "Read more",
   project: "Projects",
+  droit: "All rights reserved",
+  design: "Designed by",
+  lien: "Links",
   partner: {
     title: "Partners",
     description: "they put their trust in us, then and now"
