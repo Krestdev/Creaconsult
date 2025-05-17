@@ -28,7 +28,7 @@ const Page = async ({ params }: contactPageProps) => {
   return (
     <main>
       {/* Job description */}
-      <JobDetail JobData={job} />
+      <JobDetail JobData={job} dictionary={dictionary} />
       {/* Job Offers adds list */}
       <JobBanner Jobs={jobs} dicrionary={dictionary} />
       {/* News Letter */}

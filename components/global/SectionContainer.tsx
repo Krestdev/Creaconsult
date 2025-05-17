@@ -14,7 +14,7 @@ const SectionContainer = ({
 }) => {
   return (
     <section
-      className={clsx("containerParent bg-cover bg-center", className)}
+      className={clsx("containerParent bg-cover bg-center py-0 md:py-10", className)}
       style={
         img
           ? {

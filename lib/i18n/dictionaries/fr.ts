@@ -62,6 +62,51 @@ export const fr: Dictionary = {
   droit: "Tous droits réservés",
   design: "Design par",
   lien: "Liens",
+  JobsDetail: {
+    nombre: "Nombre de postes",
+    lieu: "Localisation",
+    contrat: "Contrat",
+    delai: "Délai de soumission",
+    competence: "Compétences",
+    description: "Description",
+    postuler: "Postuler pour ce poste",
+    copier: "Copier le lien",
+    copie: "Copié",
+    actif: "Actif",
+    expire: "Expiré"
+  },
+  slides: [
+    {
+      image: "/ui/projects/regie.webp",
+      title: "Batiment RTC",
+      description: "Maîtrise d’œuvre complète de l’immeuble de type R+6 à usage de bureaux au profit de la Régie du Terminal à Conteneurs (RTC)"
+    },
+    {
+      image: "/ui/projects/carino.webp",
+      title: "Le Carino",
+      description: "Construction de l’immeuble siège de KREST HOLDING"
+    },
+    {
+      image: "/ui/projects/japoma.webp",
+      title: "Voie d'acces State Japoma",
+      description: "Maitrise d'œuvre de travaux de réhabilitation de la voie d'accès secondaire au complexe sportif de Japoma "
+    },
+    {
+      image: "/ui/projects/wouri.webp",
+      title: "Wouri",
+      description: "Maitrise d'œuvre de travaux de construction de la voie sur berges du fleuve Wouri dans la ville de douala"
+    },
+    {
+      image: "/ui/projects/bourse.webp",
+      title: "Bourse sous-traitance et de partenariat du Cameroun",
+      description: "Études d’avant-projet définitif de la construction de l’immeuble siège de la bourse de sous-traitance et de partenariat du Cameroun (BSTP-CMR)"
+    },
+    {
+      image: "/ui/projects/Ngodi.webp",
+      title: "Espace de jeux et loisirs",
+      description: "Études complémentaires d’un espace de jeux et loisirs à Ngodi Akwa douala"
+    }
+  ],
   partner: {
     title: "Partenaires",
     description: "Ils nous ont fait confiance, hier comme aujourd'hui."
@@ -178,21 +223,17 @@ export const fr: Dictionary = {
     },
     reasons: [
       {
-        title: "Une Expertise Reconnue",
-        desc: `Avec plus de 15 ans d’expérience , nous avons accompagné de nombreux projets à travers l’Afrique subsaharienne, en particulier au Cameroun.`,
+        title: "Expertise ciblée et impact réel",
+        desc: `Avec plus de 15 ans d'expérience, notamment en Afrique subsaharienne, Crea Consult ne se contente pas de contribuer : elle fait réussir les projets. Nos experts interviennent uniquement là où ils excellent. Objectifs clairs, résultats concrets.`,
       },
       {
-        title: "Certifications et Engagement Qualité",
-        desc: `Nous sommes certifiés ISO 9001 et 14001 (référentiel 2015), garantissant une gestion rigoureuse de la qualité et une approche respectueuse de l’environnement.`,
+        title: "Qualité prouvée, performance durable",
+        desc: `Certifiée ISO 9001 et 14001, notre rigueur de gestion et notre démarche environnementale assurent des livrables fiables, dans les délais. Chez nous, la qualité est une méthode, pas une promesse.`,
       },
       {
-        title: "Références et Projets Réussis",
-        desc: `Nos collaborations avec des institutions, des entreprises commerciales et industrielles ont permis la réalisation de projets d’envergure.`,
-      },
-      {
-        title: "Études de Cas et Réalisations",
-        desc: `Nous mettons en avant des projets concrets, illustrant notre savoir-faire à travers des études de cas détaillées, avec images avant/après et résultats obtenus.`,
-      },
+        title: "Des références solides, des résultats mesurables",
+        desc: `De grandes institutions aux entreprises locales, nous sommes un partenaire stratégique et réactif. Nous formons aussi les jeunes talents pour construire l'avenir dès aujourd'hui.`,
+      }
     ],
   },
   Partners: {

@@ -5,19 +5,19 @@ export const en: Dictionary = {
   title: "CreaConsult",
   navbar: [
     { link: "/", title: "Home" },
-    { link: "/about", title: "About us" },
-    { link: "/services", title: "Services" },
+    { link: "/about", title: "About" },
+    { link: "/services", title: "Our Services" },
     { link: "/jobs", title: "Jobs" },
-    { link: "/news", title: "news" },
+    { link: "/news", title: "News" },
     { link: "/contact", title: "Contact" },
   ],
   footer: {
     links: [
       { link: "/", title: "Home" },
-      { link: "/about", title: "About us" },
-      { link: "/services", title: "Services" },
+      { link: "/about", title: "About" },
+      { link: "/services", title: "Our Services" },
       { link: "/jobs", title: "Jobs" },
-      { link: "/news", title: "news" },
+      { link: "/news", title: "News" },
       { link: "/contact", title: "Contact" },
     ],
     info: {
@@ -28,24 +28,24 @@ export const en: Dictionary = {
       ],
     },
     service: {
-      title: "Our Services",
+      title: "Services",
       links: [
-        { href: "/services", label: "Services" },
+        { href: "/services", label: "Our services" },
         { href: "/terms", label: "Terms & Conditions" },
       ],
     },
     help: {
-      title: "Helpful Links",
+      title: "Useful Links",
       links: [
         { href: "/services", label: "Expertise" },
         { href: "/services", label: "Projects" },
-        { href: "/services", label: "Case study" },
+        { href: "/services", label: "Case studies" },
       ],
     },
     contact: {
-      title: "Contact Us",
+      title: "Contact us",
       links: [
-        { href: "tel:+237 233 426 385", label: "+237 233 426 385" },
+        { href: "tel:+237233426385", label: "+237 233 426 385" },
         {
           href: "mailto:infos@betcreaconsult.com",
           label: "infos@betcreaconsult.com",
@@ -55,16 +55,61 @@ export const en: Dictionary = {
   },
   apply: "Apply",
   app: "Apply now",
-  new: "New Jobs",
+  new: "New jobs",
   autor: "Created by",
-  voir: "Read more",
+  voir: "See more",
   project: "Projects",
   droit: "All rights reserved",
-  design: "Designed by",
+  design: "Design by",
   lien: "Links",
+  JobsDetail: {
+    nombre: "Number of positions",
+    lieu: "Location",
+    contrat: "Contract type",
+    delai: "Submission deadline",
+    competence: "Skills",
+    description: "Description",
+    postuler: "Apply for this position",
+    copier: "Copy link",
+    copie: "Copied",
+    actif: "Active",
+    expire: "Expired"
+  },
+  slides: [
+    {
+      image: "/ui/projects/regie.webp",
+      title: "RTC Building",
+      description: "Complete project management of the R+6 office building for the Container Terminal Authority (RTC)"
+    },
+    {
+      image: "/ui/projects/carino.webp",
+      title: "Le Carino",
+      description: "Construction of the headquarters building for KREST HOLDING"
+    },
+    {
+      image: "/ui/projects/japoma.webp",
+      title: "Japoma Stadium Access Road",
+      description: "Project management for rehabilitation works of the secondary access road to the Japoma sports complex"
+    },
+    {
+      image: "/ui/projects/wouri.webp",
+      title: "Wouri",
+      description: "Project management for construction works of the Wouri river bankside road in Douala"
+    },
+    {
+      image: "/ui/projects/bourse.webp",
+      title: "Cameroon Subcontracting and Partnership Exchange",
+      description: "Detailed preliminary design studies for the construction of the headquarters building of the Cameroon Subcontracting and Partnership Exchange (BSTP-CMR)"
+    },
+    {
+      image: "/ui/projects/Ngodi.webp",
+      title: "Play and Leisure Area",
+      description: "Complementary studies for a play and leisure area in Ngodi Akwa, Douala"
+    }
+  ],
   partner: {
     title: "Partners",
-    description: "they put their trust in us, then and now"
+    description: "They have trusted us, yesterday as today."
   },
   pages: {
     about: {
@@ -73,7 +118,8 @@ export const en: Dictionary = {
     },
     service: {
       title: "Service",
-      subtitle: "Des solutions innovantes en ingénierie et maîtrise d’œuvre pour des projets d’exception.",
+      subtitle:
+        "Innovative engineering and project management solutions for exceptional projects.",
     },
     contact: {
       title: "Contact Us",
@@ -81,71 +127,47 @@ export const en: Dictionary = {
     },
     news: {
       title: "News",
-      subtitle: "News title",
+      subtitle: "News subtitle",
     },
   },
   hero: {
     title: {
-      small: "Category A Consulting Office",
+      small: "Category A Engineering Office",
       main: "Turn your projects into reality with Creaconsult.",
       sub: "Experts in sector studies, technical control and infrastructure.",
     },
     action: {
-      contact: "Contact us",
-      devis: "Request a quote",
+      contact: "contact us",
+      devis: "request a quote",
     },
-  },
-  why: {
-    title: {
-      main: "Why Choose Creaconsult ?",
-      sub: "Chez CREACONSULT, nous mettons notre expertise et notre engagement au service de vos projets, garantissant des solutions innovantes et adaptées à vos besoins.",
-    },
-    reasons: [
-      {
-        title: "Recognised expertise",
-        desc: "With over 15 years' experience in the field, particularly in sub-Saharan Africa and Cameroon, Crea Consult doesn't just take part in projects - it makes them succeed. Our experts only work in areas where we have 100% expertise. Clear objectives, concrete results. No improvisation.",
-      },
-      {
-        title: "Certifications and Quality Commitment",
-        desc: "Certified to ISO 9001 and 14001 (2015 standard), Crea Consult is renowned for its rigorous management and exemplary environmental commitment. Our continuous improvement system guarantees impeccable deliverables, on time and to the highest standards. Here, quality is not just a word, it's a method.",
-      },
-      {
-        title: "References and Successful Projects",
-        desc: "We have won the trust of institutions, commercial, industrial and academic companies through large-scale projects. As well as providing advice, we are a strategic partner: responsive, committed and always solution-oriented. We also support the training and integration of young people, because the future is being built today.",
-      },
-      {
-        title: "Case studies and achievements",
-        desc: "Our case studies are our best proof: before and after, quantified results, real transformation. Crea Consult is about concrete results, not theory. Each project is a visible, documented and reproducible success.",
-      },
-    ],
   },
   service: {
     title: {
       main: "Our Services",
-      sub: "Innovative engineering and project management solutions for exceptional projects",
+      sub: "Technical expertise for the design and implementation of infrastructures.",
     },
     serviceList: [
       {
         title: "Engineering and Technical Studies",
-        sub: "Technical expertise for infrastructure design and implementation.",
-        link: "ingenierie-et-etudes-techniques",
-        img: "/ui/home/service1.jpg",
+        sub: "Technical expertise for the design and implementation of infrastructures.",
         imgList: [
           "/ui/services/TechnicalStudies_pic1.jpg",
           "/ui/services/TechnicalStudies_pic2.jpg",
           "/ui/services/TechnicalStudies_pic3.jpg",
         ],
+        link: "engineering-and-technical-studies",
+        img: "/ui/home/service1.jpg",
         sublist: [
-          "Studies of roads and other networks",
+          "- Road and utility network studies",
           "Electrical engineering",
           "Topographic and GIS studies",
           "Geotechnical studies",
         ],
       },
       {
-        title: "Project Ownership and Management",
-        sub: "Overall management of projects, from planning to execution in the field",
-        link: "maitrise-d-oeuvre",
+        title: "Project Management and Supervision",
+        sub: "Global project management, from planning to on-site execution",
+        link: "project-management",
         img: "/ui/home/service2.jpg",
         imgList: [
           "/ui/services/ProjectManagmant_pic1.jpg",
@@ -153,16 +175,15 @@ export const en: Dictionary = {
           "/ui/services/ProjectManagmant_pic3.jpg",
         ],
         sublist: [
-          "Project management",
-          "Operational planning",
-          "Operational monitoring of works",
-          "Drawing up specifications",
+          "- Operational planning",
+          "Work progress monitoring",
+          "Preparation of technical specifications",
         ],
       },
       {
-        title: "Design and Optimisation Consultancy",
-        sub: "Preliminary studies to guide, plan and secure the feasibility of projects",
-        link: "controle-technique",
+        title: "Design Consulting and Optimization",
+        sub: "Preliminary studies to guide, plan and secure project feasibility.",
+        link: "technical-control",
         img: "/ui/home/service3.jpg",
         imgList: [
           "/ui/services/Conception_pic1.jpg",
@@ -170,7 +191,7 @@ export const en: Dictionary = {
           "/ui/services/Conception_pic3.jpg",
         ],
         sublist: [
-          "-	Opportunity studies",
+          "Opportunity studies",
           "Pre-feasibility studies",
           "Feasibility studies",
           "Socio-economic studies",
@@ -178,8 +199,8 @@ export const en: Dictionary = {
       },
       {
         title: "Sustainable Development and Certifications",
-        sub: "Solutions focused on sustainability, environmental management and optimisation of natural resources.",
-        link: "controle-technique",
+        sub: "Solutions focused on sustainability, environmental management and optimization of natural resources.",
+        link: "technical-control",
         img: "/ui/home/service4.jpg",
         imgList: [
           "/ui/services/EcoDevelopment_pic1.jpg",
@@ -187,7 +208,7 @@ export const en: Dictionary = {
           "/ui/services/EcoDevelopment_pic3.jpg",
         ],
         sublist: [
-          "Environmental professions",
+          "Environmental services",
           "Rural engineering",
           "Hydrogeology and hydrology studies",
           "Data analysis techniques",
@@ -195,10 +216,30 @@ export const en: Dictionary = {
       },
     ],
   },
+  why: {
+    title: {
+      main: "Why Choose Creaconsult?",
+      sub: "At CREACONSULT, we put our expertise and commitment at the service of your projects, guaranteeing innovative solutions tailored to your needs.",
+    },
+    reasons: [
+      {
+        title: "Targeted expertise and real impact",
+        desc: `With over 15 years of experience, particularly in sub-Saharan Africa, Crea Consult doesn't just contribute: it makes projects succeed. Our experts intervene only where they excel. Clear objectives, concrete results.`,
+      },
+      {
+        title: "Proven quality, sustainable performance",
+        desc: `Certified ISO 9001 and 14001, our management rigor and environmental approach ensure reliable deliverables, on time. For us, quality is a method, not a promise.`,
+      },
+      {
+        title: "Solid references, measurable results",
+        desc: `From large institutions to local companies, we are a strategic and responsive partner. We also train young talents to build the future today.`,
+      }
+    ],
+  },
   Partners: {
     title: {
       main: "Partners",
-      sub: "they put their trust in us, then and now",
+      sub: "they have trusted us, yesterday as today",
     },
   },
   contact: {
@@ -214,26 +255,26 @@ export const en: Dictionary = {
     },
     form: {
       name: "Name",
-      email: "Mail",
+      email: "Email address",
       profession: "Profession",
-      subject: "Subjet",
-      message: "mesage",
+      subject: "Subject",
+      message: "Message",
     },
   },
   newsLetter: {
     title: {
       main: "Subscribe to our newsletter",
-      sub: "Get the latest news and updates from Creaconsult",
+      sub: "Receive the latest news and updates from Creaconsult",
     },
     buttons: {
       link: "Subscribe",
     },
   },
-  actu: "Headlines",
+  actu: "Featured",
   Jobs: {
     title: {
       title: {
-        main: "Job Offers",
+        main: "Job offers",
         sub: "Join our team of experts",
       },
     },
@@ -242,17 +283,18 @@ export const en: Dictionary = {
       active: "Active",
     },
     banner: {
-      title: "New Opportunities",
+      title: "New opportunities",
       message: "Apply now",
       all: "All",
       active: "Active",
     },
   },
-
   about: {
     story: {
       title: "Our Story",
-      desc: "CREACONSULT, an engineering and project management company founded in 2006, uses its proven expertise to create sustainable living environments. Committed to continuous improvement, we simplify every stage for project owners and investors.\n\nCertified ISO 9001 and 14001 (2015 standard), our management combines rigor, quality, and environmental commitment. As specialists in institutional, commercial, and industrial projects, we apply our cutting-edge technical expertise to ambitious projects.\n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our customers and partners a privileged and efficient collaboration.\n\nInnovative engineering and project management solutions for exceptional projects.",
+      desc: `
+      CREACONSULT, an engineering and project management company founded in 2006, puts its proven expertise at the service of creating sustainable living environments. Committed to continuous improvement, we simplify each step for project owners and investors.\n\nCertified ISO 9001 and 14001 (2015 standard), our management combines rigor, quality and environmental commitment. Specialists in institutional, commercial and industrial projects, we mobilize our cutting-edge technical expertise to carry out ambitious projects. \n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our clients and partners a privileged and high-performance collaboration.\n\nInnovative engineering and project management solutions for exceptional achievements.
+      `,
       boxImages: [
         {
           img: "/ui/services/Conception_pic1.jpg",
@@ -272,7 +314,7 @@ export const en: Dictionary = {
       title: "Certifications",
       sub: "Recognized Expertise",
       desc: `<p class="text-justify">
-  Certified <strong>ISO 9001 and ISO 14001</strong>, and holder of <strong>Environmental Impact Study Accreditation</strong>, CREACONSULT reaffirms its commitment to quality, sustainable performance and environmental responsibility. These recognitions strengthen the rigor of our internal processes, enhance our image with partners, facilitate market access and ensure better risk management in an increasingly demanding economic environment.
+  Certified <strong>ISO 9001 and ISO 14001</strong>, and holder of the <strong>Environmental Impact Study Accreditation</strong>, CREACONSULT affirms its commitment to quality, sustainable performance and environmental responsibility. These recognitions consolidate the rigor of its internal processes, enhance its image with partners, facilitate access to markets and ensure better risk management in an increasingly demanding economic environment.
 </p>`,
     },
   },
@@ -281,7 +323,7 @@ export const en: Dictionary = {
     posts: [
       {
         name: "Mr. Désiré FOTSO",
-        post: "Chief Operating Officer",
+        post: "Operations Director",
         img: "/ui/team/Ceo.png",
         links: {
           linkedin: "https://linkedin.com/in/desire-fotso",
@@ -291,7 +333,7 @@ export const en: Dictionary = {
       },
       {
         name: "Mr. Brice LEKIAGNI",
-        post: "Studies and Monitoring Engineer",
+        post: "Study and Monitoring Technician",
         img: "/ui/team/Etude.png",
         links: {
           linkedin: "https://linkedin.com/in/brice-lekiagni",
@@ -300,8 +342,8 @@ export const en: Dictionary = {
         },
       },
       {
-        name: "Mme. Carole TEMOU HEUME",
-        post: "Quality Assurance Manager",
+        name: "Carole TEMOU HEUME",
+        post: "Quality Manager",
         img: "/ui/team/qualite.png",
         links: {
           linkedin: "https://linkedin.com/in/carole-temou",
@@ -310,8 +352,8 @@ export const en: Dictionary = {
         },
       },
       {
-        name: "Mme. Amougou Mbassi",
-        post: "Regulatory Compliance Manager",
+        name: "Ms. Amougou Mbassi",
+        post: "Declaration and E-Declaration Manager",
         img: "/ui/team/Declaration.png",
         links: {
           linkedin: "https://linkedin.com/in/amougou-mbassi",
@@ -320,8 +362,8 @@ export const en: Dictionary = {
         },
       },
       {
-        name: "Mme. Gladys Ngono",
-        post: "Environmental Affairs Director",
+        name: "Ms. Gladys Ngono",
+        post: "Environmental Department Manager",
         img: "/ui/team/Environnement.png",
         links: {
           linkedin: "https://linkedin.com/in/gladys-ngono",

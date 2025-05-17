@@ -13,6 +13,24 @@ export interface Dictionary {
   droit: string,
   design: string,
   lien: string,
+  JobsDetail: {
+    nombre: string;
+    lieu: string;
+    contrat: string;
+    delai: string;
+    competence: string;
+    description: string;
+    postuler: string,
+    copier: string,
+    copie: string,
+    actif: string,
+    expire: string
+  },
+  slides: Array<{
+    title: string;
+    description: string;
+    image: string;
+  }>,
   partner: {
     title: string,
     description: string

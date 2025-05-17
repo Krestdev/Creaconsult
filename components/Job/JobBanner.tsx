@@ -19,7 +19,7 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
   }, [Jobs]);
 
   return (
-    <SectionContainer className="pb-[24px]">
+    <SectionContainer className="pb-[24px] ">
       <div className="space-y-8">
         <h2 className="font-semibold hidden md:block">
           {dicrionary.Jobs.banner.title}

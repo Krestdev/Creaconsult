@@ -17,11 +17,11 @@ const Footer = ({ dictionary }: FooterProps) => {
       }}
     >
       <div className="container">
-        <div className="w-full grid grid-cols-1 md:grid-cols-5 gap-2 p-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-5 gap-2 p-7 md:p-4">
 
           {/* body */}
-          <div className="flex flex-col justify-between w-full max-w-[400px] col-span-2">
-            <div className="">
+          <div className="flex flex-col gap-7 pb-5 items-center justify-between w-full max-w-[400px] col-span-2">
+            <div>
               <img
                 src="/ui/CreaConsultLogoLine.png"
                 alt="logo"
@@ -29,7 +29,7 @@ const Footer = ({ dictionary }: FooterProps) => {
               />
               <p className="italic !text-[12px]">{"Performing for real progress"}</p>
             </div>
-            <div className="flex gap-2 overflow-hidden justify-start flex-col md:flex-row ">
+            <div className="flex gap-2 overflow-hidden justify-start md:flex-row">
               <div className="flex gap-4 items-center">
                 <img
                   src="/ui/certificates/isoveritas.png"
