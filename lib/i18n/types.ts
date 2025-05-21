@@ -26,6 +26,11 @@ export interface Dictionary {
     actif: string,
     expire: string
   },
+  domainTitle: string;
+  domain: Array<{
+    title: string;
+    contain: Array<string>;
+  }>;
   slides: Array<{
     title: string;
     description: string;

@@ -75,6 +75,45 @@ export const fr: Dictionary = {
     actif: "Actif",
     expire: "Expiré"
   },
+  domainTitle: "Nos Domaines",
+  domain: [
+    {
+      title: "Infrastructures de Transport",
+      contain: [
+        "Routière",
+        "Portuaire",
+        "Maritime",
+        "Ouvrages d'art"
+      ]
+    },
+    {
+      title: "Bâtiments",
+      contain: [
+        "Résidentiels",
+        "Industriels",
+        "Commerciaux",
+        "Tertiaires"
+      ]
+    },
+    {
+      title: "Environnement",
+      contain: [
+        "Hydro-agricole",
+        "Assainissement",
+        "Réhabilitation Eau et Énergie",
+        "Protection Environnementale"
+      ]
+    },
+    {
+      title: "Équipements collectifs",
+      contain: [
+        "Sportifs",
+        "Hospitaliers",
+        "Éducationnels",
+        "Restauration"
+      ]
+    },
+  ],
   slides: [
     {
       image: "/ui/projects/regie.webp",
@@ -158,7 +197,7 @@ export const fr: Dictionary = {
         link: "ingenierie-et-etudes-techniques",
         img: "/ui/home/service1.jpg",
         sublist: [
-          "-	Les études de voiries et réseaux divers",
+          "Les études de voiries et réseaux divers",
           "L’ingénierie électrique",
           "Les études topographiques et SIG",
           "Les études géotechniques",
@@ -175,7 +214,7 @@ export const fr: Dictionary = {
           "/ui/services/ProjectManagmant_pic3.jpg",
         ],
         sublist: [
-          "-	La planification opérationnelle",
+          "La planification opérationnelle",
           "Les suivis opérationnels des travaux",
           "La rédaction des cahiers de charges",
         ],

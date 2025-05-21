@@ -66,7 +66,7 @@ export const en: Dictionary = {
     nombre: "Number of positions",
     lieu: "Location",
     contrat: "Contract type",
-    delai: "Submission deadline",
+    delai: "Application deadline",
     competence: "Skills",
     description: "Description",
     postuler: "Apply for this position",
@@ -75,11 +75,50 @@ export const en: Dictionary = {
     actif: "Active",
     expire: "Expired"
   },
+  domainTitle: "Our Domains",
+  domain: [
+    {
+      title: "Transport Infrastructure",
+      contain: [
+        "Road",
+        "Port",
+        "Maritime",
+        "Civil engineering structures"
+      ]
+    },
+    {
+      title: "Buildings",
+      contain: [
+        "Residential",
+        "Industrial",
+        "Commercial",
+        "Tertiary"
+      ]
+    },
+    {
+      title: "Environment",
+      contain: [
+        "Hydro-agricultural",
+        "Sanitation",
+        "Water and Energy Rehabilitation",
+        "Environmental Protection"
+      ]
+    },
+    {
+      title: "Community Facilities",
+      contain: [
+        "Sports",
+        "Hospital",
+        "Educational",
+        "Restoration"
+      ]
+    },
+  ],
   slides: [
     {
       image: "/ui/projects/regie.webp",
       title: "RTC Building",
-      description: "Complete project management of the R+6 office building for the Container Terminal Authority (RTC)"
+      description: "Complete project management for a R+6 office building for the Container Terminal Authority (RTC)"
     },
     {
       image: "/ui/projects/carino.webp",
@@ -94,17 +133,17 @@ export const en: Dictionary = {
     {
       image: "/ui/projects/wouri.webp",
       title: "Wouri",
-      description: "Project management for construction works of the Wouri river bankside road in Douala"
+      description: "Project management for construction works of the Wouri river embankment road in Douala"
     },
     {
       image: "/ui/projects/bourse.webp",
       title: "Cameroon Subcontracting and Partnership Exchange",
-      description: "Detailed preliminary design studies for the construction of the headquarters building of the Cameroon Subcontracting and Partnership Exchange (BSTP-CMR)"
+      description: "Detailed preliminary studies for the construction of the headquarters building of the Cameroon Subcontracting and Partnership Exchange (BSTP-CMR)"
     },
     {
       image: "/ui/projects/Ngodi.webp",
-      title: "Play and Leisure Area",
-      description: "Complementary studies for a play and leisure area in Ngodi Akwa, Douala"
+      title: "Leisure and Recreation Area",
+      description: "Complementary studies for a leisure and recreation area in Ngodi Akwa, Douala"
     }
   ],
   partner: {
@@ -117,9 +156,8 @@ export const en: Dictionary = {
       subtitle: "About us title",
     },
     service: {
-      title: "Service",
-      subtitle:
-        "Innovative engineering and project management solutions for exceptional projects.",
+      title: "Services",
+      subtitle: "Innovative engineering and project management solutions for exceptional projects.",
     },
     contact: {
       title: "Contact Us",
@@ -132,7 +170,7 @@ export const en: Dictionary = {
   },
   hero: {
     title: {
-      small: "Category A Engineering Office",
+      small: "Category A Engineering Firm",
       main: "Turn your projects into reality with Creaconsult.",
       sub: "Experts in sector studies, technical control and infrastructure.",
     },
@@ -158,7 +196,7 @@ export const en: Dictionary = {
         link: "engineering-and-technical-studies",
         img: "/ui/home/service1.jpg",
         sublist: [
-          "- Road and utility network studies",
+          "Road and utility network studies",
           "Electrical engineering",
           "Topographic and GIS studies",
           "Geotechnical studies",
@@ -175,9 +213,9 @@ export const en: Dictionary = {
           "/ui/services/ProjectManagmant_pic3.jpg",
         ],
         sublist: [
-          "- Operational planning",
-          "Work progress monitoring",
-          "Preparation of technical specifications",
+          "Operational planning",
+          "Construction site supervision",
+          "Technical specifications preparation",
         ],
       },
       {
@@ -199,7 +237,7 @@ export const en: Dictionary = {
       },
       {
         title: "Sustainable Development and Certifications",
-        sub: "Solutions focused on sustainability, environmental management and optimization of natural resources.",
+        sub: "Solutions focused on sustainability, environmental management and natural resource optimization.",
         link: "technical-control",
         img: "/ui/home/service4.jpg",
         imgList: [
@@ -208,7 +246,7 @@ export const en: Dictionary = {
           "/ui/services/EcoDevelopment_pic3.jpg",
         ],
         sublist: [
-          "Environmental services",
+          "Environmental engineering",
           "Rural engineering",
           "Hydrogeology and hydrology studies",
           "Data analysis techniques",
@@ -224,7 +262,7 @@ export const en: Dictionary = {
     reasons: [
       {
         title: "Targeted expertise and real impact",
-        desc: `With over 15 years of experience, particularly in sub-Saharan Africa, Crea Consult doesn't just contribute: it makes projects succeed. Our experts intervene only where they excel. Clear objectives, concrete results.`,
+        desc: `With over 15 years of experience, particularly in Sub-Saharan Africa, Crea Consult doesn't just contribute: it makes projects succeed. Our experts intervene only where they excel. Clear objectives, concrete results.`,
       },
       {
         title: "Proven quality, sustainable performance",
@@ -293,7 +331,7 @@ export const en: Dictionary = {
     story: {
       title: "Our Story",
       desc: `
-      CREACONSULT, an engineering and project management company founded in 2006, puts its proven expertise at the service of creating sustainable living environments. Committed to continuous improvement, we simplify each step for project owners and investors.\n\nCertified ISO 9001 and 14001 (2015 standard), our management combines rigor, quality and environmental commitment. Specialists in institutional, commercial and industrial projects, we mobilize our cutting-edge technical expertise to carry out ambitious projects. \n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our clients and partners a privileged and high-performance collaboration.\n\nInnovative engineering and project management solutions for exceptional achievements.
+      CREACONSULT, an engineering and project management company founded in 2006, puts its proven expertise at the service of creating sustainable living environments. Committed to continuous improvement, we simplify every step for project owners and investors.\n\nCertified ISO 9001 and 14001 (2015 standard), our management combines rigor, quality and environmental commitment. Specialists in institutional, commercial and industrial projects, we mobilize our cutting-edge technical expertise to carry out ambitious projects. \n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our clients and partners a privileged and high-performance collaboration.\n\nInnovative engineering and project management solutions for exceptional achievements.
       `,
       boxImages: [
         {
@@ -314,7 +352,7 @@ export const en: Dictionary = {
       title: "Certifications",
       sub: "Recognized Expertise",
       desc: `<p class="text-justify">
-  Certified <strong>ISO 9001 and ISO 14001</strong>, and holder of the <strong>Environmental Impact Study Accreditation</strong>, CREACONSULT affirms its commitment to quality, sustainable performance and environmental responsibility. These recognitions consolidate the rigor of its internal processes, enhance its image with partners, facilitate access to markets and ensure better risk management in an increasingly demanding economic environment.
+  Certified <strong>ISO 9001 and ISO 14001</strong>, and holder of the <strong>Environmental Impact Studies Accreditation</strong>, CREACONSULT affirms its commitment to quality, sustainable performance and environmental responsibility. These recognitions consolidate the rigor of its internal processes, enhance its image with partners, facilitate access to markets and ensure better risk management in an increasingly demanding economic environment.
 </p>`,
     },
   },
@@ -352,7 +390,7 @@ export const en: Dictionary = {
         },
       },
       {
-        name: "Ms. Amougou Mbassi",
+        name: "Mrs. Amougou Mbassi",
         post: "Declaration and E-Declaration Manager",
         img: "/ui/team/Declaration.png",
         links: {
@@ -362,7 +400,7 @@ export const en: Dictionary = {
         },
       },
       {
-        name: "Ms. Gladys Ngono",
+        name: "Mrs. Gladys Ngono",
         post: "Environmental Department Manager",
         img: "/ui/team/Environnement.png",
         links: {

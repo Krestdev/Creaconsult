@@ -49,7 +49,7 @@ interface ServiceType {
 const Partners = ({ dictionary }: ServiceType) => {
   return (
     <SectionContainer className="bg-white !py-7">
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4 w-full">
         <div className="flex flex-col gap-2 items-center">
           <h2 className="font-semibold hidden md:block w-fit">{dictionary.partner.title}</h2>
           <h4 className="font-bold md:hidden">{dictionary.partner.title}</h4>
