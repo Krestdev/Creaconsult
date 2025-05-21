@@ -53,7 +53,7 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
           <div
             className=" flex flex-col gap-8 text-white justify-center items-center w-full aspect-square bg-cover bg-[var(--primary)]"
             style={{
-              backgroundImage: `linear-gradient(to bottom,rgba(255,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/footer/bglines.png')`,
+              backgroundImage: `linear-gradient(to bottom,rgba(255,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/footer/bglines.webp')`,
             }}
           >
             <h5 className="text-white font-light flex justify-center items-center">

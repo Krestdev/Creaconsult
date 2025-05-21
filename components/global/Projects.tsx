@@ -87,22 +87,22 @@ const Projects = ({dictionary}: ServiceType) => {
     //   </div>
     //   <div className="flex w-1/2 gap-4 h-fit md:h-[500px] items-end p-6">
     //     <img
-    //       src="/ui/projects/project1.jpeg"
+    //       src="/ui/projects/project1.webp"
     //       alt="Djapoma Stadium Construction"
     //       className="w-[200px] h-[300px] object-cover object-center bg-gray-400 shadow-lg shadow-black"
     //     />
     //     <img
-    //       src="/ui/projects/project3.jpeg"
+    //       src="/ui/projects/project3.webp"
     //       alt="Djapoma Stadium Construction"
     //       className="w-[200px] h-[300px] object-cover object-center bg-gray-400 shadow-lg shadow-black"
     //     />
     //     <img
-    //       src="/ui/projects/project2.jpeg"
+    //       src="/ui/projects/project2.webp"
     //       alt="Djapoma Stadium Construction"
     //       className="w-[200px] h-[300px] object-cover object-center bg-gray-400 shadow-lg shadow-black"
     //     />
     //     <img
-    //       src="/ui/projects/project3.jpeg"
+    //       src="/ui/projects/project3.webp"
     //       alt="Djapoma Stadium Construction"
     //       className="w-[200px] h-[300px] object-cover object-center bg-gray-400 shadow-lg shadow-black"
     //     />

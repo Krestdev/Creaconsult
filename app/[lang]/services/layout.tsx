@@ -24,7 +24,7 @@ export default async function Layout({ children, params }: LayoutProps) {
   return (
     <PageIntro
       title={(await params).lang == "en" ? "Services" : "Nos Services"}
-      img="/ui/intro/ServiceIntro.jpg"
+      img="/ui/intro/ServiceIntro.webp"
     >
       {children}
     </PageIntro>

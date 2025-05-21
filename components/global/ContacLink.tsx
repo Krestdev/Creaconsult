@@ -12,7 +12,7 @@ interface ContactLinkProps {
 
 const ContacLink = ({ dictionary }: ContactLinkProps) => {
   return (
-    <SectionContainer color="white" img="/ui/global/bglinesDeco.png" className="py-0">
+    <SectionContainer color="white" img="/ui/global/bglinesDeco.webp" className="py-0">
       <div className="p-6">
         <div className="flex flex-col items-center justify-center">
           <h2 className="font-semibold hidden md:block text-center">

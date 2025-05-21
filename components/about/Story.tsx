@@ -9,7 +9,7 @@ interface StoryType {
 
 const Story = ({ dictionary }: StoryType) => {
   return (
-    <SectionContainer color="white" img="/ui/global/bglinesDeco.png">
+    <SectionContainer color="white" img="/ui/global/bglinesDeco.webp">
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="w-full space-y-4">
           <h2 className="font-semibold hidden md:block">

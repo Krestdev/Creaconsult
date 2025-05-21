@@ -37,18 +37,18 @@ const Achievements = ({ dictionary }: AchievementType) => {
         <div className="flex flex-row justify-center gap-7">
           <div className="flex flex-col justify-between items-center gap-2">
             <img
-              src="/ui/certificates/isoveritas.png"
+              src="/ui/certificates/isoveritas.webp"
               className="max-w-[200px] aspect-video w-full h-auto"
               alt="crea1"
             />
             <img
-              src="/ui/certificates/isoveritas2.png"
+              src="/ui/certificates/isoveritas2.webp"
               className="max-w-[200px] aspect-video w-full h-auto"
               alt="crea2"
             />
           </div>
           <img
-            src="/ui/certificates/ukasMs.png"
+            src="/ui/certificates/ukasMs.webp"
             alt="crea3"
             className="max-w-[200px] aspect-auto w-full h-auto"
           />

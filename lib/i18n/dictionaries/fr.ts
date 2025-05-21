@@ -190,12 +190,12 @@ export const fr: Dictionary = {
         title: "Ingénierie et Études Techniques",
         sub: "Expertises techniques pour la conception et la mise en œuvre d’infrastructures.",
         imgList: [
-          "/ui/services/TechnicalStudies_pic1.jpg",
-          "/ui/services/TechnicalStudies_pic2.jpg",
-          "/ui/services/TechnicalStudies_pic3.jpg",
+          "/ui/services/TechnicalStudies_pic1.webp",
+          "/ui/services/TechnicalStudies_pic2.webp",
+          "/ui/services/TechnicalStudies_pic3.webp",
         ],
         link: "ingenierie-et-etudes-techniques",
-        img: "/ui/home/service1.jpg",
+        img: "/ui/home/service1.webp",
         sublist: [
           "Les études de voiries et réseaux divers",
           "L’ingénierie électrique",
@@ -207,11 +207,11 @@ export const fr: Dictionary = {
         title: "Maîtrise d’Œuvre et Gestion de Projets",
         sub: "Pilotage global des projets, de la planification à l’exécution sur le terrain Les maîtrises d'œuvre",
         link: "maitrise-d-oeuvre",
-        img: "/ui/home/service2.jpg",
+        img: "/ui/home/service2.webp",
         imgList: [
-          "/ui/services/ProjectManagmant_pic1.jpg",
-          "/ui/services/ProjectManagmant_pic2.jpg",
-          "/ui/services/ProjectManagmant_pic3.jpg",
+          "/ui/services/ProjectManagmant_pic1.webp",
+          "/ui/services/ProjectManagmant_pic2.webp",
+          "/ui/services/ProjectManagmant_pic3.webp",
         ],
         sublist: [
           "La planification opérationnelle",
@@ -223,11 +223,11 @@ export const fr: Dictionary = {
         title: "Conseil en Conception et Optimisation",
         sub: "Études préliminaires pour orienter, planifier et sécuriser la faisabilité des projets.",
         link: "controle-technique",
-        img: "/ui/home/service3.jpg",
+        img: "/ui/home/service3.webp",
         imgList: [
-          "/ui/services/Conception_pic1.jpg",
-          "/ui/services/Conception_pic2.jpg",
-          "/ui/services/Conception_pic3.jpg",
+          "/ui/services/Conception_pic1.webp",
+          "/ui/services/Conception_pic2.webp",
+          "/ui/services/Conception_pic3.webp",
         ],
         sublist: [
           "Les études d'opportunité",
@@ -240,11 +240,11 @@ export const fr: Dictionary = {
         title: "Développement Durable et Certifications",
         sub: "Solutions axées sur la durabilité, la gestion environnementale et l’optimisation des ressources naturelles.",
         link: "controle-technique",
-        img: "/ui/home/service4.jpg",
+        img: "/ui/home/service4.webp",
         imgList: [
-          "/ui/services/EcoDevelopment_pic1.jpg",
-          "/ui/services/EcoDevelopment_pic2.jpg",
-          "/ui/services/EcoDevelopment_pic3.jpg",
+          "/ui/services/EcoDevelopment_pic1.webp",
+          "/ui/services/EcoDevelopment_pic2.webp",
+          "/ui/services/EcoDevelopment_pic3.webp",
         ],
         sublist: [
           "Les métiers de l'environnement",
@@ -336,15 +336,15 @@ export const fr: Dictionary = {
       `,
       boxImages: [
         {
-          img: "/ui/services/Conception_pic1.jpg",
+          img: "/ui/services/Conception_pic1.webp",
           title: "Ingénierie et Études Techniques",
         },
         {
-          img: "/ui/services/EcoDevelopment_pic2.jpg",
+          img: "/ui/services/EcoDevelopment_pic2.webp",
           title: "Développement Durable et Certifications",
         },
         {
-          img: "/ui/services/ProjectManagmant_pic3.jpg",
+          img: "/ui/services/ProjectManagmant_pic3.webp",
           title: "Conseil en Conception et Optimisation",
         },
       ],
@@ -363,7 +363,7 @@ export const fr: Dictionary = {
       {
         name: "Mr. Désiré FOTSO",
         post: "Directeur des Opérations",
-        img: "/ui/team/Ceo.png",
+        img: "/ui/team/Ceo.webp",
         links: {
           linkedin: "https://linkedin.com/in/desire-fotso",
           facebook: "https://facebook.com/desire.fotso",
@@ -373,7 +373,7 @@ export const fr: Dictionary = {
       {
         name: "Mr. Brice LEKIAGNI",
         post: "Technicien d’Étude et de Suivi",
-        img: "/ui/team/Etude.png",
+        img: "/ui/team/Etude.webp",
         links: {
           linkedin: "https://linkedin.com/in/brice-lekiagni",
           facebook: "https://facebook.com/brice.lekiagni",
@@ -383,7 +383,7 @@ export const fr: Dictionary = {
       {
         name: "Carole TEMOU HEUME",
         post: "Responsable Qualité",
-        img: "/ui/team/qualite.png",
+        img: "/ui/team/qualite.webp",
         links: {
           linkedin: "https://linkedin.com/in/carole-temou",
           facebook: "https://facebook.com/carole.temou",
@@ -393,7 +393,7 @@ export const fr: Dictionary = {
       {
         name: "Mme. Amougou Mbassi",
         post: "Responsable Déclaration et Télédéclaration",
-        img: "/ui/team/Declaration.png",
+        img: "/ui/team/Declaration.webp",
         links: {
           linkedin: "https://linkedin.com/in/amougou-mbassi",
           facebook: "https://facebook.com/amougou.mbassi",
@@ -403,7 +403,7 @@ export const fr: Dictionary = {
       {
         name: "Mme. Gladys Ngono",
         post: "Responsable du Volet Environnemental",
-        img: "/ui/team/Environnement.png",
+        img: "/ui/team/Environnement.webp",
         links: {
           linkedin: "https://linkedin.com/in/gladys-ngono",
           facebook: "https://facebook.com/gladys.ngono",

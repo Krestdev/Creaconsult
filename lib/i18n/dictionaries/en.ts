@@ -189,12 +189,12 @@ export const en: Dictionary = {
         title: "Engineering and Technical Studies",
         sub: "Technical expertise for the design and implementation of infrastructures.",
         imgList: [
-          "/ui/services/TechnicalStudies_pic1.jpg",
-          "/ui/services/TechnicalStudies_pic2.jpg",
-          "/ui/services/TechnicalStudies_pic3.jpg",
+          "/ui/services/TechnicalStudies_pic1.webp",
+          "/ui/services/TechnicalStudies_pic2.webp",
+          "/ui/services/TechnicalStudies_pic3.webp",
         ],
         link: "engineering-and-technical-studies",
-        img: "/ui/home/service1.jpg",
+        img: "/ui/home/service1.webp",
         sublist: [
           "Road and utility network studies",
           "Electrical engineering",
@@ -206,11 +206,11 @@ export const en: Dictionary = {
         title: "Project Management and Supervision",
         sub: "Global project management, from planning to on-site execution",
         link: "project-management",
-        img: "/ui/home/service2.jpg",
+        img: "/ui/home/service2.webp",
         imgList: [
-          "/ui/services/ProjectManagmant_pic1.jpg",
-          "/ui/services/ProjectManagmant_pic2.jpg",
-          "/ui/services/ProjectManagmant_pic3.jpg",
+          "/ui/services/ProjectManagmant_pic1.webp",
+          "/ui/services/ProjectManagmant_pic2.webp",
+          "/ui/services/ProjectManagmant_pic3.webp",
         ],
         sublist: [
           "Operational planning",
@@ -222,11 +222,11 @@ export const en: Dictionary = {
         title: "Design Consulting and Optimization",
         sub: "Preliminary studies to guide, plan and secure project feasibility.",
         link: "technical-control",
-        img: "/ui/home/service3.jpg",
+        img: "/ui/home/service3.webp",
         imgList: [
-          "/ui/services/Conception_pic1.jpg",
-          "/ui/services/Conception_pic2.jpg",
-          "/ui/services/Conception_pic3.jpg",
+          "/ui/services/Conception_pic1.webp",
+          "/ui/services/Conception_pic2.webp",
+          "/ui/services/Conception_pic3.webp",
         ],
         sublist: [
           "Opportunity studies",
@@ -239,11 +239,11 @@ export const en: Dictionary = {
         title: "Sustainable Development and Certifications",
         sub: "Solutions focused on sustainability, environmental management and natural resource optimization.",
         link: "technical-control",
-        img: "/ui/home/service4.jpg",
+        img: "/ui/home/service4.webp",
         imgList: [
-          "/ui/services/EcoDevelopment_pic1.jpg",
-          "/ui/services/EcoDevelopment_pic2.jpg",
-          "/ui/services/EcoDevelopment_pic3.jpg",
+          "/ui/services/EcoDevelopment_pic1.webp",
+          "/ui/services/EcoDevelopment_pic2.webp",
+          "/ui/services/EcoDevelopment_pic3.webp",
         ],
         sublist: [
           "Environmental engineering",
@@ -335,15 +335,15 @@ export const en: Dictionary = {
       `,
       boxImages: [
         {
-          img: "/ui/services/Conception_pic1.jpg",
+          img: "/ui/services/Conception_pic1.webp",
           title: "Engineering and Technical Studies",
         },
         {
-          img: "/ui/services/EcoDevelopment_pic2.jpg",
+          img: "/ui/services/EcoDevelopment_pic2.webp",
           title: "Sustainable Development and Certifications",
         },
         {
-          img: "/ui/services/ProjectManagmant_pic3.jpg",
+          img: "/ui/services/ProjectManagmant_pic3.webp",
           title: "Design Consulting and Optimization",
         },
       ],
@@ -362,7 +362,7 @@ export const en: Dictionary = {
       {
         name: "Mr. Désiré FOTSO",
         post: "Operations Director",
-        img: "/ui/team/Ceo.png",
+        img: "/ui/team/Ceo.webp",
         links: {
           linkedin: "https://linkedin.com/in/desire-fotso",
           facebook: "https://facebook.com/desire.fotso",
@@ -372,7 +372,7 @@ export const en: Dictionary = {
       {
         name: "Mr. Brice LEKIAGNI",
         post: "Study and Monitoring Technician",
-        img: "/ui/team/Etude.png",
+        img: "/ui/team/Etude.webp",
         links: {
           linkedin: "https://linkedin.com/in/brice-lekiagni",
           facebook: "https://facebook.com/brice.lekiagni",
@@ -382,7 +382,7 @@ export const en: Dictionary = {
       {
         name: "Carole TEMOU HEUME",
         post: "Quality Manager",
-        img: "/ui/team/qualite.png",
+        img: "/ui/team/qualite.webp",
         links: {
           linkedin: "https://linkedin.com/in/carole-temou",
           facebook: "https://facebook.com/carole.temou",
@@ -392,7 +392,7 @@ export const en: Dictionary = {
       {
         name: "Mrs. Amougou Mbassi",
         post: "Declaration and E-Declaration Manager",
-        img: "/ui/team/Declaration.png",
+        img: "/ui/team/Declaration.webp",
         links: {
           linkedin: "https://linkedin.com/in/amougou-mbassi",
           facebook: "https://facebook.com/amougou.mbassi",
@@ -402,7 +402,7 @@ export const en: Dictionary = {
       {
         name: "Mrs. Gladys Ngono",
         post: "Environmental Department Manager",
-        img: "/ui/team/Environnement.png",
+        img: "/ui/team/Environnement.webp",
         links: {
           linkedin: "https://linkedin.com/in/gladys-ngono",
           facebook: "https://facebook.com/gladys.ngono",

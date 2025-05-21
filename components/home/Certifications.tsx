@@ -5,12 +5,12 @@ const Certifications = () => {
     <SectionContainer
       className="py-5 md:py-10"
       color="white"
-      img="/ui/global/bglinesDeco.png"
+      img="/ui/global/bglinesDeco.webp"
     >
       <div className="flex gap-4 overflow-hidden justify-center flex-col md:flex-row">
         <div className="flex gap-4 items-center">
           <img
-            src="/ui/certificates/isoveritas.png"
+            src="/ui/certificates/isoveritas.webp"
             alt="certificates"
             className="h-[3.5rem] md:h-[4rem] "
           />
@@ -18,7 +18,7 @@ const Certifications = () => {
         </div>
         <div className="flex gap-4 items-center">
           <img
-            src="/ui/certificates/isoveritas2.png"
+            src="/ui/certificates/isoveritas2.webp"
             alt="certificates"
             className="h-[3.5rem] md:h-[4rem] object-cover"
           />
@@ -26,7 +26,7 @@ const Certifications = () => {
         </div>
         <div className="flex gap-4 items-center">
           <img
-            src="/ui/certificates/ukasMS.png"
+            src="/ui/certificates/ukasMS.webp"
             alt="certificates"
             className="h-[3.5rem] md:h-[4rem] w-[3rem] object-cover"
           />

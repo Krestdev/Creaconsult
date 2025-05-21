@@ -8,37 +8,37 @@ import { Dictionary } from "@/lib/i18n";
 
 const slides = [
   {
-    src: "/ui/partners/feicom.png",
+    src: "/ui/partners/feicom.webp",
   },
   {
-    src: "/ui/partners/smt.png",
+    src: "/ui/partners/smt.webp",
   },
   {
-    src: "/ui/partners/tradex.png",
+    src: "/ui/partners/tradex.webp",
   },
   {
-    src: "/ui/partners/bicec.png",
+    src: "/ui/partners/bicec.webp",
   },
   {
-    src: "/ui/partners/picture11.png",
+    src: "/ui/partners/picture11.webp",
   },
   {
-    src: "/ui/partners/picture12.png",
+    src: "/ui/partners/picture12.webp",
   },
   {
-    src: "/ui/partners/picture13.png",
+    src: "/ui/partners/picture13.webp",
   },
   {
-    src: "/ui/partners/picture14.png",
+    src: "/ui/partners/picture14.webp",
   },
   {
-    src: "/ui/partners/picture15.png",
+    src: "/ui/partners/picture15.webp",
   },
   {
-    src: "/ui/partners/picture16.png",
+    src: "/ui/partners/picture16.webp",
   },
   {
-    src: "/ui/partners/picture17.jpg",
+    src: "/ui/partners/picture17.webp",
   },
 ];
 

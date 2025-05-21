@@ -70,7 +70,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
           <div>
             <Link href="/">
               <img
-                src="/ui/creaconsultFootLogo.png"
+                src="/ui/creaconsultFootLogo.webp"
                 alt="logo"
                 className="h-[80px] w-[120px] object-cover my-2"
               />
@@ -146,7 +146,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
           <div className="nav__logo">
             <Link href="/">
               <img
-                src="/ui/creaconsultFootLogo.png"
+                src="/ui/creaconsultFootLogo.webp"
                 alt="logo"
                 className=" h-[100px]"
               />

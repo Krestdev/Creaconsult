@@ -10,7 +10,7 @@ const WhyChooseUs = ({ dictionary }: ServiceType) => {
   return (
     <SectionContainer
       color="white"
-      img="/ui/global/bglinesDeco.png"
+      img="/ui/global/bglinesDeco.webp"
       className=""
     >
       <div className="flex flex-col justify-between gap-5 xl:flex-row">

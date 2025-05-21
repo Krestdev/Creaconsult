@@ -13,7 +13,7 @@ const Footer = ({ dictionary }: FooterProps) => {
     <footer
       className="containerParent bg-[var(--primary)] text-white bg-cover bg-center py-[24px] !text-[14px]"
       style={{
-        backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.7)),url('/ui/global/bglinesDeco2.png')`,
+        backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.7)),url('/ui/global/bglinesDeco2.webp')`,
       }}
     >
       <div className="container">
@@ -23,7 +23,7 @@ const Footer = ({ dictionary }: FooterProps) => {
           <div className="flex flex-col gap-7 pb-5 items-center justify-between w-full max-w-[400px] col-span-2">
             <div>
               <img
-                src="/ui/CreaConsultLogoLine.png"
+                src="/ui/CreaConsultLogoLine.webp"
                 alt="logo"
                 className="w-[150px] h-[50px]"
               />
@@ -32,21 +32,21 @@ const Footer = ({ dictionary }: FooterProps) => {
             <div className="flex gap-2 overflow-hidden justify-start md:flex-row">
               <div className="flex gap-4 items-center">
                 <img
-                  src="/ui/certificates/isoveritas.png"
+                  src="/ui/certificates/isoveritas.webp"
                   alt="certificates"
                   className="h-[4rem] "
                 />
               </div>
               <div className="flex gap-4 items-center">
                 <img
-                  src="/ui/certificates/isoveritas2.png"
+                  src="/ui/certificates/isoveritas2.webp"
                   alt="certificates"
                   className="h-[4rem] object-cover"
                 />
               </div>
               <div className="flex gap-4 items-center">
                 <img
-                  src="/ui/certificates/ukasMS.png"
+                  src="/ui/certificates/ukasMS.webp"
                   alt="certificates"
                   className="h-[4rem] w-[3rem] object-cover"
                 />
