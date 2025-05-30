@@ -73,7 +73,8 @@ export const en: Dictionary = {
     copier: "Copy link",
     copie: "Copied",
     actif: "Active",
-    expire: "Expired"
+    expire: "Expired",
+    intitule: "Job title"
   },
   domainTitle: "Our Domains",
   domain: [
