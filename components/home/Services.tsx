@@ -12,7 +12,7 @@ interface ServiceType {
 
 const Services = ({ dictionary }: ServiceType) => {
   return (
-    <SectionContainer>
+    <SectionContainer className="py-0 md:py-10">
       <div className="flex flex-col items-center gap-6">
         {/* web */}
         <div className="w-full">
@@ -34,7 +34,7 @@ const Services = ({ dictionary }: ServiceType) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {dictionary.service.serviceList.map((service, index) => {
-            return <SingleServicesItem {...service} key={index} />;
+            return <SingleServicesItem dictionary={dictionary} {...service} key={index} />;
           })}
         </div>
       </div>
@@ -51,6 +51,7 @@ interface SingleServicesItemProps {
   sub: string;
   link: string;
   img: string;
+  dictionary: Dictionary;
 }
 
 const SingleServicesItem = ({
@@ -58,10 +59,11 @@ const SingleServicesItem = ({
   sub,
   link,
   img,
+  dictionary
 }: SingleServicesItemProps) => {
   return (
     <div
-      className="md h-[400px] md:h-[500px] w-full flex flex-col justify-end gap-2 bg-cover bg-center p-4 text-white shadow-black shadow-lg hover:scale-105 transition-all duration-500 ease-in-out"
+      className="h-[400px] md:h-[400px] lg:h-[500] w-full flex flex-col justify-end gap-2 bg-cover bg-center p-4 text-white shadow-black shadow-lg hover:scale-105 transition-all duration-500 ease-in-out"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,1)), url('${img}')`,
       }}
@@ -69,7 +71,7 @@ const SingleServicesItem = ({
       <h4 className="text-white">{title}</h4>
       <p>{sub}</p>
       <div className="flex items-center gap-2 link_button w-fit">
-        <Link href={`/services/#${link}`}>voir plus</Link>
+        <Link href={`/services/#${link}`}>{dictionary.voir}</Link>
         <ArrowRight size={18} />
       </div>
     </div>

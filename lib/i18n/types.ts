@@ -4,6 +4,43 @@ export interface Dictionary {
     title: string;
     link: string;
   }>;
+  apply: string,
+  app: string,
+  new: string,
+  autor: string,
+  voir: string,
+  project: string,
+  droit: string,
+  design: string,
+  lien: string,
+  JobsDetail: {
+    intitule: string;
+    nombre: string;
+    lieu: string;
+    contrat: string;
+    delai: string;
+    competence: string;
+    description: string;
+    postuler: string,
+    copier: string,
+    copie: string,
+    actif: string,
+    expire: string
+  },
+  domainTitle: string;
+  domain: Array<{
+    title: string;
+    contain: Array<string>;
+  }>;
+  slides: Array<{
+    title: string;
+    description: string;
+    image: string;
+  }>,
+  partner: {
+    title: string,
+    description: string
+  },
   footer: {
     links: Array<{
       title: string;
@@ -113,6 +150,8 @@ export interface Dictionary {
     banner: {
       title: string;
       message: string;
+      all: string, 
+      active: string,
     };
   };
   about: {

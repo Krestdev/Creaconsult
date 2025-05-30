@@ -8,8 +8,9 @@ interface HeroType {
 
 const Hero = ({ dictionary }: HeroType) => {
   return (
-    <section className="containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.jpeg')] bg-cover bg-center">
-      <div className="container flex justify-between items-center gap-4 min-h-[700px]">
+    <section className="relative containerParent bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/home/hero_sky_scapers.webp')] bg-cover bg-center px-7">
+      <div className="absolute inset-0 top-0 left-0 bg-transparent/50"/>
+      <div className="container flex justify-between items-center gap-4 min-h-[700px] z-10">
         <div className="flex flex-col gap-2 text-white mx-4">
           <small className="font-bold uppercase link_button w-fit border-b-white border-b-4">
             {dictionary.hero.title.small}
@@ -18,39 +19,39 @@ const Hero = ({ dictionary }: HeroType) => {
             {/* Turn your projects into reality with Creaconsult. */}
             {dictionary.hero.title.main}
           </h3>
-          <h1 className="font-semibold max-w-[600px] hidden md:block text-white">
+          <h1 className="font-semibold text-[3rem] lg:text-[3.813rem] max-w-[600px] hidden md:block text-white">
             {/* Turn your projects into reality with Creaconsult. */}
             {dictionary.hero.title.main}
           </h1>
-          <p className="max-w-[750px] text-3xl mb-4">
+          <p className="max-w-[750px] text-base lg:text-3xl mb-4">
             {dictionary.hero.title.sub}
           </p>
-          <div className="flex gap-2 flex-col md:flex-row">
-            <Link href={"/contact"} className="link_button w-fit">
+          <div className="flex gap-2 flex-col md:flex-row w-full">
+            <Link href={"/contact"} className="link_button w-fit text-nowrap">
               {dictionary.hero.action.contact}
             </Link>
-            <Link href={"/contact"} className="link_button_outline w-fit">
+            <Link href={"/contact"} className="link_button_outline w-fit text-nowrap">
               {dictionary.hero.action.devis}
             </Link>
           </div>
         </div>
         {/* image */}
-        <div className="hidden md:flex gap-4 ">
+        <div className="hidden md:grid md:grid-cols-2 gap-4 ">
           <div className="flex flex-col gap-4 mt-[50px] w-fit">
             <img
-              src="/ui/home/hero_sky_scapers.jpeg"
-              className="size-[250px] shadow-black shadow-lg"
+              src="/ui/home/hero_sky_scapers.webp"
+              className="max-w-[250px] w-[100%]  aspect-square shadow-black shadow-lg"
               alt=""
             />
             <img
-              src="/ui/home/hero_building2.jpeg"
-              className="size-[250px] shadow-black shadow-lg"
+              src="/ui/home/hero_building2.webp"
+              className="max-w-[250px] w-[100%]  aspect-square shadow-black shadow-lg"
               alt=""
             />
           </div>
           <img
-            src="/ui/home/hero_building1.jpeg"
-            className="w-[250px] h-[516px] mb-[50px] shadow-black shadow-lg"
+            src="/ui/home/hero_building1.webp"
+            className="max-h-[516px] h-auto w-full aspect-auto shadow-black shadow-lg"
             alt=""
           />
         </div>

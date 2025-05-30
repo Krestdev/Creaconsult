@@ -16,8 +16,8 @@ const Achievements = ({ dictionary }: AchievementType) => {
           {dictionary.about.certification.title}
         </h4>
       </div>
-      <div className="flex gap-[100px] flex-col lg:flex-row">
-        <div className="md:w-1/2 space-y-4">
+      <div className="flex gap-2 lg:gap-20 flex-col lg:flex-row">
+        <div className="lg:w-1/2 space-y-4">
           {/* <h2 className="font-semibold hidden md:block">
             Creation of the company
           </h2> */}
@@ -34,23 +34,23 @@ const Achievements = ({ dictionary }: AchievementType) => {
             }}
           />
         </div>
-        <div className="md:w-[524px] h-[300px] flex gap-[24px]">
-          <div className="flex flex-col h-full w-full gap-2">
+        <div className="flex flex-row justify-center gap-7">
+          <div className="flex flex-col justify-between items-center gap-2">
             <img
-              src="/ui/certificates/isoveritas.png"
-              className="object-cover md:w-full h-full"
+              src="/ui/certificates/isoveritas.webp"
+              className="max-w-[200px] aspect-video w-full h-auto"
               alt="crea1"
             />
             <img
-              src="/ui/certificates/isoveritas2.png"
-              className="object-cover md:w-full h-full"
+              src="/ui/certificates/isoveritas2.webp"
+              className="max-w-[200px] aspect-video w-full h-auto"
               alt="crea2"
             />
           </div>
           <img
-            src="/ui/certificates/ukasMs.png"
+            src="/ui/certificates/ukasMs.webp"
             alt="crea3"
-            className="md:w-[200px] object-cover "
+            className="max-w-[200px] aspect-auto w-full h-auto"
           />
         </div>
       </div>

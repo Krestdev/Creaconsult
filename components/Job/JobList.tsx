@@ -75,7 +75,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                   <div className="w-full flex flex-col gap-4 mb-4 relative">
                     <img
                       src={`${process.env.NEXT_IMAGE_BASE}assets/${job.illustration}`}
-                      alt="articel"
+                      alt="article"
                       className="w-full h-[250px] object-cover bg-slate-300"
                     />
                     <button
@@ -125,7 +125,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                       href={`jobs/${job.id}`}
                       className="flex gap-2 items-center text-[var(--primary)] font-semibold"
                     >
-                      <p>Apply</p> <ArrowRight size={24} />
+                      <p>{dicrionary.apply}</p> <ArrowRight size={24} />
                     </Link>
                   </div>
                 </div>

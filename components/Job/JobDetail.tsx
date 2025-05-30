@@ -5,8 +5,10 @@ import Link from "next/link";
 import { Suitcase } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
+import { Dictionary } from "@/lib/i18n";
+import { Button } from "../ui/button";
 
-const JobDetail = ({ JobData }: { JobData: any }) => {
+const JobDetail = ({ JobData, dictionary }: { JobData: any, dictionary: Dictionary }) => {
   const [Job, setJob] = useState<Record<string, any>>();
   const now = new Date();
 
@@ -41,57 +43,56 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
             />
 
             <div className="w-1/2 space-y-2 hidden md:block">
-              <h3>{Job.title}</h3>
-              <h5>
-                <span className="font-semibold">Posts: </span>{" "}
+              <h2><span className="font-semibold">{`${dictionary.JobsDetail.intitule}: `}</span>{Job.title}</h2>
+              {/* <h5>
+                <span className="font-semibold">{dictionary.JobsDetail.nombre}</span>{": "}
                 {Job.applications}
-              </h5>
+              </h5> */}
               <h5>
-                <span className="font-semibold">Location: </span>
+                <span className="font-semibold">{dictionary.JobsDetail.lieu}</span>{": "}
                 {Job.location}
               </h5>
               <h5>
-                <span className="font-semibold">Contract: </span>
+                <span className="font-semibold">{dictionary.JobsDetail.contrat}</span>{": "}
                 {Job.type}
               </h5>
               <h5>
-                <span className="font-semibold">Expire Date: </span>
+                <span className="font-semibold">{dictionary.JobsDetail.delai}</span>{": "}
                 {Job.expire ? new Date(Job.expire).toUTCString() : ""}
               </h5>
             </div>
             <div className="space-y-2 md:hidden">
-              <h5 className="font-bold">{Job.title}</h5>
-              <h6>
-                <span className="font-semibold">Posts: </span>{" "}
+              <h3>{Job.title}</h3>
+              <h5>
+                <span className="font-semibold">{dictionary.JobsDetail.nombre}</span>{": "}
                 {Job.applications}
-              </h6>
-              <h6>
-                <span className="font-semibold">Location: </span>
+              </h5>
+              <h5>
+                <span className="font-semibold">{dictionary.JobsDetail.lieu}</span>{": "}
                 {Job.location}
-              </h6>
-              <h6>
-                <span className="font-semibold">Contract: </span>
+              </h5>
+              <h5>
+                <span className="font-semibold">{dictionary.JobsDetail.contrat}</span>{": "}
                 {Job.type}
-              </h6>
-              <h6>
-                <span className="font-semibold">Expire Date: </span>
+              </h5>
+              <h5>
+                <span className="font-semibold">{dictionary.JobsDetail.delai}</span>{": "}
                 {Job.expire ? new Date(Job.expire).toUTCString() : ""}
-              </h6>
+              </h5>
             </div>
             <button
               className={clsx(
                 "rounded px-2 py-1",
                 "text-[var(--primary)]",
-                `${
-                  !Job.expire || new Date(Job.expire) > now
-                    ? "bg-green-200"
-                    : "bg-red-200"
+                `${!Job.expire || new Date(Job.expire) > now
+                  ? "bg-green-200"
+                  : "bg-red-200"
                 }`
               )}
             >
               {/* Active expire */}
 
-              {!Job.expire || new Date(Job.expire) > now ? "Active" : "Expired"}
+              {!Job.expire || new Date(Job.expire) > now ? dictionary.JobsDetail.actif : dictionary.JobsDetail.expire}
             </button>
           </div>
           <hr className="w-full border-1 mt-4 border-[#700032]/50" />
@@ -99,8 +100,8 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
             <div className="md:w-2/3 w-full">
               <div className="space-y-4 my-[24px]">
                 <div>
-                  <h3 className="font-semibold hidden md:block">Skills</h3>
-                  <h5 className="font-semibold md:hidden">Skills</h5>
+                  <h3 className="font-semibold hidden md:block">{dictionary.JobsDetail.competence}</h3>
+                  <h5 className="font-semibold md:hidden">{dictionary.JobsDetail.competence}</h5>
                   <ul className="flex gap-2 my-4 flex-wrap">
                     {Job.tags.map((filter: string, index: number) => {
                       return (
@@ -120,22 +121,25 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold hidden md:block">Description</h3>
-                  <h5 className="font-semibold md:hidden">Description</h5>
+                  <h3 className="font-semibold hidden md:block">{dictionary.JobsDetail.description}</h3>
+                  <h5 className="font-semibold md:hidden">{dictionary.JobsDetail.description}</h5>
                   <div dangerouslySetInnerHTML={{ __html: Job.description }} />
                 </div>
               </div>
-              <div className="flex gap-4 flex-col md:flex-row">
-                <Link
-                  href={`https://www.krestholding.com/offres`}
-                  className={clsx(
-                    "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",
-                    "bg-[var(--primary)]"
-                  )}
-                >
-                  <Suitcase size={16} />
-                  Apply for this job
-                </Link>
+              <div className="flex gap-4 flex-col md:flex-row md:items-center">
+                <Button disabled={new Date(Job.expire) <= now} className={`${new Date(Job.expire) <= now ? "cursor-not-allowed" : ""}`}>
+                  <Link
+                    href={`https://www.krestholding.com/offres`}
+                    target="_blank"
+                    className={clsx(
+                      "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",
+                      "bg-[var(--primary)]"
+                    )}
+                  >
+                    <Suitcase size={16} />
+                    {dictionary.JobsDetail.postuler}
+                  </Link>
+                </Button>
                 <button
                   onClick={copyToClipboard}
                   className={clsx(
@@ -144,7 +148,7 @@ const JobDetail = ({ JobData }: { JobData: any }) => {
                   )}
                 >
                   <Suitcase size={16} />
-                  {isCopied ? "Copied!" : "Copy Link"}
+                  {isCopied ? dictionary.JobsDetail.copie : dictionary.JobsDetail.copier}
                 </button>
               </div>
             </div>

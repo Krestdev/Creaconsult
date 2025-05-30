@@ -19,7 +19,7 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
   }, [Jobs]);
 
   return (
-    <SectionContainer className="pb-[24px]">
+    <SectionContainer className="pb-[24px] ">
       <div className="space-y-8">
         <h2 className="font-semibold hidden md:block">
           {dicrionary.Jobs.banner.title}
@@ -45,7 +45,7 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
                   href={`/jobs/${job.id}`}
                   className="flex gap-2 items-center text-white w-fit px-2 py-1 bg-[var(--primary)] font-semibold"
                 >
-                  <p>Apply</p> <ArrowRight size={24} />
+                  <p>{dicrionary.apply}</p> <ArrowRight size={24} />
                 </Link>
               </div>
             );
@@ -53,13 +53,13 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
           <div
             className=" flex flex-col gap-8 text-white justify-center items-center w-full aspect-square bg-cover bg-[var(--primary)]"
             style={{
-              backgroundImage: `linear-gradient(to bottom,rgba(255,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/footer/bglines.png')`,
+              backgroundImage: `linear-gradient(to bottom,rgba(255,0,0,0.5),rgba(0,0,0,0.5)),url('/ui/footer/bglines.webp')`,
             }}
           >
             <h5 className="text-white font-light flex justify-center items-center">
-              <span className="text-7xl">{jobs.length}</span> New Jobs
+              <span className="text-7xl">{jobs.length}</span> {dicrionary.new}
             </h5>
-            <h2 className="text-white mariyam text-center">Apply Now</h2>
+            <h2 className="text-white mariyam text-center">{dicrionary.app}</h2>
           </div>
         </div>
       </div>

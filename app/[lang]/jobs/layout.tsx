@@ -23,8 +23,8 @@ export async function generateStaticParams() {
 export default async function Layout({ children, params }: LayoutProps) {
   return (
     <PageIntro
-      title={(await params).lang == "en" ? "Job Offers" : "Emploi"}
-      img="/ui/intro/jobsintro.jpg"
+      title={(await params).lang == "en" ? "Job Offers" : "Emplois"}
+      img="/ui/intro/jobsintro.webp"
     >
       {children}
     </PageIntro>

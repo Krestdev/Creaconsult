@@ -27,7 +27,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* team */}
       <Team dictionary={dictionary} />
       {/* partners */}
-      <Partners />
+      <Partners dictionary={dictionary} />
       {/* contact us */}
       <ContacLink dictionary={dictionary} />
     </main>

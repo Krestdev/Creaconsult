@@ -80,7 +80,7 @@ const ContactUs = ({ dictionary, lang }: ContactProps) => {
   };
 
   return (
-    <SectionContainer color="white" img="/ui/global/bglinesDeco.png">
+    <SectionContainer color="white" img="/ui/global/bglinesDeco.">
       <div className="flex flex-col md:flex-row gap-4 py-[24px]">
         <div className="flex flex-col gap-6 md:w-1/2">
           <h2 className="font-semibold hidden md:block">

@@ -1,6 +1,7 @@
 import ContacLink from "@/components/global/ContacLink";
 import Partners from "@/components/global/Partners";
 import WhyChooseUs from "@/components/global/WhyChooseUs";
+import Domains from "@/components/services/Domains";
 import ServicesDetails from "@/components/services/ServicesDetails";
 import { getDictionary, Locale } from "@/lib/i18n";
 
@@ -15,13 +16,15 @@ const Page = async ({ params }: contactPageProps) => {
   const dictionary = await getDictionary(lang);
 
   return (
-    <main>
+    <main className="overflow-clip">
+      {/* Domains */}
+      <Domains dictionary={dictionary} />
       {/* Services */}
       <ServicesDetails dictionary={dictionary} />
       {/* Pourquoi nous choisir */}
       <WhyChooseUs dictionary={dictionary} />
       {/* Partners */}
-      <Partners />
+      <Partners dictionary={dictionary} />
       {/* Contact us */}
       <ContacLink dictionary={dictionary} />
     </main>

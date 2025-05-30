@@ -3,6 +3,8 @@
 import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { useEffect } from "react";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+
 
 const locales = ["en", "fr"] as const;
 const languages = {
@@ -62,17 +64,37 @@ export function LanguageSwitcher({
   }
 
   return (
-    <button
-      onClick={() => switchLanguage(lang === "en" ? "fr" : "en")}
-      className="flex gap-2 items-center"
-      aria-label="Switch language"
-    >
-      {children}
-      {text && (
-        <span className="hidden sm:inline">
-          {languages[lang === "en" ? "fr" : "en"]}
-        </span>
-      )}
-    </button>
+    // <button
+    //   onClick={() => switchLanguage(lang === "en" ? "fr" : "en")}
+    //   className="flex gap-2 items-center"
+    //   aria-label="Switch language"
+    // >
+    //   {children}
+    //   {text && (
+    //     <span className="hidden sm:inline">
+    //       {languages[lang === "en" ? "fr" : "en"]}
+    //     </span>
+    //   )}
+    // </button>
+    <Select defaultValue={lang} onValueChange={switchLanguage}>
+      <SelectTrigger className="w-fit text-black">
+        <SelectValue placeholder="Select a language" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          {
+            locales.map((locale) => (
+              <SelectItem
+                key={locale}
+                value={locale}
+                onClick={() => switchLanguage(locale)}
+              >
+                {languages[locale]}
+              </SelectItem>
+            ))
+          }
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }

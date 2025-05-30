@@ -14,7 +14,7 @@ const POPPINS = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Creacosult - overview",
+  title: "Creaconsult - overview",
   description:
     "Turn your projects into reality with Creaconsult. Our team of experts in engineering and project management is here to help you achieve your goals. Explore our services and discover how we can support you.",
 };

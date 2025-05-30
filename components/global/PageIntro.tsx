@@ -4,7 +4,7 @@ import SectionContainer from "./SectionContainer";
 const PageIntro = ({
   title,
   children,
-  img = "/ui/global/about.jpg",
+  img = "/ui/global/about.webp",
 }: {
   title: string;
   children: React.ReactNode;

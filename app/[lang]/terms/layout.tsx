@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 
 export default async function Layout({ children }: LayoutProps) {
   return (
-    <PageIntro title="News" img="/ui/intro/NewsIntro.jpg">
+    <PageIntro title="News" img="/ui/intro/NewsIntro.webp">
       {children}
     </PageIntro>
   );

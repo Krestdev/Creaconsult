@@ -1,36 +1,37 @@
+import { title } from "process";
 import type { Dictionary } from "../types";
 
 export const fr: Dictionary = {
   title: "CreaConsult",
   navbar: [
-    { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
-    { link: "/about", title: "À Propos" }, // Added the accent on "À"
+    { link: "/", title: "Accueil" }, 
+    { link: "/about", title: "À Propos" }, 
     { link: "/services", title: "Nos Services" },
-    { link: "/jobs", title: "Emploi" },
-    { link: "/news", title: "Actualité" }, // Corrected from "Actualite" with the accent
+    { link: "/jobs", title: "Emplois" },
+    { link: "/news", title: "Actualités" },
     { link: "/contact", title: "Contact" },
   ],
   footer: {
     links: [
-      { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
-      { link: "/about", title: "À Propos" }, // Added the accent on "À"
+      { link: "/", title: "Accueil" },
+      { link: "/about", title: "À Propos" }, 
       { link: "/services", title: "Nos Services" },
-      { link: "/jobs", title: "Emploi" },
-      { link: "/news", title: "Actualité" }, // Corrected from "Actualite" with the accent
+      { link: "/jobs", title: "Emplois" },
+      { link: "/news", title: "Actualités" },
       { link: "/contact", title: "Contact" },
     ],
     info: {
       title: "Informations",
       links: [
         { href: "/about", label: "À propos de nous" },
-        { href: "/news", label: "Actualité" },
+        { href: "/news", label: "Actualités" },
       ],
     },
     service: {
       title: "Services",
       links: [
         { href: "/services", label: "Nos services" },
-        { href: "/terms", label: "Conditions générales" },
+        { href: "/terms", label: "Cond. générales" },
       ],
     },
     help: {
@@ -51,6 +52,104 @@ export const fr: Dictionary = {
         },
       ],
     },
+  },
+  apply: "Postuler",
+  app: "Postuler maintenant",
+  new: "Nouveaux emplois",
+  autor: "Créé par",
+  voir: "Voir plus",
+  project: "Projets",
+  droit: "Tous droits réservés",
+  design: "Design par",
+  lien: "Liens",
+  JobsDetail: {
+    intitule: "Intitulé du poste",
+    nombre: "Nombre de postes",
+    lieu: "Localisation",
+    contrat: "Type de Contrat",
+    delai: "Délai de soumission",
+    competence: "Compétences",
+    description: "Description",
+    postuler: "Postuler pour ce poste",
+    copier: "Copier le lien",
+    copie: "Copié",
+    actif: "Actif",
+    expire: "Expiré"
+  },
+  domainTitle: "Nos Domaines",
+  domain: [
+    {
+      title: "Infrastructures de Transport",
+      contain: [
+        "Routière",
+        "Portuaire",
+        "Maritime",
+        "Ouvrages d'art"
+      ]
+    },
+    {
+      title: "Bâtiments",
+      contain: [
+        "Résidentiels",
+        "Industriels",
+        "Commerciaux",
+        "Tertiaires"
+      ]
+    },
+    {
+      title: "Environnement",
+      contain: [
+        "Hydro-agricole",
+        "Assainissement",
+        "Réhabilitation Eau et Énergie",
+        "Protection Environnementale"
+      ]
+    },
+    {
+      title: "Équipements collectifs",
+      contain: [
+        "Sportifs",
+        "Hospitaliers",
+        "Éducationnels",
+        "Restauration"
+      ]
+    },
+  ],
+  slides: [
+    {
+      image: "/ui/projects/regie.webp",
+      title: " Nouveau siège de la Régie du Terminal à Conteneurs",
+      description: "Maîtrise d’œuvre complète de l’immeuble de type R+6 à usage de bureaux au profit de la Régie du Terminal à Conteneurs (RTC)"
+    },
+    {
+      image: "/ui/projects/carino.webp",
+      title: "Le Carino",
+      description: "Construction de l’immeuble siège de KREST HOLDING"
+    },
+    {
+      image: "/ui/projects/japoma.webp",
+      title: "Voie d’accès au stade de Japoma",
+      description: "Maitrise d'œuvre de travaux de réhabilitation de la voie d'accès secondaire au complexe sportif de Japoma "
+    },
+    {
+      image: "/ui/projects/wouri.webp",
+      title: "Wouri",
+      description: "Maitrise d'œuvre de travaux de construction de la voie sur berges du fleuve Wouri dans la ville de Douala"
+    },
+    {
+      image: "/ui/projects/bourse.webp",
+      title: "Bourse sous-traitance et de partenariat du Cameroun",
+      description: "Études d’avant-projet définitif de la construction de l’immeuble siège de la bourse de sous-traitance et de partenariat du Cameroun (BSTP-CMR)"
+    },
+    {
+      image: "/ui/projects/Ngodi.webp",
+      title: "Espace de jeux et loisirs",
+      description: "Études complémentaires d’un espace de jeux et loisirs à Ngodi Akwa Douala"
+    }
+  ],
+  partner: {
+    title: "Partenaires",
+    description: "Ils nous ont fait confiance, hier comme aujourd'hui."
   },
   pages: {
     about: {
@@ -92,14 +191,14 @@ export const fr: Dictionary = {
         title: "Ingénierie et Études Techniques",
         sub: "Expertises techniques pour la conception et la mise en œuvre d’infrastructures.",
         imgList: [
-          "/ui/services/TechnicalStudies_pic1.jpg",
-          "/ui/services/TechnicalStudies_pic2.jpg",
-          "/ui/services/TechnicalStudies_pic3.jpg",
+          "/ui/services/TechnicalStudies_pic1.webp",
+          "/ui/services/TechnicalStudies_pic2.webp",
+          "/ui/services/TechnicalStudies_pic3.webp",
         ],
         link: "ingenierie-et-etudes-techniques",
-        img: "/ui/home/service1.jpg",
+        img: "/ui/home/service1.webp",
         sublist: [
-          "-	Les études de voiries et réseaux divers",
+          "Les études de voiries et réseaux divers",
           "L’ingénierie électrique",
           "Les études topographiques et SIG",
           "Les études géotechniques",
@@ -109,14 +208,14 @@ export const fr: Dictionary = {
         title: "Maîtrise d’Œuvre et Gestion de Projets",
         sub: "Pilotage global des projets, de la planification à l’exécution sur le terrain Les maîtrises d'œuvre",
         link: "maitrise-d-oeuvre",
-        img: "/ui/home/service2.jpg",
+        img: "/ui/home/service2.webp",
         imgList: [
-          "/ui/services/ProjectManagmant_pic1.jpg",
-          "/ui/services/ProjectManagmant_pic2.jpg",
-          "/ui/services/ProjectManagmant_pic3.jpg",
+          "/ui/services/ProjectManagmant_pic1.webp",
+          "/ui/services/ProjectManagmant_pic2.webp",
+          "/ui/services/ProjectManagmant_pic3.webp",
         ],
         sublist: [
-          "-	La planification opérationnelle",
+          "La planification opérationnelle",
           "Les suivis opérationnels des travaux",
           "La rédaction des cahiers de charges",
         ],
@@ -125,11 +224,11 @@ export const fr: Dictionary = {
         title: "Conseil en Conception et Optimisation",
         sub: "Études préliminaires pour orienter, planifier et sécuriser la faisabilité des projets.",
         link: "controle-technique",
-        img: "/ui/home/service3.jpg",
+        img: "/ui/home/service3.webp",
         imgList: [
-          "/ui/services/Conception_pic1.jpg",
-          "/ui/services/Conception_pic2.jpg",
-          "/ui/services/Conception_pic3.jpg",
+          "/ui/services/Conception_pic1.webp",
+          "/ui/services/Conception_pic2.webp",
+          "/ui/services/Conception_pic3.webp",
         ],
         sublist: [
           "Les études d'opportunité",
@@ -142,11 +241,11 @@ export const fr: Dictionary = {
         title: "Développement Durable et Certifications",
         sub: "Solutions axées sur la durabilité, la gestion environnementale et l’optimisation des ressources naturelles.",
         link: "controle-technique",
-        img: "/ui/home/service4.jpg",
+        img: "/ui/home/service4.webp",
         imgList: [
-          "/ui/services/EcoDevelopment_pic1.jpg",
-          "/ui/services/EcoDevelopment_pic2.jpg",
-          "/ui/services/EcoDevelopment_pic3.jpg",
+          "/ui/services/EcoDevelopment_pic1.webp",
+          "/ui/services/EcoDevelopment_pic2.webp",
+          "/ui/services/EcoDevelopment_pic3.webp",
         ],
         sublist: [
           "Les métiers de l'environnement",
@@ -164,21 +263,17 @@ export const fr: Dictionary = {
     },
     reasons: [
       {
-        title: "Une Expertise Reconnue",
-        desc: `Avec plus de 15 ans d’expérience , nous avons accompagné de nombreux projets à travers l’Afrique subsaharienne, en particulier au Cameroun.`,
+        title: "Expertise ciblée et impact réel",
+        desc: `Avec plus de 15 ans d'expérience, notamment en Afrique subsaharienne, Crea Consult ne se contente pas de contribuer : elle fait réussir les projets. Nos experts interviennent uniquement là où ils excellent. Objectifs clairs, résultats concrets.`,
       },
       {
-        title: "Certifications et Engagement Qualité",
-        desc: `Nous sommes certifiés ISO 9001 et 14001 (référentiel 2015), garantissant une gestion rigoureuse de la qualité et une approche respectueuse de l’environnement.`,
+        title: "Qualité prouvée, performance durable",
+        desc: `Certifiée ISO 9001 et 14001, notre rigueur de gestion et notre démarche environnementale assurent des livrables fiables, dans les délais. Chez nous, la qualité est une méthode, pas une promesse.`,
       },
       {
-        title: "Références et Projets Réussis",
-        desc: `Nos collaborations avec des institutions, des entreprises commerciales et industrielles ont permis la réalisation de projets d’envergure.`,
-      },
-      {
-        title: "Études de Cas et Réalisations",
-        desc: `Nous mettons en avant des projets concrets, illustrant notre savoir-faire à travers des études de cas détaillées, avec images avant/après et résultats obtenus.`,
-      },
+        title: "Des références solides, des résultats mesurables",
+        desc: `De grandes institutions aux entreprises locales, nous sommes un partenaire stratégique et réactif. Nous formons aussi les jeunes talents pour construire l'avenir dès aujourd'hui.`,
+      }
     ],
   },
   Partners: {
@@ -209,7 +304,7 @@ export const fr: Dictionary = {
   newsLetter: {
     title: {
       main: "Abonnez-vous à notre newsletter",
-      sub: "Recevez les dernières actualités et mises à jour de Creacosult",
+      sub: "Recevez les dernières actualités et mises à jour de Creaconsult",
     },
     buttons: {
       link: "S'abonner",
@@ -230,25 +325,27 @@ export const fr: Dictionary = {
     banner: {
       title: "Nouvelles opportunités",
       message: "Postuler maintenant",
+      all: "Tout",
+      active: "Actifs",
     },
   },
   about: {
     story: {
-      title: "Our Story",
+      title: "Notre Histoire",
       desc: `
-      CREACONSULT, an engineering and project management company founded in 2006, uses its proven expertise to create sustainable living environments. Committed to continuous improvement, we simplify every stage for project owners and investors. \n\n Certified ISO 9001 and 14001 (2015 standard), our management combines rigour, quality and environmental commitment. As specialists in institutional, commercial and industrial projects, we apply our cutting-edge technical expertise to ambitious projects. \n\nAt CREACONSULT, excellence is based on strong professional and ethical values, guaranteeing our customers and partners a privileged and efficient collaboration. \n\nInnovative engineering and project management solutions for exceptional projects.
+      CREACONSULT, société d’ingénierie et de gestion de projets fondée en 2006, met son expertise éprouvée au service de la création de cadres de vie durables. Engagés dans une démarche d’amélioration continue, nous simplifions chaque étape pour les maîtres d’ouvrage et les investisseurs.\n\nCertifiée ISO 9001 et 14001 (norme 2015), notre gestion allie rigueur, qualité et engagement environnemental. Spécialistes des projets institutionnels, commerciaux et industriels, nous mobilisons notre expertise technique de pointe pour mener à bien des projets ambitieux. \n\nChez CREACONSULT, l’excellence repose sur des valeurs professionnelles et éthiques fortes, garantissant à nos clients et partenaires une collaboration privilégiée et performante.\n\nDes solutions innovantes en ingénierie et gestion de projets pour des réalisations d’exception.
       `,
       boxImages: [
         {
-          img: "/ui/services/Conception_pic1.jpg",
+          img: "/ui/services/Conception_pic1.webp",
           title: "Ingénierie et Études Techniques",
         },
         {
-          img: "/ui/services/EcoDevelopment_pic2.jpg",
+          img: "/ui/services/EcoDevelopment_pic2.webp",
           title: "Développement Durable et Certifications",
         },
         {
-          img: "/ui/services/ProjectManagmant_pic3.jpg",
+          img: "/ui/services/ProjectManagmant_pic3.webp",
           title: "Conseil en Conception et Optimisation",
         },
       ],
@@ -267,7 +364,7 @@ export const fr: Dictionary = {
       {
         name: "Mr. Désiré FOTSO",
         post: "Directeur des Opérations",
-        img: "/ui/team/Ceo.png",
+        img: "/ui/team/Ceo.webp",
         links: {
           linkedin: "https://linkedin.com/in/desire-fotso",
           facebook: "https://facebook.com/desire.fotso",
@@ -277,7 +374,7 @@ export const fr: Dictionary = {
       {
         name: "Mr. Brice LEKIAGNI",
         post: "Technicien d’Étude et de Suivi",
-        img: "/ui/team/Etude.png",
+        img: "/ui/team/Etude.webp",
         links: {
           linkedin: "https://linkedin.com/in/brice-lekiagni",
           facebook: "https://facebook.com/brice.lekiagni",
@@ -287,7 +384,7 @@ export const fr: Dictionary = {
       {
         name: "Carole TEMOU HEUME",
         post: "Responsable Qualité",
-        img: "/ui/team/qualite.png",
+        img: "/ui/team/qualite.webp",
         links: {
           linkedin: "https://linkedin.com/in/carole-temou",
           facebook: "https://facebook.com/carole.temou",
@@ -297,7 +394,7 @@ export const fr: Dictionary = {
       {
         name: "Mme. Amougou Mbassi",
         post: "Responsable Déclaration et Télédéclaration",
-        img: "/ui/team/Declaration.png",
+        img: "/ui/team/Declaration.webp",
         links: {
           linkedin: "https://linkedin.com/in/amougou-mbassi",
           facebook: "https://facebook.com/amougou.mbassi",
@@ -307,7 +404,7 @@ export const fr: Dictionary = {
       {
         name: "Mme. Gladys Ngono",
         post: "Responsable du Volet Environnemental",
-        img: "/ui/team/Environnement.png",
+        img: "/ui/team/Environnement.webp",
         links: {
           linkedin: "https://linkedin.com/in/gladys-ngono",
           facebook: "https://facebook.com/gladys.ngono",

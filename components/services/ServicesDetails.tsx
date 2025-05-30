@@ -23,7 +23,10 @@ const ServicesDetails = ({ dictionary }: ServiceType) => {
 
   return (
     <SectionContainer>
-      <div className="flex flex-col gap-[100px] lg:gap-[250px]">
+      <div className="flex flex-col gap-[50px] lg:gap-[70px]">
+        <h2 className="col-span-1 md:col-span-2 xl:col-span-4 font-semibold">
+          {dictionary.service.title.main}
+        </h2>
         {services.map((service, index) => {
           const revert = index % 2 == 0;
           return (

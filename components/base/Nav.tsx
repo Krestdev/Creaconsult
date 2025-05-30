@@ -35,14 +35,14 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
   return (
     <nav
       className={clsx(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-7",
         scrolled
           ? "bg-black bg-opacity-50 shadow-md backdrop-blur-lg"
           : "bg-transparent"
       )}
     >
       {/* web navbar version start */}
-      <div className="container hidden md:block">
+      <div className="container hidden lg:block">
         <div className="flex justify-between items-center h-fit">
           <div className="text-white flex items-center gap-6">
             {dictionary.navbar.slice(0, 3).map((item) => {
@@ -70,7 +70,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
           <div>
             <Link href="/">
               <img
-                src="/ui/creaconsultFootLogo.png"
+                src="/ui/creaconsultFootLogo.webp"
                 alt="logo"
                 className="h-[80px] w-[120px] object-cover my-2"
               />
@@ -135,7 +135,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
       {/* web navbar version end */}
 
       {/* mobile navbar version start */}
-      <div className="container md:hidden px-4">
+      <div className="container lg:hidden px-4">
         <div className="flex justify-between items-center">
           <div
             className="text-white flex items-center gap-6 "
@@ -146,7 +146,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
           <div className="nav__logo">
             <Link href="/">
               <img
-                src="/ui/creaconsultFootLogo.png"
+                src="/ui/creaconsultFootLogo.webp"
                 alt="logo"
                 className=" h-[100px]"
               />
@@ -163,7 +163,7 @@ const Nav = ({ lang, dictionary }: NavBarType) => {
           animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
           transition={{ duration: 0.3 }}
           className={clsx(
-            "absolute top-full left-0 w-full bg-black bg-opacity-50 shadow-md py-4 space-y-4 text-center text-white md:hidden",
+            "absolute top-full left-0 w-full bg-black bg-opacity-50 shadow-md py-4 space-y-4 text-center text-white lg:hidden",
             isOpen ? "block" : "hidden"
           )}
         >
