@@ -14,6 +14,7 @@ export interface Dictionary {
   design: string,
   lien: string,
   JobsDetail: {
+    intitule: string;
     nombre: string;
     lieu: string;
     contrat: string;

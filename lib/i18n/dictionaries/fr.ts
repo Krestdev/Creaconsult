@@ -4,20 +4,20 @@ import type { Dictionary } from "../types";
 export const fr: Dictionary = {
   title: "CreaConsult",
   navbar: [
-    { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
-    { link: "/about", title: "À Propos" }, // Added the accent on "À"
+    { link: "/", title: "Accueil" }, 
+    { link: "/about", title: "À Propos" }, 
     { link: "/services", title: "Nos Services" },
     { link: "/jobs", title: "Emplois" },
-    { link: "/news", title: "Actualités" }, // Corrected from "Actualite" with the accent
+    { link: "/news", title: "Actualités" },
     { link: "/contact", title: "Contact" },
   ],
   footer: {
     links: [
-      { link: "/", title: "Accueil" }, // Corrected from "Acceuille"
-      { link: "/about", title: "À Propos" }, // Added the accent on "À"
+      { link: "/", title: "Accueil" },
+      { link: "/about", title: "À Propos" }, 
       { link: "/services", title: "Nos Services" },
       { link: "/jobs", title: "Emplois" },
-      { link: "/news", title: "Actualités" }, // Corrected from "Actualite" with the accent
+      { link: "/news", title: "Actualités" },
       { link: "/contact", title: "Contact" },
     ],
     info: {
@@ -63,9 +63,10 @@ export const fr: Dictionary = {
   design: "Design par",
   lien: "Liens",
   JobsDetail: {
+    intitule: "Intitulé du poste",
     nombre: "Nombre de postes",
     lieu: "Localisation",
-    contrat: "Contrat",
+    contrat: "Type de Contrat",
     delai: "Délai de soumission",
     competence: "Compétences",
     description: "Description",
@@ -117,7 +118,7 @@ export const fr: Dictionary = {
   slides: [
     {
       image: "/ui/projects/regie.webp",
-      title: "Batiment RTC",
+      title: " Nouveau siège de la Régie du Terminal à Conteneurs",
       description: "Maîtrise d’œuvre complète de l’immeuble de type R+6 à usage de bureaux au profit de la Régie du Terminal à Conteneurs (RTC)"
     },
     {
@@ -127,13 +128,13 @@ export const fr: Dictionary = {
     },
     {
       image: "/ui/projects/japoma.webp",
-      title: "Voie d'acces State Japoma",
+      title: "Voie d’accès au stade de Japoma",
       description: "Maitrise d'œuvre de travaux de réhabilitation de la voie d'accès secondaire au complexe sportif de Japoma "
     },
     {
       image: "/ui/projects/wouri.webp",
       title: "Wouri",
-      description: "Maitrise d'œuvre de travaux de construction de la voie sur berges du fleuve Wouri dans la ville de douala"
+      description: "Maitrise d'œuvre de travaux de construction de la voie sur berges du fleuve Wouri dans la ville de Douala"
     },
     {
       image: "/ui/projects/bourse.webp",
@@ -143,7 +144,7 @@ export const fr: Dictionary = {
     {
       image: "/ui/projects/Ngodi.webp",
       title: "Espace de jeux et loisirs",
-      description: "Études complémentaires d’un espace de jeux et loisirs à Ngodi Akwa douala"
+      description: "Études complémentaires d’un espace de jeux et loisirs à Ngodi Akwa Douala"
     }
   ],
   partner: {

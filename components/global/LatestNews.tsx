@@ -74,7 +74,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                   {" -- "}
                   {new Date(news[0].date_created).toDateString()}
                 </small>
-                <h4 className="font-semibold hidden md:block mt-6">
+                <h4 className="font-bold hidden md:block mt-6">
                   {news[0].title}
                 </h4>
                 <h6 className="font-semibold md:hidden">{news[0].title}</h6>
@@ -102,10 +102,10 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                     alt="img"
                   />
                   <div className="flex-1 flex flex-col">
-                    <h5 className="hidden md:block !line-clamp-3">
+                    <h5 className="hidden md:block !line-clamp-3 font-semibold">
                       {article.title}
                     </h5>
-                    <h6 className="md:hidden !line-clamp-2">
+                    <h6 className="md:hidden !line-clamp-2 mt-2">
                       {article.subtitle}
                     </h6>
                     <small className="pb-2 italic">

@@ -43,11 +43,11 @@ const JobDetail = ({ JobData, dictionary }: { JobData: any, dictionary: Dictiona
             />
 
             <div className="w-1/2 space-y-2 hidden md:block">
-              <h3>{Job.title}</h3>
-              <h5>
+              <h2><span className="font-semibold">{`${dictionary.JobsDetail.intitule}: `}</span>{Job.title}</h2>
+              {/* <h5>
                 <span className="font-semibold">{dictionary.JobsDetail.nombre}</span>{": "}
                 {Job.applications}
-              </h5>
+              </h5> */}
               <h5>
                 <span className="font-semibold">{dictionary.JobsDetail.lieu}</span>{": "}
                 {Job.location}
