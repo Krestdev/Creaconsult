@@ -16,7 +16,7 @@ interface JobOfferProps {
 const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
   const [jobs, setJobs] = useState<Record<string, any>[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Record<string, any>[]>([]);
-  const [filter, setFilter] = useState<"active" | "all">("active");
+  const [filter, setFilter] = useState<"active" | "all">("all");
   const now = new Date();
 
   const filters: ("active" | "all")[] = ["all", "active"];
