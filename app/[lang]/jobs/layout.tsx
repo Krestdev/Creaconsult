@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "Creacosult - Jobs offers",
+  title: "Creaconsult - Jobs offers",
   description:
     "Join our team of experts and contribute to innovative projects in engineering and project management. Explore our job offers and become part of our commitment to excellence.",
 };

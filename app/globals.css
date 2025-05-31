@@ -86,6 +86,16 @@ body {
     padding-bottom: 50px;
   }
 
+ .editor strong:not(:first-of-type) {
+  margin-top: 12px;
+  display: block;
+}
+
+.editor li {
+  @apply list-disc;
+}
+
+
   /* link button */
   .link_button {
     @apply px-4 py-1 bg-[var(--primary)] text-white;

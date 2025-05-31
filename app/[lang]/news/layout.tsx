@@ -11,9 +11,9 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "Creacosult - News",
+  title: "Creaconsult - News",
   description:
-    "Get the latest news and updates from Creacosult. Stay informed about our projects, achievements, and industry insights.",
+    "Get the latest news and updates from Creaconsult. Stay informed about our projects, achievements, and industry insights.",
 };
 
 export async function generateStaticParams() {

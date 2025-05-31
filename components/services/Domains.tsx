@@ -25,7 +25,7 @@ const Domains = ({ dictionary }: DomainsProps) => {
                         className="flex flex-col gap-4 p-4 bg-white shadow-lg justify-between"
                     >
                         <h4 className='h-full flex items-end'>{domain.title}</h4>
-                        <ul className="list-disc pl-5">
+                        <ul className="list-disc pl-10">
                             {domain.contain.map((item, index) => (
                                 <li key={index} className="text-gray-700">
                                     {item}

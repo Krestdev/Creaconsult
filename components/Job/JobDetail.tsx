@@ -123,7 +123,7 @@ const JobDetail = ({ JobData, dictionary }: { JobData: any, dictionary: Dictiona
                 <div>
                   <h3 className="font-semibold hidden md:block">{dictionary.JobsDetail.description}</h3>
                   <h5 className="font-semibold md:hidden">{dictionary.JobsDetail.description}</h5>
-                  <div dangerouslySetInnerHTML={{ __html: Job.description }} />
+                  <div dangerouslySetInnerHTML={{ __html: Job.description }} className="editor" />
                 </div>
               </div>
               <div className="flex gap-4 flex-col md:flex-row md:items-center">

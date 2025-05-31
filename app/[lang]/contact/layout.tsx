@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "Creacosult - contact us",
+  title: "Creaconsult - contact us",
   description: "Share your projects and let's work together",
 };
 

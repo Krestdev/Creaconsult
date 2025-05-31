@@ -82,7 +82,7 @@ const NewsList = ({
         <ul className="flex gap-2">
           {[
             { picker: "all", label: "All" },
-            { picker: "today", label: "Toay" },
+            { picker: "today", label: "Today" },
             { picker: "this-week", label: "This Week" },
             { picker: "this-month", label: "This Month" },
             { picker: "headline", label: "Headline" },
