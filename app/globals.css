@@ -86,13 +86,12 @@ body {
     padding-bottom: 50px;
   }
 
- .editor strong:not(:first-of-type) {
-  margin-top: 12px;
-  display: block;
+ .editor strong {
+  @apply block mt-3
 }
 
 .editor li {
-  @apply list-disc;
+  @apply list-disc ml-4;
 }
 
 
