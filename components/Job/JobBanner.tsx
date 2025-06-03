@@ -5,6 +5,7 @@ import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import { Dictionary } from "@/lib/i18n";
+import { Button } from "../ui/button";
 
 interface JobOBannerProps {
   Jobs: any;
@@ -41,12 +42,16 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
                   <h5 className="text-white font-semibold">{job.title}</h5>
                   <p>{job.summary}</p>
                 </div>
-                <Link
+                { !job.expire || new Date(job.expire) > (new Date()) ? <Link
                   href={`/jobs/${job.id}`}
                   className="flex gap-2 items-center text-white w-fit px-2 py-1 bg-[var(--primary)] font-semibold"
                 >
                   <p>{dicrionary.apply}</p> <ArrowRight size={24} />
-                </Link>
+                </Link>: 
+                <Button disabled className="flex gap-2 items-center text-white w-fit px-2 py-1 bg-[var(--primary)] font-semibold">
+                  <p>{dicrionary.apply}</p> <ArrowRight size={24} />
+                </Button>
+                }
               </div>
             );
           })}

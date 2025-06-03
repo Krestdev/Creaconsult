@@ -108,7 +108,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                     <h6 className="md:hidden !line-clamp-2 mt-2">
                       {article.subtitle}
                     </h6>
-                    <small className="pb-2 italic">
+                    <small className="py-4 italic">
                       {dicrionary.autor}{" "}
                       <b className=" text-[var(--primary)]">
                         {article.user_created.first_name}
