@@ -66,7 +66,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                 </div>
               </div>
               <div>
-                <small className=" italic">
+                <small className="italic">
                   {dicrionary.autor}{" "}
                   <b className=" text-[var(--primary)]">
                     {news[0].user_created.first_name}

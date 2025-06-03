@@ -36,8 +36,8 @@ const Hero = ({ dictionary }: HeroType) => {
           </div>
         </div>
         {/* image */}
-        <div className="hidden md:grid md:grid-cols-2 gap-4 ">
-          <div className="flex flex-col gap-4 mt-[50px] w-fit">
+        <div className="hidden md:grid md:grid-cols-2 justify-center gap-4 ">
+          <div className="flex flex-col items-end gap-4 mt-[50px] w-full">
             <img
               src="/ui/home/hero_sky_scapers.webp"
               className="max-w-[250px] w-[100%]  aspect-square shadow-black shadow-lg"

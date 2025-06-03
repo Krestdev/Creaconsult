@@ -87,11 +87,15 @@ body {
   }
 
  .editor strong {
-  @apply block mt-3
+  @apply block mt-3 w-fit
 }
 
 .editor li {
   @apply list-disc ml-4;
+}
+
+.editor p span {
+  @apply space-y-0 w-full
 }
 
 
