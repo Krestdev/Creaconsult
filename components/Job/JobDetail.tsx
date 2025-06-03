@@ -62,23 +62,23 @@ const JobDetail = ({ JobData, dictionary }: { JobData: any, dictionary: Dictiona
               </h5>
             </div>
             <div className="space-y-2 md:hidden">
-              <h3>{Job.title}</h3>
-              <h5>
+              <h4><span className="font-semibold">{`${dictionary.JobsDetail.intitule}: `}</span>{Job.title}</h4>
+              {/* <h5>
                 <span className="font-semibold">{dictionary.JobsDetail.nombre}</span>{": "}
                 {Job.applications}
-              </h5>
-              <h5>
+              </h5> */}
+              <h6>
                 <span className="font-semibold">{dictionary.JobsDetail.lieu}</span>{": "}
                 {Job.location}
-              </h5>
-              <h5>
+              </h6>
+              <h6>
                 <span className="font-semibold">{dictionary.JobsDetail.contrat}</span>{": "}
                 {Job.type}
-              </h5>
-              <h5>
+              </h6>
+              <h6>
                 <span className="font-semibold">{dictionary.JobsDetail.delai}</span>{": "}
                 {Job.expire ? new Date(Job.expire).toUTCString() : ""}
-              </h5>
+              </h6>
             </div>
             <button
               className={clsx(
@@ -101,7 +101,7 @@ const JobDetail = ({ JobData, dictionary }: { JobData: any, dictionary: Dictiona
               <div className="space-y-4 my-[24px]">
                 <div>
                   <h3 className="font-semibold hidden md:block">{dictionary.JobsDetail.competence}</h3>
-                  <h5 className="font-semibold md:hidden">{dictionary.JobsDetail.competence}</h5>
+                  <h6 className="font-semibold md:hidden">{dictionary.JobsDetail.competence}</h6>
                   <ul className="flex gap-2 my-4 flex-wrap">
                     {Job.tags.map((filter: string, index: number) => {
                       return (
