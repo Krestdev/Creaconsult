@@ -26,6 +26,16 @@ export interface Dictionary {
     copie: string,
     actif: string,
     expire: string
+    JobSubmit: {
+      nom: string,
+      cni: string,
+      diplome: string,
+      addresse: string
+      tel: string,
+      cv: string,
+      mail: string,
+      poste: string
+    }
   },
   domainTitle: string;
   domain: Array<{

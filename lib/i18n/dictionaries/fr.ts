@@ -74,7 +74,17 @@ export const fr: Dictionary = {
     copier: "Copier le lien",
     copie: "Copié",
     actif: "Actif",
-    expire: "Expiré"
+    expire: "Expiré",
+    JobSubmit: {
+      nom: "Nom Complet",
+      cni: "CNI",
+      diplome: "Dernier diplôme (Optionnel)",
+      addresse: "Addresse",
+      tel: "Numéro de téléphone",
+      cv: "CV",
+      mail: "Adresse mail",
+      poste: "Poste souhaité"
+    }
   },
   domainTitle: "Nos Domaines",
   domain: [

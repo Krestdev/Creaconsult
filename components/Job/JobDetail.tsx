@@ -129,8 +129,9 @@ const JobDetail = ({ JobData, dictionary }: { JobData: any, dictionary: Dictiona
               <div className="flex gap-4 flex-col md:flex-row md:items-center">
                 <Button disabled={new Date(Job.expire) <= now} className={`${new Date(Job.expire) <= now ? "cursor-not-allowed" : ""}`}>
                   <Link
-                    href={`https://www.krestholding.com/offres`}
-                    target="_blank"
+                    // href={`https://www.krestholding.com/offres`}
+                    href={`submit/${Job.id}`}
+                    // target="_blank"
                     className={clsx(
                       "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",
                       "bg-[var(--primary)]"

@@ -74,7 +74,17 @@ export const en: Dictionary = {
     copie: "Copied",
     actif: "Active",
     expire: "Expired",
-    intitule: "Job title"
+    intitule: "Job title",
+    JobSubmit: {
+      nom: "Full Name",
+      cni: "National ID",
+      diplome: "Highest Diploma (Optional)",
+      addresse: "Address",
+      tel: "Phone Number",
+      cv: "CV/Resume",
+      mail: "Email Address",
+      poste: "Desired Position"
+    }
   },
   domainTitle: "Our Domains",
   domain: [
