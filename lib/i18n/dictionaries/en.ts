@@ -79,32 +79,23 @@ export const en: Dictionary = {
       nom: "Full Name",
       cni: "National ID",
       diplome: "Highest Diploma (Optional)",
+      lettre: "Letter",
       addresse: "Address",
       tel: "Phone Number",
       cv: "CV/Resume",
       mail: "Email Address",
-      poste: "Desired Position"
-    }
+      poste: "Desired Position",
+    },
   },
   domainTitle: "Our Domains",
   domain: [
     {
       title: "Transport Infrastructure",
-      contain: [
-        "Road",
-        "Port",
-        "Maritime",
-        "Civil engineering structures"
-      ]
+      contain: ["Road", "Port", "Maritime", "Civil engineering structures"],
     },
     {
       title: "Buildings",
-      contain: [
-        "Residential",
-        "Industrial",
-        "Commercial",
-        "Tertiary"
-      ]
+      contain: ["Residential", "Industrial", "Commercial", "Tertiary"],
     },
     {
       title: "Environment",
@@ -112,54 +103,55 @@ export const en: Dictionary = {
         "Hydro-agricultural",
         "Sanitation",
         "Water and Energy Rehabilitation",
-        "Environmental Protection"
-      ]
+        "Environmental Protection",
+      ],
     },
     {
       title: "Community Facilities",
-      contain: [
-        "Sports",
-        "Hospital",
-        "Educational",
-        "Restoration"
-      ]
+      contain: ["Sports", "Hospital", "Educational", "Restoration"],
     },
   ],
   slides: [
     {
       image: "/ui/projects/regie.webp",
       title: "RTC Building",
-      description: "Complete project management for a R+6 office building for the Container Terminal Authority (RTC)"
+      description:
+        "Complete project management for a R+6 office building for the Container Terminal Authority (RTC)",
     },
     {
       image: "/ui/projects/carino.webp",
       title: "Le Carino",
-      description: "Construction of the headquarters building for KREST HOLDING"
+      description:
+        "Construction of the headquarters building for KREST HOLDING",
     },
     {
       image: "/ui/projects/japoma.webp",
       title: "Japoma Stadium Access Road",
-      description: "Project management for rehabilitation works of the secondary access road to the Japoma sports complex"
+      description:
+        "Project management for rehabilitation works of the secondary access road to the Japoma sports complex",
     },
     {
       image: "/ui/projects/wouri.webp",
       title: "Wouri",
-      description: "Project management for construction works of the Wouri river embankment road in Douala"
+      description:
+        "Project management for construction works of the Wouri river embankment road in Douala",
     },
     {
       image: "/ui/projects/bourse.webp",
       title: "Cameroon Subcontracting and Partnership Exchange",
-      description: "Detailed preliminary studies for the construction of the headquarters building of the Cameroon Subcontracting and Partnership Exchange (BSTP-CMR)"
+      description:
+        "Detailed preliminary studies for the construction of the headquarters building of the Cameroon Subcontracting and Partnership Exchange (BSTP-CMR)",
     },
     {
       image: "/ui/projects/Ngodi.webp",
       title: "Leisure and Recreation Area",
-      description: "Complementary studies for a leisure and recreation area in Ngodi Akwa, Douala"
-    }
+      description:
+        "Complementary studies for a leisure and recreation area in Ngodi Akwa, Douala",
+    },
   ],
   partner: {
     title: "Partners",
-    description: "They have trusted us, yesterday as today."
+    description: "They have trusted us, yesterday as today.",
   },
   pages: {
     about: {
@@ -168,7 +160,8 @@ export const en: Dictionary = {
     },
     service: {
       title: "Services",
-      subtitle: "Innovative engineering and project management solutions for exceptional projects.",
+      subtitle:
+        "Innovative engineering and project management solutions for exceptional projects.",
     },
     contact: {
       title: "Contact Us",
@@ -282,7 +275,7 @@ export const en: Dictionary = {
       {
         title: "Solid references, measurable results",
         desc: `From large institutions to local companies, we are a strategic and responsive partner. We also train young talents to build the future today.`,
-      }
+      },
     ],
   },
   Partners: {

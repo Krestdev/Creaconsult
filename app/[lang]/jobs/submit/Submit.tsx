@@ -199,7 +199,7 @@ function Submit({
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    {dictionary.JobsDetail.JobSubmit.diplome}
+                    {dictionary.JobsDetail.JobSubmit.lettre}
                   </FormLabel>
                   <FormControl>
                     <Input

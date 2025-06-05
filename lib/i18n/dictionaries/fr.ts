@@ -4,8 +4,8 @@ import type { Dictionary } from "../types";
 export const fr: Dictionary = {
   title: "CreaConsult",
   navbar: [
-    { link: "/", title: "Accueil" }, 
-    { link: "/about", title: "À Propos" }, 
+    { link: "/", title: "Accueil" },
+    { link: "/about", title: "À Propos" },
     { link: "/services", title: "Nos Services" },
     { link: "/jobs", title: "Emplois" },
     { link: "/news", title: "Actualités" },
@@ -14,7 +14,7 @@ export const fr: Dictionary = {
   footer: {
     links: [
       { link: "/", title: "Accueil" },
-      { link: "/about", title: "À Propos" }, 
+      { link: "/about", title: "À Propos" },
       { link: "/services", title: "Nos Services" },
       { link: "/jobs", title: "Emplois" },
       { link: "/news", title: "Actualités" },
@@ -79,32 +79,23 @@ export const fr: Dictionary = {
       nom: "Nom Complet",
       cni: "CNI",
       diplome: "Dernier diplôme (Optionnel)",
+      lettre: "Lettre de motivation",
       addresse: "Addresse",
       tel: "Numéro de téléphone",
       cv: "CV",
       mail: "Adresse mail",
-      poste: "Poste souhaité"
-    }
+      poste: "Poste souhaité",
+    },
   },
   domainTitle: "Nos Domaines",
   domain: [
     {
       title: "Infrastructures de Transport",
-      contain: [
-        "Routière",
-        "Portuaire",
-        "Maritime",
-        "Ouvrages d'art"
-      ]
+      contain: ["Routière", "Portuaire", "Maritime", "Ouvrages d'art"],
     },
     {
       title: "Bâtiments",
-      contain: [
-        "Résidentiels",
-        "Industriels",
-        "Commerciaux",
-        "Tertiaires"
-      ]
+      contain: ["Résidentiels", "Industriels", "Commerciaux", "Tertiaires"],
     },
     {
       title: "Environnement",
@@ -112,54 +103,54 @@ export const fr: Dictionary = {
         "Hydro-agricole",
         "Assainissement",
         "Réhabilitation Eau et Énergie",
-        "Protection Environnementale"
-      ]
+        "Protection Environnementale",
+      ],
     },
     {
       title: "Équipements collectifs",
-      contain: [
-        "Sportifs",
-        "Hospitaliers",
-        "Éducationnels",
-        "Restauration"
-      ]
+      contain: ["Sportifs", "Hospitaliers", "Éducationnels", "Restauration"],
     },
   ],
   slides: [
     {
       image: "/ui/projects/regie.webp",
       title: " Nouveau siège de la Régie du Terminal à Conteneurs",
-      description: "Maîtrise d’œuvre complète de l’immeuble de type R+6 à usage de bureaux au profit de la Régie du Terminal à Conteneurs (RTC)"
+      description:
+        "Maîtrise d’œuvre complète de l’immeuble de type R+6 à usage de bureaux au profit de la Régie du Terminal à Conteneurs (RTC)",
     },
     {
       image: "/ui/projects/carino.webp",
       title: "Le Carino",
-      description: "Construction de l’immeuble siège de KREST HOLDING"
+      description: "Construction de l’immeuble siège de KREST HOLDING",
     },
     {
       image: "/ui/projects/japoma.webp",
       title: "Voie d’accès au stade de Japoma",
-      description: "Maitrise d'œuvre de travaux de réhabilitation de la voie d'accès secondaire au complexe sportif de Japoma "
+      description:
+        "Maitrise d'œuvre de travaux de réhabilitation de la voie d'accès secondaire au complexe sportif de Japoma ",
     },
     {
       image: "/ui/projects/wouri.webp",
       title: "Wouri",
-      description: "Maitrise d'œuvre de travaux de construction de la voie sur berges du fleuve Wouri dans la ville de Douala"
+      description:
+        "Maitrise d'œuvre de travaux de construction de la voie sur berges du fleuve Wouri dans la ville de Douala",
     },
     {
       image: "/ui/projects/bourse.webp",
       title: "Bourse sous-traitance et de partenariat du Cameroun",
-      description: "Études d’avant-projet définitif de la construction de l’immeuble siège de la bourse de sous-traitance et de partenariat du Cameroun (BSTP-CMR)"
+      description:
+        "Études d’avant-projet définitif de la construction de l’immeuble siège de la bourse de sous-traitance et de partenariat du Cameroun (BSTP-CMR)",
     },
     {
       image: "/ui/projects/Ngodi.webp",
       title: "Espace de jeux et loisirs",
-      description: "Études complémentaires d’un espace de jeux et loisirs à Ngodi Akwa Douala"
-    }
+      description:
+        "Études complémentaires d’un espace de jeux et loisirs à Ngodi Akwa Douala",
+    },
   ],
   partner: {
     title: "Partenaires",
-    description: "Ils nous ont fait confiance, hier comme aujourd'hui."
+    description: "Ils nous ont fait confiance, hier comme aujourd'hui.",
   },
   pages: {
     about: {
@@ -283,7 +274,7 @@ export const fr: Dictionary = {
       {
         title: "Des références solides, des résultats mesurables",
         desc: `De grandes institutions aux entreprises locales, nous sommes un partenaire stratégique et réactif. Nous formons aussi les jeunes talents pour construire l'avenir dès aujourd'hui.`,
-      }
+      },
     ],
   },
   Partners: {
