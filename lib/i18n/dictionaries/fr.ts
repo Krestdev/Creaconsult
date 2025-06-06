@@ -80,7 +80,7 @@ export const fr: Dictionary = {
       cni: "CNI",
       diplome: "Dernier diplôme (Optionnel)",
       lettre: "Lettre de motivation",
-      addresse: "Addresse",
+      addresse: "Adresse",
       tel: "Numéro de téléphone",
       cv: "CV",
       mail: "Adresse mail",

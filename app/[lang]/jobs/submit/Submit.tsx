@@ -261,7 +261,7 @@ function Submit({
               variant={submitBtnDisabled ? "ghost" : "default"}
               disabled={submitBtnDisabled}
             >
-              {!submitBtnDisabled ? "Soumetre" : "Loading..."}
+              {!submitBtnDisabled ? "Soumettre" : "Loading..."}
             </Button>
           </form>
         </Form>
