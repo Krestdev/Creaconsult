@@ -34,6 +34,10 @@ const JobBanner = ({ Jobs, dicrionary }: JobOBannerProps) => {
             .filter((job) => {
               return !job.expire || new Date(job.expire) > now;
             })
+            .sort(
+              (a, b) =>
+                new Date(b.expire).getTime() - new Date(a.expire).getTime()
+            )
             .map((job, index) => {
               return (
                 <div
