@@ -4,15 +4,15 @@ export interface Dictionary {
     title: string;
     link: string;
   }>;
-  apply: string,
-  app: string,
-  new: string,
-  autor: string,
-  voir: string,
-  project: string,
-  droit: string,
-  design: string,
-  lien: string,
+  apply: string;
+  app: string;
+  new: string;
+  autor: string;
+  voir: string;
+  project: string;
+  droit: string;
+  design: string;
+  lien: string;
   JobsDetail: {
     intitule: string;
     nombre: string;
@@ -21,22 +21,23 @@ export interface Dictionary {
     delai: string;
     competence: string;
     description: string;
-    postuler: string,
-    copier: string,
-    copie: string,
-    actif: string,
-    expire: string
+    postuler: string;
+    copier: string;
+    copie: string;
+    actif: string;
+    expire: string;
     JobSubmit: {
-      nom: string,
-      cni: string,
-      diplome: string,
-      addresse: string
-      tel: string,
-      cv: string,
-      mail: string,
-      poste: string
-    }
-  },
+      nom: string;
+      cni: string;
+      diplome: string;
+      lettre: string;
+      addresse: string;
+      tel: string;
+      cv: string;
+      mail: string;
+      poste: string;
+    };
+  };
   domainTitle: string;
   domain: Array<{
     title: string;
@@ -46,11 +47,11 @@ export interface Dictionary {
     title: string;
     description: string;
     image: string;
-  }>,
+  }>;
   partner: {
-    title: string,
-    description: string
-  },
+    title: string;
+    description: string;
+  };
   footer: {
     links: Array<{
       title: string;
@@ -160,8 +161,8 @@ export interface Dictionary {
     banner: {
       title: string;
       message: string;
-      all: string, 
-      active: string,
+      all: string;
+      active: string;
     };
   };
   about: {

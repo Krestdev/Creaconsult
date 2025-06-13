@@ -22,7 +22,12 @@ export async function POST(req: Request) {
   // await new Promise(async (resolve, reject) => {
   let attachments: { filename: string; path: string }[] = [];
 
-  let files = [reqBody.get("cv"), reqBody.get("cni"), reqBody.get("diplome")];
+  let files = [
+    reqBody.get("cv"),
+    reqBody.get("cni"),
+    reqBody.get("diplome"),
+    reqBody.get("lettre"),
+  ];
 
   let filedata: { filename: string; path: string }[] = [];
 
@@ -44,7 +49,7 @@ export async function POST(req: Request) {
     telephone: reqBody.get("telephone"),
     addresse: reqBody.get("addresse"),
     mail: reqBody.get("mail"),
-    poste: reqBody.get("poste")
+    poste: reqBody.get("poste"),
   };
 
   filedata.forEach((file) => {
@@ -76,7 +81,11 @@ export async function POST(req: Request) {
   // });
 }
 
-const sendEmailWithAttachment = async (fields: any, attachments: any, to?:string) => {
+const sendEmailWithAttachment = async (
+  fields: any,
+  attachments: any,
+  to?: string
+) => {
   // Configure the email transporter
   const message = `<!DOCTYPE html>
         <html lang="en">
