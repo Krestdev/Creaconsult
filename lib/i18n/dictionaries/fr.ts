@@ -412,6 +412,16 @@ export const fr: Dictionary = {
           email: "gngono@creaconsult.com",
         },
       },
+      // {
+      //   name: "Mme. Alphonsine Toukam",
+      //   post: "Assistante de direction",
+      //   img: "/ui/team/assDir.webp",
+      //   links: {
+      //     linkedin: "https://linkedin.com/in/gladys-ngono",
+      //     facebook: "https://facebook.com/gladys.ngono",
+      //     email: "gngono@creaconsult.com",
+      //   },
+      // },
     ],
   },
 };
