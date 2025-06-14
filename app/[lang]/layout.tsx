@@ -53,14 +53,14 @@ export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
-  const lang = (await params).lang;
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang}>
       <MyContext>
         <QueryClientContext>
-          <body className={`${poppins.className} antialiased`}>
+          <body className={` antialiased`}>
             {/* Navbar */}
             <Nav lang={lang} dictionary={dictionary} />
             {children}

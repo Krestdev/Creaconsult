@@ -34,6 +34,10 @@
   font-family: 'mariyam';
 }
 
+html {
+  font-family: "poppins";
+}
+
 body {
   box-sizing: border-box;
   line-height: var(--line-height);
