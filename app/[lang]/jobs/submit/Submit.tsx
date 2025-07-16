@@ -96,6 +96,7 @@ function Submit({
   const cniRef = form.register("cni");
   const cvRef = form.register("cv");
   const diplomeRef = form.register("diplome");
+  const letterRef = form.register("lettre");
 
   return (
     <div className=" container mx-auto my-20">
@@ -204,7 +205,7 @@ function Submit({
                   <FormControl>
                     <Input
                       type="file"
-                      {...diplomeRef}
+                      {...letterRef}
                       onChange={(event) => {
                         field.onChange(event.target?.files?.[0] ?? undefined);
                       }}
