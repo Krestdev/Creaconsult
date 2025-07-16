@@ -364,55 +364,165 @@ export const en: Dictionary = {
     title: "Team",
     posts: [
       {
-        name: "Mr. Désiré FOTSO",
-        post: "Operations Director",
+        name: "Désiré FOTSO",
+        post: "Chief Operations Officer",
         img: "/ui/team/Ceo.webp",
         links: {
           linkedin: "https://linkedin.com/in/desire-fotso",
           facebook: "https://facebook.com/desire.fotso",
-          email: "dfotso@creaconsult.com",
-        },
+          email: "dfotso@creaconsult.com"
+        }
       },
       {
-        name: "Mr. Brice LEKIAGNI",
-        post: "Study and Monitoring Technician",
-        img: "/ui/team/Etude.webp",
+        name: "Alfred BAYIGA",
+        post: "Senior Project Manager",
+        img: "/ui/team/ALFRED BAYIGA Chef de projet - crea.webp",
         links: {
-          linkedin: "https://linkedin.com/in/brice-lekiagni",
-          facebook: "https://facebook.com/brice.lekiagni",
-          email: "blekiagni@creaconsult.com",
-        },
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
       },
       {
-        name: "Carole TEMOU HEUME",
+        name: "Alphonsine TOUKAM",
+        post: "Executive Assistant",
+        img: "/ui/team/ALPHONSINE TOUKAM  Assistante de direction-crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "Carole TEMOU",
         post: "Quality Manager",
-        img: "/ui/team/qualite.webp",
+        img: "/ui/team/CAROLE LACAINE TEMOU  Responsable Qualité - crea.webp",
         links: {
-          linkedin: "https://linkedin.com/in/carole-temou",
-          facebook: "https://facebook.com/carole.temou",
-          email: "ctemou@creaconsult.com",
-        },
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
       },
       {
-        name: "Mrs. Amougou Mbassi",
-        post: "Declaration and E-Declaration Manager",
-        img: "/ui/team/Declaration.webp",
+        name: "Caulrade TAMANJONG",
+        post: "Architect",
+        img: "/ui/team/CAULRADE TAMANJONG Architecte- crea.webp",
         links: {
-          linkedin: "https://linkedin.com/in/amougou-mbassi",
-          facebook: "https://facebook.com/amougou.mbassi",
-          email: "ambassi@creaconsult.com",
-        },
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
       },
       {
-        name: "Mrs. Gladys Ngono",
-        post: "Environmental Department Manager",
-        img: "/ui/team/Environnement.webp",
+        name: "Christian KOMBOU",
+        post: "Project Manager",
+        img: "/ui/team/CHRISTIAN KOMBOU Chef de projet - crea.webp",
         links: {
-          linkedin: "https://linkedin.com/in/gladys-ngono",
-          facebook: "https://facebook.com/gladys.ngono",
-          email: "gngono@creaconsult.com",
-        },
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
       },
+      {
+        name: "David YOUMSI",
+        post: "QHSE Assistant",
+        img: "/ui/team/DAVID YOUMSI Assistant QHSE - crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "Eric TENAMOU",
+        post: "Project Manager",
+        img: "/ui/team/ERIC TENAMOU Chef de projet - crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "Gladys NGONO",
+        post: "Environmental Manager",
+        img: "/ui/team/GLADYS NGONO Responsable Volet Environnemental - crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "Ivan KADJI MONKAM",
+        post: "Architect",
+        img: "/ui/team/IVAN KADJI MONKAM Architecte - crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "Junior NITCHEU",
+        post: "Chief Financial Officer",
+        img: "/ui/team/JUNIOR NITCHEU Directeur des Affaires Financières - crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "Kloter KOUAM",
+        post: "IT and Maintenance Manager",
+        img: "/ui/team/KLOTER KOUAM Responsable IT et Maintenance - crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      },
+      {
+        name: "SOULÉ Valérie ",
+        post: "Senior Project Manager",
+        img: "/ui/team/VALERY SOULEYChef de projet- crea.webp",
+        links: {
+          linkedin: "https://linkedin.com/in/alfred-bahiha",
+          facebook: "https://facebook.com/alfred-bahiha",
+          email: "dfotso@creaconsult.com"
+        }
+      }
+      // {
+      //   name: "Mr. Brice LEKIAGNI",
+      //   post: "Technicien d’Étude et de Suivi",
+      //   img: "/ui/team/Etude.webp",
+      //   links: {
+      //     linkedin: "https://linkedin.com/in/brice-lekiagni",
+      //     facebook: "https://facebook.com/brice.lekiagni",
+      //     email: "blekiagni@creaconsult.com",
+      //   },
+      // },
+      // {
+      //   name: "Mme. Amougou Mbassi",
+      //   post: "Responsable Déclaration et Télédéclaration",
+      //   img: "/ui/team/Declaration.webp",
+      //   links: {
+      //     linkedin: "https://linkedin.com/in/amougou-mbassi",
+      //     facebook: "https://facebook.com/amougou.mbassi",
+      //     email: "ambassi@creaconsult.com",
+      //   },
+      // },
+      // {
+      //   name: "Mme. Alphonsine Toukam",
+      //   post: "Assistante de direction",
+      //   img: "/ui/team/assDir.webp",
+      //   links: {
+      //     linkedin: "https://linkedin.com/in/gladys-ngono",
+      //     facebook: "https://facebook.com/gladys.ngono",
+      //     email: "gngono@creaconsult.com",
+      //   },
+      // },
     ],
   },
 };
