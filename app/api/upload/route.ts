@@ -65,7 +65,7 @@ export async function POST(req: Request) {
 
   try {
     await sendEmailWithAttachment(fields, attachments);
-    // await sendEmailWithAttachment(fields, attachments, fields.mail as string);
+    await sendEmailWithAttachment(fields, attachments, fields.mail as string);
     return NextResponse.json({
       message: "File uploaded and email sent successfully!",
     });
