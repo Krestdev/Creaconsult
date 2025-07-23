@@ -71,7 +71,10 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                 }
               )}
             </div> */}
-            <div dangerouslySetInnerHTML={{ __html: news.content }} className="!mt-5" />
+            <div
+              dangerouslySetInnerHTML={{ __html: news.content }}
+              className="!mt-5"
+            />
           </div>
           <div className="xl:w-1/2 space-y-8">
             {newsList &&
@@ -88,7 +91,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                     />
 
                     <div className="flex-1 flex flex-col">
-                      <Link href={`news/${news.slug}`}>
+                      <Link href={`/news/${news.slug}`}>
                         <h4 className="hidden md:block !line-clamp-3">
                           {article.title}
                         </h4>

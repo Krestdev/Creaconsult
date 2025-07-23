@@ -139,7 +139,7 @@ const NewsList = ({
                       {" -- "}
                       {new Date(news.date_created).toDateString()}
                     </small>
-                    <Link href={`news/${news.slug}`}>
+                    <Link href={`/news/${news.slug}`}>
                       <h4 className="font-semibold hidden md:block line-clamp-1">
                         {news.title}
                       </h4>
@@ -149,7 +149,7 @@ const NewsList = ({
                     </Link>
                     <p className=" line-clamp-5">{news.summary}</p>
                     <Link
-                      href={`news/${news.slug}`}
+                      href={`/news/${news.slug}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>{dictionary.voir}</p> <ArrowRight size={24} />
