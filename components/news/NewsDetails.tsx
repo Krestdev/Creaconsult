@@ -91,7 +91,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                     />
 
                     <div className="flex-1 flex flex-col">
-                      <Link href={`/news/${news.slug}`}>
+                      <Link href={`/news/${article.slug}`}>
                         <h4 className="hidden md:block !line-clamp-3">
                           {article.title}
                         </h4>
