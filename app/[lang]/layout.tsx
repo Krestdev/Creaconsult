@@ -7,6 +7,7 @@ import Nav from "@/components/base/Nav";
 import Footer from "@/components/base/Footer";
 import { MyContext } from "@/context/MyContext";
 import QueryClientContext from "@/context/QueryClientContext";
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 const POPPINS = Poppins({
   weight: ["300"],
@@ -66,6 +67,7 @@ export default async function RootLayout({
             {children}
             {/* footer */}
             <Footer dictionary={dictionary} />
+            <GoogleAnalytics gaId="G-93XDV3G21J" />
           </body>
         </QueryClientContext>
       </MyContext>
