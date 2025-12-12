@@ -1,3 +1,4 @@
+import PageIntro from "@/components/global/PageIntro";
 import JobBanner from "@/components/Job/JobBanner";
 import JobList from "@/components/Job/JobList";
 import directus from "@/lib/directus/directus";
@@ -29,13 +30,16 @@ const Page = async ({ params }: contactPageProps) => {
   const jobs = await getJobOffers();
 
   return (
-    <main>
+    <PageIntro
+      title={(await params).lang == "en" ? "Job Offers" : "Emplois"}
+      img="/ui/intro/jobsintro.webp"
+    >
       {/* Job Offers adds list */}
       {jobs.length > 0 && <JobBanner Jobs={jobs} dicrionary={dictionary} />}
       {/* Job Offers list */}
       <JobList Jobs={jobs} dicrionary={dictionary} />
       {/* News Letter */}
-    </main>
+    </PageIntro>
   );
 };
 

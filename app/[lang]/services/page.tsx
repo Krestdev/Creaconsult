@@ -1,4 +1,5 @@
 import ContacLink from "@/components/global/ContacLink";
+import PageIntro from "@/components/global/PageIntro";
 import Partners from "@/components/global/Partners";
 import WhyChooseUs from "@/components/global/WhyChooseUs";
 import Domains from "@/components/services/Domains";
@@ -16,18 +17,23 @@ const Page = async ({ params }: contactPageProps) => {
   const dictionary = await getDictionary(lang);
 
   return (
-    <main className="overflow-clip">
-      {/* Domains */}
-      <Domains dictionary={dictionary} />
-      {/* Services */}
-      <ServicesDetails dictionary={dictionary} />
-      {/* Pourquoi nous choisir */}
-      <WhyChooseUs dictionary={dictionary} />
-      {/* Partners */}
-      <Partners dictionary={dictionary} />
-      {/* Contact us */}
-      <ContacLink dictionary={dictionary} />
-    </main>
+    <PageIntro
+      title={(await params).lang == "en" ? "Services" : "Nos Services"}
+      img="/ui/intro/ServiceIntro.webp"
+    >
+      <main className="overflow-clip">
+        {/* Domains */}
+        <Domains dictionary={dictionary} />
+        {/* Services */}
+        <ServicesDetails dictionary={dictionary} />
+        {/* Pourquoi nous choisir */}
+        <WhyChooseUs dictionary={dictionary} />
+        {/* Partners */}
+        <Partners dictionary={dictionary} />
+        {/* Contact us */}
+        <ContacLink dictionary={dictionary} />
+      </main>
+    </PageIntro>
   );
 };
 

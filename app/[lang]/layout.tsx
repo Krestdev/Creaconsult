@@ -1,18 +1,12 @@
-import type { Metadata } from "next";
-import { Poppins, Sacramento, Poiret_One } from "next/font/google";
-import "../globals.css";
-import React from "react";
-import { getDictionary, Locale } from "@/lib/i18n";
-import Nav from "@/components/base/Nav";
 import Footer from "@/components/base/Footer";
+import Nav from "@/components/base/Nav";
 import { MyContext } from "@/context/MyContext";
 import QueryClientContext from "@/context/QueryClientContext";
-import { GoogleAnalytics } from "@next/third-parties/google"
-
-const POPPINS = Poppins({
-  weight: ["300"],
-  subsets: ["latin"],
-});
+import { getDictionary } from "@/lib/i18n"; // Enlever Locale de l'import
+import { GoogleAnalytics } from "@next/third-parties/google";
+import type { Metadata } from "next";
+import React from "react";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Creaconsult - overview",
@@ -23,47 +17,28 @@ export const metadata: Metadata = {
 interface RootLayoutProps {
   children: React.ReactNode;
   params: Promise<{
-    lang: Locale;
+    lang: string;
   }>;
 }
-
-export async function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "fr" }];
-}
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-poppins",
-});
-
-// Configure Sacramento (handwriting)
-const sacramento = Sacramento({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-sacramento",
-});
-
-const poiret_One = Poiret_One({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-poiret_One",
-});
 
 export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  
+  // Vérifier que la langue est valide avant de passer à getDictionary
+  const validLang = lang === "en" || lang === "fr" ? lang : "en";
+  
+  const dictionary = await getDictionary(validLang);
 
   return (
-    <html lang={lang}>
+    <html lang={validLang}>
       <MyContext>
         <QueryClientContext>
-          <body className={` antialiased`}>
+          <body className={`antialiased`}>
             {/* Navbar */}
-            <Nav lang={lang} dictionary={dictionary} />
+            <Nav lang={validLang} dictionary={dictionary} />
             {children}
             {/* footer */}
             <Footer dictionary={dictionary} />

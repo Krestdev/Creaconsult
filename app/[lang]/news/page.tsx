@@ -1,4 +1,5 @@
 import LatestNews from "@/components/global/LatestNews";
+import PageIntro from "@/components/global/PageIntro";
 import NewsList from "@/components/news/NewsList";
 import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
@@ -36,7 +37,10 @@ const Page = async ({ params }: contactPageProps) => {
   const News = await getNews();
 
   return (
-    <main>
+    <PageIntro
+      title={(await params).lang == "en" ? "News" : "Actualités"}
+      img="/ui/intro/NewsIntro.webp"
+      >
       {/* Lattest news topics */}
       <LatestNews LatestNews={News} dicrionary={dictionary} />
       {/* News list */}
@@ -45,7 +49,7 @@ const Page = async ({ params }: contactPageProps) => {
       {/* events list */}
       {/* News Letter */}
       {/* contact */}
-    </main>
+    </PageIntro>
   );
 };
 

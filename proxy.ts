@@ -5,7 +5,7 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 const defaultLocale = "en";
-const locales: Locale[] = ["en", "fr"];
+export const locales: Locale[] = ["en", "fr"];
 
 function getLocale(request: NextRequest): Locale {
   // 1. Check cookie first
@@ -30,7 +30,7 @@ function getLocale(request: NextRequest): Locale {
   return matchedLocale as Locale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = locales.some(
