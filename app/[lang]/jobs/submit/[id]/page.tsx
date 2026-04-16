@@ -1,11 +1,7 @@
+"use client";
 import Submit from "../Submit";
-import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { readItem } from "@directus/sdk";
-
-async function getJob(id: number) {
-    return directus.request(readItem("Job", id));
-}
+import { jobQuery } from "@/lib/queries/tanstack.queries";
 
 interface contactPageProps {
   params: Promise<{
@@ -14,17 +10,21 @@ interface contactPageProps {
   }>;
 }
 
-async function  Page({ params }: contactPageProps) {
-
-  const {id, lang} = await params;
+async function Page({ params }: contactPageProps) {
+  const { id, lang } = await params;
   const dictionary = await getDictionary(lang);
+  const { data: job, isLoading: isJobLoading } = jobQuery.jobById(id);
 
-  const job = await getJob(parseInt(id));
-  return (
-   <div>
-    <Submit JobData={job} dictionary={dictionary} />
-   </div>
-  );
+  if (isJobLoading) {
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  // const job = await getJob(parseInt(id));
+  return <div>{job && <Submit JobData={job} dictionary={dictionary} />}</div>;
 }
 
 export default Page;

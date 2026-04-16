@@ -7,13 +7,14 @@ import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import { filterJobs } from "@/lib/FilterJobs";
 import { Dictionary } from "@/lib/i18n";
+import { Job } from "@/lib/types";
 
 interface JobOfferProps {
-  Jobs: any;
-  dicrionary: Dictionary;
+  Jobs: Job[];
+  dictionary: Dictionary;
 }
 
-const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
+const JobList = ({ Jobs, dictionary }: JobOfferProps) => {
   const [jobs, setJobs] = useState<Record<string, any>[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Record<string, any>[]>([]);
   const [filter, setFilter] = useState<"active" | "all">("all");
@@ -35,10 +36,10 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
     <SectionContainer>
       <div className="space-y-2 mb-4">
         <h2 className="font-semibold hidden md:block">
-          {dicrionary.Jobs.title.title.main}
+          {dictionary.Jobs.title.title.main}
         </h2>
         <h4 className="font-semibold md:hidden">
-          {dicrionary.Jobs.title.title.main}
+          {dictionary.Jobs.title.title.main}
         </h4>
         <h6 className="max-w-[700px]">
           {
@@ -57,7 +58,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                     "rounded-full px-4 py-2",
                     filter === option.toLocaleLowerCase()
                       ? "bg-[var(--primary)] text-white"
-                      : "bg-[#700032]/10"
+                      : "bg-[#700032]/10",
                   )}
                 >
                   {option}
@@ -73,7 +74,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
               .filter((job: any) => new Date(job.expire) > new Date())
               .sort(
                 (a, b) =>
-                  new Date(b.expire).getTime() - new Date(a.expire).getTime()
+                  new Date(b.expire).getTime() - new Date(a.expire).getTime(),
               )
               .map((job, index) => {
                 console.log("expires on", job.expire);
@@ -81,7 +82,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                   <div key={index} className="shadow-md shadow-black">
                     <div className="w-full flex flex-col gap-4 mb-4 relative">
                       <img
-                        src={`${process.env.NEXT_IMAGE_BASE}assets/${job.illustration}`}
+                        src={`${process.env.NEXT_IMAGE_BASE}${job.illustration.url}`}
                         alt="article"
                         className="w-full h-[250px] object-cover bg-slate-300"
                       />
@@ -93,7 +94,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                             !job.expire || new Date(job.expire) > now
                               ? "bg-green-200"
                               : "bg-red-200"
-                          }`
+                          }`,
                         )}
                       >
                         {/* Active expire */}
@@ -117,7 +118,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                                 <button
                                   className={clsx(
                                     "rounded-full px-2 py-1",
-                                    "bg-[var(--primary)] text-white"
+                                    "bg-[var(--primary)] text-white",
                                   )}
                                 >
                                   {filter}
@@ -132,7 +133,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                         href={`jobs/${job.id}`}
                         className="flex gap-2 items-center text-[var(--primary)] font-semibold"
                       >
-                        <p>{dicrionary.apply}</p> <ArrowRight size={24} />
+                        <p>{dictionary.apply}</p> <ArrowRight size={24} />
                       </Link>
                     </div>
                   </div>
@@ -146,7 +147,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                 <div key={index} className="shadow-md shadow-black">
                   <div className="w-full flex flex-col gap-4 mb-4 relative">
                     <img
-                      src={`${process.env.NEXT_IMAGE_BASE}assets/${job.illustration}`}
+                      src={`${process.env.NEXT_IMAGE_BASE}${job.illustration.url}`}
                       alt="article"
                       className="w-full h-[250px] object-cover bg-slate-300"
                     />
@@ -158,7 +159,7 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                           !job.expire || new Date(job.expire) > now
                             ? "bg-green-200"
                             : "bg-red-200"
-                        }`
+                        }`,
                       )}
                     >
                       {/* Active expire */}
@@ -176,28 +177,30 @@ const JobList = ({ Jobs, dicrionary }: JobOfferProps) => {
                     {/* <h6 className="font-semibold md:hidden">{job.title}</h6> */}
                     <ul className="flex gap-2 my-4 flex-wrap">
                       {job.tags &&
-                        job.tags.map((filter: string, index: number) => {
-                          return (
-                            <li key={index}>
-                              <button
-                                className={clsx(
-                                  "rounded-full px-2 py-1",
-                                  "bg-[var(--primary)] text-white"
-                                )}
-                              >
-                                {filter}
-                              </button>
-                            </li>
-                          );
-                          //
-                        })}
+                        job.tags
+                          .split(",")
+                          .map((filter: string, index: number) => {
+                            return (
+                              <li key={index}>
+                                <button
+                                  className={clsx(
+                                    "rounded-full px-2 py-1",
+                                    "bg-[var(--primary)] text-white",
+                                  )}
+                                >
+                                  {filter}
+                                </button>
+                              </li>
+                            );
+                            //
+                          })}
                     </ul>
                     <p>{job.summary}</p>
                     <Link
                       href={`jobs/${job.id}`}
                       className="flex gap-2 items-center text-[var(--primary)] font-semibold"
                     >
-                      <p>{dicrionary.apply}</p> <ArrowRight size={24} />
+                      <p>{dictionary.apply}</p> <ArrowRight size={24} />
                     </Link>
                   </div>
                 </div>

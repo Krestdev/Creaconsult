@@ -1,0 +1,18 @@
+@host = http://localhost:1337
+@token = b1e2d1591f306061e6c474707b779d301d27d725f2b05ee7b4cd691f0e3c6fea70a2404090acaeb1cff3eca73c6df1049c9f5c9fa480e7ee427ac96480f6c84000cadadce366d14c63c717f5e560be51108052b26b7553ff90872fcab7d73c36b444daf667214a7b5ee7b943651ffc92c6b3aa4343897e903b90e86b4d9e877c
+
+### get contact
+GET {{host}}/api/contacts
+Authorization: Bearer {{token}}
+
+### get Jobs
+GET {{host}}/api/jobs?populate=*
+Authorization: Bearer {{token}}
+
+### get Job by id
+GET {{host}}/api/jobs/1
+Authorization: Bearer {{token}}
+
+### get news
+GET {{host}}/api/news?populate=*
+Authorization: Bearer {{token}}

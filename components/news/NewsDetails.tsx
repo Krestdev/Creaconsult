@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
+import { New } from "@/lib/types";
 
 interface NewsListPorps {
-  NewsData: any;
-  newsList: Record<string, any>[] | null;
+  NewsData: New;
+  newsList: New[] | null;
 }
 
 const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
-  const [news, setNews] = useState<Record<string, any>>();
+  const [news, setNews] = useState<New | null>(null);
   useEffect(() => {
     setNews(NewsData);
   }, [NewsData]);
@@ -32,17 +33,18 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                 Created by{" "}
                 <span className="font-bold">
                   <b className=" text-[var(--primary)]">
-                    {news.user_created.first_name}
+                    {/*  Creaconsult */}
+                    Creaconsult
                   </b>
                   {" . "}
                 </span>
-                {new Date(news.date_created).toDateString()}
+                {new Date(news.createdAt).toDateString()}
               </h6>
             </div>
             <div className="space-y-4">
-              <p>{news.summary}</p>
+              <p>{news.bref}</p>
               <img
-                src={`${process.env.NEXT_IMAGE_BASE}assets/${news.cover}`}
+                src={`${process.env.NEXT_IMAGE_BASE}${news.cover?.url}`}
                 alt="news"
                 className="w-full max-h-[300px] object-cover object-center"
               />
@@ -100,12 +102,13 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                       <small className="pb-2 italic">
                         created by{" "}
                         <b className=" text-[var(--primary)]">
-                          {article.user_created.first_name}
+                          {/*  Creaconsult */}
+                          Creaconsult
                         </b>
                         {" -- "}
-                        {new Date(article.date_created).toDateString()}
+                        {new Date(article.createdAt).toDateString()}
                       </small>
-                      <p className="line-clamp-4">{article.summary}</p>
+                      <p className="line-clamp-4">{article.bref}</p>
                       <Link
                         href={`/news/${article.slug}`}
                         className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"

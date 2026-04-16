@@ -6,13 +6,14 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Dictionary } from "@/lib/i18n";
 import { useMyContext } from "@/context/MyContext";
+import { New } from "@/lib/types";
 
 interface LatestNewsProps {
-  LatestNews: any;
-  dicrionary: Dictionary;
+  LatestNews: New[];
+  dictionary: Dictionary;
 }
 
-const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
+const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
   const [news, setNews] = useState<Record<string, any>[]>([]);
 
   const { setHasNewFeed } = useMyContext();
@@ -35,8 +36,8 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
   return (
     <SectionContainer>
       <div className="flex flex-col gap-12">
-        <h2 className="font-semibold hidden md:block">{dicrionary.actu}</h2>
-        <h4 className="font-bold md:hidden">{dicrionary.actu}</h4>
+        <h2 className="font-semibold hidden md:block">{dictionary.actu}</h2>
+        <h4 className="font-bold md:hidden">{dictionary.actu}</h4>
         <div className="flex gap-8 flex-col xl:flex-row">
           {news.length > 0 && (
             <div className="xl:w-1/2">
@@ -51,7 +52,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                     news[0].images.map(
                       (
                         imgData: { id: number; directus_files_id: string },
-                        index: number
+                        index: number,
                       ) => {
                         return (
                           <img
@@ -61,16 +62,14 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                             className="w-full md:max-w-[300px] h-[150px] object-cover bg-slate-300  shadow-md shadow-black"
                           />
                         );
-                      }
+                      },
                     )}
                 </div>
               </div>
               <div>
                 <small className="italic">
-                  {dicrionary.autor}{" "}
-                  <b className=" text-[var(--primary)]">
-                    {news[0].user_created.first_name}
-                  </b>
+                  {dictionary.autor}{" "}
+                  <b className=" text-[var(--primary)]">Creaconsult</b>
                   {" -- "}
                   {new Date(news[0].date_created).toDateString()}
                 </small>
@@ -83,7 +82,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                   href={`/news/${news[0].slug}`}
                   className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                 >
-                  <p>{dicrionary.voir}</p> <ArrowRight size={24} />
+                  <p>{dictionary.voir}</p> <ArrowRight size={24} />
                 </Link>
               </div>
             </div>
@@ -98,7 +97,7 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                 >
                   <img
                     className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-black"
-                    src={`${process.env.NEXT_IMAGE_BASE}assets/${article.cover}`}
+                    src={`${process.env.NEXT_IMAGE_BASE}${article.cover.url}`}
                     alt="img"
                   />
                   <div className="flex-1 flex flex-col">
@@ -109,19 +108,17 @@ const LatestNews = ({ LatestNews, dicrionary }: LatestNewsProps) => {
                       {article.subtitle}
                     </h6>
                     <small className="py-4 italic">
-                      {dicrionary.autor}{" "}
-                      <b className=" text-[var(--primary)]">
-                        {article.user_created.first_name}
-                      </b>
+                      {dictionary.autor}{" "}
+                      <b className=" text-[var(--primary)]">Creaconsult</b>
                       {" -- "}
-                      {new Date(article.date_created).toDateString()}
+                      {new Date(article.createdAt).toDateString()}
                     </small>
                     <p className="line-clamp-2">{article.summary}</p>
                     <Link
                       href={`/news/${article.slug}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold hover:bg-[var(--primary)] hover:text-white"
                     >
-                      <p>{dicrionary.voir}</p> <ArrowRight size={24} />
+                      <p>{dictionary.voir}</p> <ArrowRight size={24} />
                     </Link>
                   </div>
                 </div>

@@ -20,7 +20,7 @@ const NewsList = ({
   const [activeFilter, setActiveFilter] = useState("all");
 
   const handleFilter = (
-    filterType: "all" | "today" | "this-week" | "this-month" | "headline"
+    filterType: "all" | "today" | "this-week" | "this-month" | "headline",
   ) => {
     setActiveFilter(filterType);
     const filtered = filterNews(filterType);
@@ -28,7 +28,7 @@ const NewsList = ({
   };
 
   const filterNews = (
-    filterType: "all" | "today" | "this-week" | "this-month" | "headline"
+    filterType: "all" | "today" | "this-week" | "this-month" | "headline",
   ) => {
     const now = new Date();
     const today = new Date(now.setHours(0, 0, 0, 0));
@@ -97,14 +97,14 @@ const NewsList = ({
                         | "today"
                         | "this-week"
                         | "this-month"
-                        | "headline"
+                        | "headline",
                     )
                   }
                   className={clsx(
                     "rounded-full px-4 py-2",
                     activeFilter === filter.picker
                       ? "bg-[var(--primary)] text-white"
-                      : "bg-[#700032]/10"
+                      : "bg-[#700032]/10",
                   )}
                 >
                   {filter.label}
@@ -133,9 +133,7 @@ const NewsList = ({
                   <div>
                     <small className=" italic">
                       {dictionary.autor}{" "}
-                      <b className=" text-[var(--primary)]">
-                        {news.user_created.first_name}
-                      </b>
+                      <b className=" text-[var(--primary)]">Creaconsult</b>
                       {" -- "}
                       {new Date(news.date_created).toDateString()}
                     </small>

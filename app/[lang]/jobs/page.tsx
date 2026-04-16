@@ -1,9 +1,7 @@
 import PageIntro from "@/components/global/PageIntro";
-import JobBanner from "@/components/Job/JobBanner";
-import JobList from "@/components/Job/JobList";
-import directus from "@/lib/directus/directus";
+// import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { readItems } from "@directus/sdk";
+import ClientJobs from "./clientJobs";
 
 interface contactPageProps {
   params: Promise<{
@@ -11,34 +9,16 @@ interface contactPageProps {
   }>;
 }
 
-async function getJobOffers() {
-  return directus.request(
-    readItems("Job", {
-      filter: {
-        status: {
-          _eq: "published",
-        },
-      },
-    })
-  );
-}
-
 const Page = async ({ params }: contactPageProps) => {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
-
-  const jobs = await getJobOffers();
 
   return (
     <PageIntro
       title={(await params).lang == "en" ? "Job Offers" : "Emplois"}
       img="/ui/intro/jobsintro.webp"
     >
-      {/* Job Offers adds list */}
-      {jobs.length > 0 && <JobBanner Jobs={jobs} dicrionary={dictionary} />}
-      {/* Job Offers list */}
-      <JobList Jobs={jobs} dicrionary={dictionary} />
-      {/* News Letter */}
+      <ClientJobs dictionary={dictionary} />
     </PageIntro>
   );
 };

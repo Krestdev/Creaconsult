@@ -1,8 +1,9 @@
+"use client";
 import JobBanner from "@/components/Job/JobBanner";
 import JobDetail from "@/components/Job/JobDetail";
-import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { readItem, readItems } from "@directus/sdk";
+import { jobQuery } from "@/lib/queries/tanstack.queries";
+import ClientDetailJobs from "./clientDetailJobs";
 
 interface contactPageProps {
   params: Promise<{
@@ -11,26 +12,24 @@ interface contactPageProps {
   }>;
 }
 
-async function getJob(id: number) {
-  return directus.request(readItem("Job", id));
-}
-async function getJobs() {
-  return directus.request(readItems("Job"));
-}
-
 const Page = async ({ params }: contactPageProps) => {
   const { lang, id } = await params;
   const dictionary = await getDictionary(lang);
 
-  const job = await getJob(parseInt(id));
-  const jobs = await getJobs();
+  const { data: job, isLoading: isJobLoading } = jobQuery.jobById(id);
+  const { data: jobs, isLoading: isAllLoading } = jobQuery.jobs();
+
+  if (isAllLoading && isJobLoading) {
+    return (
+      <main>
+        <p>Loading...</p>
+      </main>
+    );
+  }
 
   return (
     <main>
-      {/* Job description */}
-      <JobDetail JobData={job} dictionary={dictionary} />
-      {/* Job Offers adds list */}
-      <JobBanner Jobs={jobs} dicrionary={dictionary} />
+      <ClientDetailJobs dictionary={dictionary} slug={id} />
       {/* News Letter */}
     </main>
   );

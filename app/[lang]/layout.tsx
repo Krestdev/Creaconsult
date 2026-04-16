@@ -26,10 +26,10 @@ export default async function RootLayout({
   params,
 }: RootLayoutProps) {
   const { lang } = await params;
-  
+
   // Vérifier que la langue est valide avant de passer à getDictionary
   const validLang = lang === "en" || lang === "fr" ? lang : "en";
-  
+
   const dictionary = await getDictionary(validLang);
 
   return (
