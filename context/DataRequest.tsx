@@ -1,9 +1,6 @@
-import directus from "@/lib/directus/directus";
-import { createItem, readItems } from "@directus/sdk";
 import { createContext, useContext, useState } from "react";
 
 export interface QueryContextType {
-  getJobs: () => Promise<Record<string, any>[]>;
   subscribeClient: (data: {
     name: string;
     profession: string;
@@ -20,24 +17,6 @@ const QueryContext = createContext<null | QueryContextType>(null);
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const getJobs = async () => {
-    setLoading(true);
-    try {
-      const jobs = await directus.request(
-        readItems("Jobs", {
-          fields: ["*"], // Specify fields you need
-        })
-      );
-      return jobs;
-    } catch (err) {
-      setError("Failed to fetch jobs");
-      console.error("Error fetching jobs:", err);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const subscribeClient = async (data: {
     name: string;
@@ -69,7 +48,6 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <QueryContext.Provider
       value={{
-        getJobs,
         subscribeClient,
         loading,
         error,

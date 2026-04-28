@@ -1,8 +1,5 @@
-// app/api/subscribe/route.ts
-// import directus from "@/lib/directus/directus";
-import nodemailer from "nodemailer";
-import { createItem, readItems } from "@directus/sdk";
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {

@@ -1,5 +1,4 @@
 import PageIntro from "@/components/global/PageIntro";
-// import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
 import ClientJobs from "./clientJobs";
 

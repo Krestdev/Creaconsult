@@ -1,7 +1,5 @@
 // app/api/subscribe/route.ts
-import directus from "@/lib/directus/directus";
 import nodemailer from "nodemailer";
-import { createItem, readItems } from "@directus/sdk";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -12,27 +10,27 @@ export async function POST(request: Request) {
     if (!email || !name) {
       return NextResponse.json(
         { error: "Email and name are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Store in Directus
-    const result = await directus.request(
-      createItem("Contacts", {
-        email,
-        name,
-        profession: profession || "",
-        subject: subject || "",
-        message: message || "",
-        date_created: new Date().toISOString(),
-        status: "pending",
-      })
-    );
+    // const result = await directus.request(
+    //   createItem("Contacts", {
+    //     email,
+    //     name,
+    //     profession: profession || "",
+    //     subject: subject || "",
+    //     message: message || "",
+    //     date_created: new Date().toISOString(),
+    //     status: "pending",
+    //   })
+    // );
 
     try {
       await sendEmailWithAttachment(
         { title: "Newsletter subscription", email, name, lang },
-        null
+        null,
       );
       return NextResponse.json({
         message: "File uploaded and email sent successfully!",
@@ -43,16 +41,16 @@ export async function POST(request: Request) {
           message: "Failed to send email.",
           error: emailErr,
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
-    return NextResponse.json(result);
+    // return NextResponse.json(result);
   } catch (error) {
     console.error("Subscription error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

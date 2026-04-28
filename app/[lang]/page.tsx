@@ -8,7 +8,6 @@ import Certifications from "@/components/home/Certifications";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import JobBanner from "@/components/Job/JobBanner";
-// import directus from "@/lib/directus/directus";
 import { getDictionary, Locale } from "@/lib/i18n";
 import { jobQuery, newQuery } from "@/lib/queries/tanstack.queries";
 import ClientComponents from "./clientComponents";
