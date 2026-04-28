@@ -18,7 +18,7 @@ const Page = async ({ params }: contactPageProps) => {
 
   return (
     <main>
-      <ClientDetailNews dictionary={dictionary} slug={slug} />
+      <ClientDetailNews slug={slug} />
       {/* Job Offers adds list */}
       {/* News Letter */}
       <Subscription dictionary={dictionary} lang={lang} />

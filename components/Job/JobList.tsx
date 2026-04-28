@@ -15,8 +15,8 @@ interface JobOfferProps {
 }
 
 const JobList = ({ Jobs, dictionary }: JobOfferProps) => {
-  const [jobs, setJobs] = useState<Record<string, any>[]>([]);
-  const [filteredJobs, setFilteredJobs] = useState<Record<string, any>[]>([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
   const [filter, setFilter] = useState<"active" | "all">("all");
   const now = new Date();
 
@@ -112,25 +112,27 @@ const JobList = ({ Jobs, dictionary }: JobOfferProps) => {
                       {/* <h6 className="font-semibold md:hidden">{job.title}</h6> */}
                       <ul className="flex gap-2 my-4 flex-wrap">
                         {job.tags &&
-                          job.tags.map((filter: string, index: number) => {
-                            return (
-                              <li key={index}>
-                                <button
-                                  className={clsx(
-                                    "rounded-full px-2 py-1",
-                                    "bg-[var(--primary)] text-white",
-                                  )}
-                                >
-                                  {filter}
-                                </button>
-                              </li>
-                            );
-                            //
-                          })}
+                          job.tags
+                            .split(",")
+                            .map((filter: string, index: number) => {
+                              return (
+                                <li key={index}>
+                                  <button
+                                    className={clsx(
+                                      "rounded-full px-2 py-1",
+                                      "bg-[var(--primary)] text-white",
+                                    )}
+                                  >
+                                    {filter}
+                                  </button>
+                                </li>
+                              );
+                              //
+                            })}
                       </ul>
-                      <p>{job.summary}</p>
+                      <p>{job.bref}</p>
                       <Link
-                        href={`jobs/${job.id}`}
+                        href={`jobs/${job.documentId}`}
                         className="flex gap-2 items-center text-[var(--primary)] font-semibold"
                       >
                         <p>{dictionary.apply}</p> <ArrowRight size={24} />
@@ -195,9 +197,9 @@ const JobList = ({ Jobs, dictionary }: JobOfferProps) => {
                             //
                           })}
                     </ul>
-                    <p>{job.summary}</p>
+                    <p>{job.bref}</p>
                     <Link
-                      href={`jobs/${job.id}`}
+                      href={`jobs/${job.documentId}`}
                       className="flex gap-2 items-center text-[var(--primary)] font-semibold"
                     >
                       <p>{dictionary.apply}</p> <ArrowRight size={24} />

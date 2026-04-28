@@ -52,7 +52,7 @@ const JobBanner = ({ Jobs, dictionary }: JobOBannerProps) => {
                     <p>{job.bref}</p>
                   </div>
                   <Link
-                    href={`/jobs/${job.id}`}
+                    href={`/jobs/${job.documentId}`}
                     className="flex gap-2 items-center text-white w-fit px-2 py-1 bg-[var(--primary)] font-semibold"
                   >
                     <p>{dictionary.apply}</p> <ArrowRight size={24} />

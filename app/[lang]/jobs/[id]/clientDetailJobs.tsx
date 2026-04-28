@@ -1,3 +1,4 @@
+"use client";
 import JobBanner from "@/components/Job/JobBanner";
 import JobDetail from "@/components/Job/JobDetail";
 import { Dictionary } from "@/lib/i18n/types";

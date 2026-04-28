@@ -5,6 +5,7 @@ import SectionContainer from "../global/SectionContainer";
 import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { New } from "@/lib/types";
+import BlockRendererClient from "../global/BlockRendererClient";
 
 interface NewsListPorps {
   NewsData: New;
@@ -38,7 +39,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                   </b>
                   {" . "}
                 </span>
-                {new Date(news.createdAt).toDateString()}
+                {new Date(news.publishedAt).toDateString()}
               </h6>
             </div>
             <div className="space-y-4">
@@ -50,33 +51,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
               />
               <h4 className="text-black">{news.subtitle}</h4>
             </div>
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-8">
-              {news.images.map(
-                (
-                  imgData: { id: number; directus_files_id: string },
-                  index: number
-                ) => {
-                  return (
-                    <div className="relative w-full h-fit" key={index}>
-                      <img
-                        src={`${process.env.NEXT_IMAGE_BASE}assets/${imgData.directus_files_id}`}
-                        alt={`${imgData.directus_files_id}`}
-                        className="w-full h-full max-h-[200px] object-cover"
-                      />
-                      <div className="absolute p-4 w-full bottom-0 bg-gradient-to-b from-transparent to-[#700032]">
-                        <small className="font-semibold text-white">
-                          {imgData.id}
-                        </small>
-                      </div>
-                    </div>
-                  );
-                }
-              )}
-            </div> */}
-            <div
-              dangerouslySetInnerHTML={{ __html: news.content }}
-              className="!mt-5"
-            />
+            <BlockRendererClient content={news.content} />
           </div>
           <div className="xl:w-1/2 space-y-8">
             {newsList &&
@@ -93,7 +68,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                     />
 
                     <div className="flex-1 flex flex-col">
-                      <Link href={`/news/${article.slug}`}>
+                      <Link href={`/news/${article.documentId}`}>
                         <h4 className="hidden md:block !line-clamp-3">
                           {article.title}
                         </h4>
@@ -106,11 +81,11 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                           Creaconsult
                         </b>
                         {" -- "}
-                        {new Date(article.createdAt).toDateString()}
+                        {new Date(article.publishedAt).toDateString()}
                       </small>
                       <p className="line-clamp-4">{article.bref}</p>
                       <Link
-                        href={`/news/${article.slug}`}
+                        href={`/news/${article.documentId}`}
                         className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                       >
                         <p>Read More</p> <ArrowRight size={24} />

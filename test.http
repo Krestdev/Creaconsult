@@ -16,3 +16,7 @@ Authorization: Bearer {{token}}
 ### get news
 GET {{host}}/api/news?populate=*
 Authorization: Bearer {{token}}
+
+### get news
+GET {{host}}/api/news/vg1dq6ixm2iptbcawfc3gb7j?populate=*
+Authorization: Bearer {{token}}

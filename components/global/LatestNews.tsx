@@ -14,7 +14,7 @@ interface LatestNewsProps {
 }
 
 const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
-  const [news, setNews] = useState<Record<string, any>[]>([]);
+  const [news, setNews] = useState<New[]>([]);
 
   const { setHasNewFeed } = useMyContext();
 
@@ -24,8 +24,8 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
     // Check if there are any new feeds in the last 7 days
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-    const hasNewFeed = LatestNews.some((feed: any) => {
-      const feedDate = new Date(feed.date_created);
+    const hasNewFeed = LatestNews.some((feed: New) => {
+      const feedDate = new Date(feed.publishedAt);
       console.log(feedDate);
       return feedDate >= sevenDaysAgo;
     });
@@ -43,27 +43,22 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
             <div className="xl:w-1/2">
               <div className="w-full flex flex-col gap-4 mb-4">
                 <img
-                  src={`${process.env.NEXT_IMAGE_BASE}assets/${news[0].cover}`}
+                  src={`${process.env.NEXT_IMAGE_BASE}${news[0].cover.url}`}
                   alt="articel"
                   className="w-full h-[350px] object-cover bg-slate-300  shadow-md shadow-black"
                 />
                 <div className="flex flex-col md:flex-row gap-4">
                   {news[0].images.length > 0 &&
-                    news[0].images.map(
-                      (
-                        imgData: { id: number; directus_files_id: string },
-                        index: number,
-                      ) => {
-                        return (
-                          <img
-                            key={index}
-                            src={`${process.env.NEXT_IMAGE_BASE}assets/${imgData.directus_files_id}`}
-                            alt="articel"
-                            className="w-full md:max-w-[300px] h-[150px] object-cover bg-slate-300  shadow-md shadow-black"
-                          />
-                        );
-                      },
-                    )}
+                    news[0].images.map((imgData, index: number) => {
+                      return (
+                        <img
+                          key={index}
+                          src={`${process.env.NEXT_IMAGE_BASE}${imgData.url}`}
+                          alt="articel"
+                          className="w-full md:max-w-[300px] h-[150px] object-cover bg-slate-300  shadow-md shadow-black"
+                        />
+                      );
+                    })}
                 </div>
               </div>
               <div>
@@ -71,15 +66,15 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                   {dictionary.autor}{" "}
                   <b className=" text-[var(--primary)]">Creaconsult</b>
                   {" -- "}
-                  {new Date(news[0].date_created).toDateString()}
+                  {new Date(news[0].publishedAt).toDateString()}
                 </small>
                 <h4 className="font-bold hidden md:block mt-6">
                   {news[0].title}
                 </h4>
                 <h6 className="font-semibold md:hidden">{news[0].title}</h6>
-                <p className="text-[16px] line-clamp-2">{news[0].summary}</p>
+                <p className="text-[16px] line-clamp-2">{news[0].bref}</p>
                 <Link
-                  href={`/news/${news[0].slug}`}
+                  href={`/news/${news[0].documentId}`}
                   className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                 >
                   <p>{dictionary.voir}</p> <ArrowRight size={24} />
@@ -111,11 +106,11 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                       {dictionary.autor}{" "}
                       <b className=" text-[var(--primary)]">Creaconsult</b>
                       {" -- "}
-                      {new Date(article.createdAt).toDateString()}
+                      {new Date(article.publishedAt).toDateString()}
                     </small>
-                    <p className="line-clamp-2">{article.summary}</p>
+                    <p className="line-clamp-2">{article.bref}</p>
                     <Link
-                      href={`/news/${article.slug}`}
+                      href={`/news/${article.documentId}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>{dictionary.voir}</p> <ArrowRight size={24} />

@@ -53,7 +53,9 @@ const JobDetail = ({
 
             <div className="w-1/2 space-y-2 hidden md:block">
               <h2>
-                <span className="font-semibold">{`${dictionary.JobsDetail.intitule}: `}</span>
+                <span className="font-semibold">
+                  {`${dictionary.JobsDetail.intitule}: `}
+                </span>
                 {Job.title}
               </h2>
               {/* <h5>
@@ -169,10 +171,6 @@ const JobDetail = ({
                   <h5 className="font-semibold md:hidden">
                     {dictionary.JobsDetail.description}
                   </h5>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: Job.description }}
-                    className="editor"
-                  />
                   <BlockRendererClient content={Job.description} />
                 </div>
               </div>
@@ -183,7 +181,7 @@ const JobDetail = ({
                 >
                   <Link
                     // href={`https://www.krestholding.com/offres`}
-                    href={`submit/${Job.id}`}
+                    href={`submit/${Job.documentId}`}
                     // target="_blank"
                     className={clsx(
                       "text-white px-6 py-4 flex gap-2 justify-center shadow-md shadow-gray-500",

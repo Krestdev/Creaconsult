@@ -4,11 +4,11 @@ import { Dictionary } from "@/lib/i18n/types";
 import { newQuery } from "@/lib/queries/tanstack.queries";
 
 interface LatestNewsProps {
-  dictionary: Dictionary;
+  // dictionary: Dictionary;
   slug: string;
 }
 
-const ClientDetailNews = ({ dictionary, slug }: LatestNewsProps) => {
+const ClientDetailNews = ({ slug }: LatestNewsProps) => {
   const { data: news, isLoading: isAllLoading } = newQuery.newById(slug);
   const { data: newsList, isLoading: isNewsListLoading } = newQuery.news();
 

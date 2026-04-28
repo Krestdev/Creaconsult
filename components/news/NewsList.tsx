@@ -6,16 +6,17 @@ import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import { Dictionary } from "@/lib/i18n";
+import { New } from "@/lib/types";
 
 const NewsList = ({
   NewsListData,
   dictionary,
 }: {
-  NewsListData: any;
+  NewsListData: New[];
   dictionary: Dictionary;
 }) => {
-  const [news, setNews] = useState<Record<string, any>[]>([]);
-  const [filteredNews, setFilteredNews] = useState<Record<string, any>[]>(news);
+  const [news, setNews] = useState<New[]>([]);
+  const [filteredNews, setFilteredNews] = useState<New[]>(news);
 
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -36,7 +37,7 @@ const NewsList = ({
     switch (filterType) {
       case "today":
         return news.filter((item) => {
-          const itemDate = new Date(item.date_created);
+          const itemDate = new Date(item.publishedAt);
           return itemDate >= today;
         });
 
@@ -44,14 +45,14 @@ const NewsList = ({
         const weekStart = new Date(today);
         weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of week (Sunday)
         return news.filter((item) => {
-          const itemDate = new Date(item.date_created);
+          const itemDate = new Date(item.publishedAt);
           return itemDate >= weekStart;
         });
 
       case "this-month":
         const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
         return news.filter((item) => {
-          const itemDate = new Date(item.date_created);
+          const itemDate = new Date(item.publishedAt);
           return itemDate >= monthStart;
         });
 
@@ -123,7 +124,7 @@ const NewsList = ({
                     <img
                       src={
                         news.cover
-                          ? `${process.env.NEXT_IMAGE_BASE}assets/${news.cover}`
+                          ? `${process.env.NEXT_IMAGE_BASE}${news.cover.url}`
                           : "/ui/creamotif unique red.svg"
                       }
                       alt="articel"
@@ -135,9 +136,9 @@ const NewsList = ({
                       {dictionary.autor}{" "}
                       <b className=" text-[var(--primary)]">Creaconsult</b>
                       {" -- "}
-                      {new Date(news.date_created).toDateString()}
+                      {new Date(news.publishedAt).toDateString()}
                     </small>
-                    <Link href={`/news/${news.slug}`}>
+                    <Link href={`/news/${news.documentId}`}>
                       <h4 className="font-semibold hidden md:block line-clamp-1">
                         {news.title}
                       </h4>
@@ -145,9 +146,9 @@ const NewsList = ({
                         {news.title}
                       </h6>
                     </Link>
-                    <p className=" line-clamp-5">{news.summary}</p>
+                    <p className=" line-clamp-5">{news.publishedAt}</p>
                     <Link
-                      href={`/news/${news.slug}`}
+                      href={`/news/${news.documentId}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>{dictionary.voir}</p> <ArrowRight size={24} />

@@ -90,17 +90,7 @@ export type New = {
   images: Illustration[];
   documentId: string;
   title: string;
-  content: [
-    {
-      type: string;
-      children: [
-        {
-          type: string;
-          text: string;
-        },
-      ];
-    },
-  ];
+  content: BlocksContent;
   headline: boolean;
   slug: string;
   subtitle: string;
