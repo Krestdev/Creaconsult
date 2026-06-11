@@ -1,5 +1,5 @@
 import { getDictionary, Locale } from "@/lib/i18n";
-import { jobQuery } from "@/lib/queries/tanstack.queries";
+import { jobQuery } from "@/lib/queries/tanstack";
 import ClientDetailJobs from "./clientDetailJobs";
 
 interface contactPageProps {
@@ -12,6 +12,8 @@ interface contactPageProps {
 const Page = async ({ params }: contactPageProps) => {
   const { lang, id } = await params;
   const dictionary = await getDictionary(lang);
+
+  console.log(id, dictionary);
 
   return (
     <main>

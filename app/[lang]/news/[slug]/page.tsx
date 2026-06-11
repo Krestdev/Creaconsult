@@ -1,7 +1,7 @@
 import Subscription from "@/components/global/Subscription";
 import NewsDetails from "@/components/news/NewsDetails";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { newQuery } from "@/lib/queries/tanstack.queries";
+import { newQuery } from "@/lib/queries/tanstack";
 import ClientDetailNews from "./clientDetailNews";
 
 interface contactPageProps {

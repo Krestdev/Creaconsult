@@ -99,7 +99,7 @@ function Submit({
   const letterRef = form.register("lettre");
 
   return (
-    <div className=" container mx-auto my-20">
+    <div className="container max-w-7xl w-full mx-auto pt-32 pb-20">
       <div className="containerBloc">
         <Form {...form}>
           <form

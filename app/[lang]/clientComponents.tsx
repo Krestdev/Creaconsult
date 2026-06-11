@@ -2,7 +2,7 @@
 import LatestNews from "@/components/global/LatestNews";
 import JobBanner from "@/components/Job/JobBanner";
 import { Dictionary, getDictionary, Locale } from "@/lib/i18n";
-import { jobQuery, newQuery } from "@/lib/queries/tanstack.queries";
+import { jobQuery, newQuery } from "@/lib/queries/tanstack";
 import React from "react";
 
 interface Props {

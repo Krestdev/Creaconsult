@@ -2,7 +2,7 @@
 import JobBanner from "@/components/Job/JobBanner";
 import JobList from "@/components/Job/JobList";
 import { Dictionary } from "@/lib/i18n/types";
-import { jobQuery } from "@/lib/queries/tanstack.queries";
+import { jobQuery } from "@/lib/queries/tanstack";
 
 interface LatestJobsProps {
   dictionary: Dictionary;

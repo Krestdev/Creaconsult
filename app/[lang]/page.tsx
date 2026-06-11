@@ -9,7 +9,7 @@ import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import JobBanner from "@/components/Job/JobBanner";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { jobQuery, newQuery } from "@/lib/queries/tanstack.queries";
+import { jobQuery, newQuery } from "@/lib/queries/tanstack";
 import ClientComponents from "./clientComponents";
 
 interface HomePageProps {

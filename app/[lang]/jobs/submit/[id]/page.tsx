@@ -1,7 +1,10 @@
 "use client";
+
+import { useQuery } from "@tanstack/react-query";
+import { jobQuery } from "@/lib/queries/tanstack";
 import Submit from "../Submit";
 import { getDictionary, Locale } from "@/lib/i18n";
-import { jobQuery } from "@/lib/queries/tanstack.queries";
+import { useEffect, useState } from "react";
 
 interface contactPageProps {
   params: Promise<{
@@ -10,12 +13,22 @@ interface contactPageProps {
   }>;
 }
 
-async function Page({ params }: contactPageProps) {
-  const { id, lang } = await params;
-  const dictionary = await getDictionary(lang);
-  const { data: job, isLoading: isJobLoading } = jobQuery.jobById(id);
+function Page({ params }: contactPageProps) {
+  const [dictionary, setDictionary] = useState<any>(null);
+  const [resolvedParams, setResolvedParams] = useState<{lang: Locale; id: string} | null>(null);
+  
+  useEffect(() => {
+    params.then(async (resolved) => {
+      setResolvedParams(resolved);
+      const dict = await getDictionary(resolved.lang);
+      setDictionary(dict);
+    });
+  }, [params]);
+  
+  const { data: job, isLoading: isJobLoading } = jobQuery.jobById(resolvedParams?.id || "");
 
-  if (isJobLoading) {
+  // Loading state
+  if (isJobLoading || !dictionary || !resolvedParams) {
     return (
       <div>
         <p>Loading...</p>
@@ -23,13 +36,11 @@ async function Page({ params }: contactPageProps) {
     );
   }
 
-  // const job = await getJob(parseInt(id));
-  return <div>{job && <Submit JobData={job} dictionary={dictionary} />}</div>;
+  return (
+    <div>
+      {job && <Submit JobData={job} dictionary={dictionary} />}
+    </div>
+  );
 }
 
 export default Page;
-
-// export async function generateStaticParams() {
-//   const blogs = await new SanityService().getOffers();
-//   return blogs.map((item) => ({ id: item._id }));
-// }

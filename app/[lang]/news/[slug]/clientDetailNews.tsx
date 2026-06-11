@@ -1,7 +1,7 @@
 "use client";
 import NewsDetails from "@/components/news/NewsDetails";
 import { Dictionary } from "@/lib/i18n/types";
-import { newQuery } from "@/lib/queries/tanstack.queries";
+import { newQuery } from "@/lib/queries/tanstack";
 
 interface LatestNewsProps {
   // dictionary: Dictionary;
