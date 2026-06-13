@@ -6,9 +6,10 @@ import { newQuery } from "@/lib/queries/tanstack";
 
 interface LatestNewsProps {
   dictionary: Dictionary;
+  lang: string;
 }
 
-const ClientNews = ({ dictionary }: LatestNewsProps) => {
+const ClientNews = ({ dictionary, lang }: LatestNewsProps) => {
   const { data: News, isLoading: isAllLoading } = newQuery.news();
 
   if (isAllLoading) {
@@ -26,7 +27,7 @@ const ClientNews = ({ dictionary }: LatestNewsProps) => {
       )}
       {/* News list */}
       {News && News.length > 0 && (
-        <NewsList NewsListData={News} dictionary={dictionary} />
+        <NewsList NewsListData={News} dictionary={dictionary} lang={lang} />
       )}
     </>
   );

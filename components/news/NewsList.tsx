@@ -5,16 +5,20 @@ import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
-import { Dictionary } from "@/lib/i18n";
+import { Dictionary, getDictionary } from "@/lib/i18n";
 import { New } from "@/lib/types";
 
 const NewsList = ({
   NewsListData,
   dictionary,
+  lang
 }: {
   NewsListData: New[];
   dictionary: Dictionary;
+  lang: string;
 }) => {
+
+  const loc = lang === "en" ? "en-US" : "fr-FR"
   const [news, setNews] = useState<New[]>([]);
   const [filteredNews, setFilteredNews] = useState<New[]>(news);
 
@@ -94,11 +98,11 @@ const NewsList = ({
                   onClick={() =>
                     handleFilter(
                       filter.picker as
-                        | "all"
-                        | "today"
-                        | "this-week"
-                        | "this-month"
-                        | "headline",
+                      | "all"
+                      | "today"
+                      | "this-week"
+                      | "this-month"
+                      | "headline",
                     )
                   }
                   className={clsx(
@@ -136,7 +140,10 @@ const NewsList = ({
                       {dictionary.autor}{" "}
                       <b className=" text-[var(--primary)]">Creaconsult</b>
                       {" -- "}
-                      {new Date(news.publishedAt).toDateString()}
+                      {new Date(news.publishedAt).toLocaleString(loc, {
+                        dateStyle: 'long',
+                        timeStyle: 'short'
+                      })}
                     </small>
                     <Link href={`/news/${news.documentId}`}>
                       <h4 className="font-semibold hidden md:block line-clamp-1">
@@ -146,7 +153,10 @@ const NewsList = ({
                         {news.title}
                       </h6>
                     </Link>
-                    <p className=" line-clamp-5">{news.publishedAt}</p>
+                    <p className=" line-clamp-5">{new Date(news.publishedAt).toLocaleString(loc, {
+                      dateStyle: 'long',
+                      timeStyle: 'short'
+                    })}</p>
                     <Link
                       href={`/news/${news.documentId}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"

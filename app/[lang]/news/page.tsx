@@ -17,7 +17,7 @@ const Page = async ({ params }: contactPageProps) => {
       title={(await params).lang == "en" ? "News" : "Actualités"}
       img="/ui/intro/NewsIntro.webp"
     >
-      <ClientNews dictionary={dictionary} />
+      <ClientNews dictionary={dictionary} lang={lang} />
       {/* adds */}
       {/* events list */}
       {/* News Letter */}

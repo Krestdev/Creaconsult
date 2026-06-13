@@ -106,7 +106,10 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                       {dictionary.autor}{" "}
                       <b className=" text-[var(--primary)]">Creaconsult</b>
                       {" -- "}
-                      {new Date(article.publishedAt).toDateString()}
+                      {new Date(article.publishedAt).toLocaleString('fr-FR', {
+                        dateStyle: 'long',
+                        timeStyle: 'short'
+                      })}
                     </small>
                     <p className="line-clamp-2">{article.bref}</p>
                     <Link
