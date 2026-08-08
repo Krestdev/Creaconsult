@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Dictionary } from "@/lib/i18n";
 import { useMyContext } from "@/context/MyContext";
 import { New } from "@/lib/types";
+import { getImageUrl } from "@/lib/utils";
 
 interface LatestNewsProps {
   LatestNews: New[];
@@ -43,7 +44,7 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
             <div className="xl:w-1/2">
               <div className="w-full flex flex-col gap-4 mb-4">
                 <img
-                  src={`${process.env.NEXT_IMAGE_BASE}${news[0].cover.url}`}
+                  src={getImageUrl(news[0].cover.url)}
                   alt="articel"
                   className="w-full h-[350px] object-cover bg-slate-300  shadow-md shadow-black"
                 />
@@ -53,7 +54,7 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                       return (
                         <img
                           key={index}
-                          src={`${process.env.NEXT_IMAGE_BASE}${imgData.url}`}
+                          src={getImageUrl(imgData.url)}
                           alt="articel"
                           className="w-full md:max-w-[300px] h-[150px] object-cover bg-slate-300  shadow-md shadow-black"
                         />
@@ -74,7 +75,7 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                 <h6 className="font-semibold md:hidden">{news[0].title}</h6>
                 <p className="text-[16px] line-clamp-2">{news[0].bref}</p>
                 <Link
-                  href={`/news/${news[0].documentId}`}
+                  href={`/news/${news[0].id}`}
                   className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                 >
                   <p>{dictionary.voir}</p> <ArrowRight size={24} />
@@ -92,7 +93,7 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                 >
                   <img
                     className="md:w-[300px] h-[250px] object-cover bg-slate-300 shadow-md shadow-black"
-                    src={`${process.env.NEXT_IMAGE_BASE}${article.cover.url}`}
+                    src={getImageUrl(article.cover.url)}
                     alt="img"
                   />
                   <div className="flex-1 flex flex-col">
@@ -113,7 +114,7 @@ const LatestNews = ({ LatestNews, dictionary }: LatestNewsProps) => {
                     </small>
                     <p className="line-clamp-2">{article.bref}</p>
                     <Link
-                      href={`/news/${article.documentId}`}
+                      href={`/news/${article.id}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>{dictionary.voir}</p> <ArrowRight size={24} />

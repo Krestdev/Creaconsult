@@ -190,7 +190,12 @@ export interface Job {
     [k: string]: unknown;
   };
   bref?: string | null;
-  tags?: string | null;
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
   location: string;
   type: string;
   expire?: string | null;
@@ -377,7 +382,12 @@ export interface JobsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   bref?: T;
-  tags?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
   location?: T;
   type?: T;
   expire?: T;

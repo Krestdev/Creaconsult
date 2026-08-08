@@ -8,6 +8,7 @@ import SectionContainer from "../global/SectionContainer";
 import { filterJobs } from "@/lib/FilterJobs";
 import { Dictionary } from "@/lib/i18n";
 import { Job } from "@/lib/types";
+import { getImageUrl } from "@/lib/utils";
 
 interface JobOfferProps {
   Jobs: Job[];
@@ -82,7 +83,7 @@ const JobList = ({ Jobs, dictionary }: JobOfferProps) => {
                   <div key={index} className="shadow-md shadow-black">
                     <div className="w-full flex flex-col gap-4 mb-4 relative">
                       <img
-                        src={`${process.env.NEXT_IMAGE_BASE}${job.illustration.url}`}
+                        src={getImageUrl(job.illustration.url)}
                         alt="article"
                         className="w-full h-[250px] object-cover bg-slate-300"
                       />
@@ -149,7 +150,7 @@ const JobList = ({ Jobs, dictionary }: JobOfferProps) => {
                 <div key={index} className="shadow-md shadow-black">
                   <div className="w-full flex flex-col gap-4 mb-4 relative">
                     <img
-                      src={`${process.env.NEXT_IMAGE_BASE}${job.illustration.url}`}
+                      src={getImageUrl(job.illustration.url)}
                       alt="article"
                       className="w-full h-[250px] object-cover bg-slate-300"
                     />

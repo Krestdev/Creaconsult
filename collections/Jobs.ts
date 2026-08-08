@@ -28,7 +28,14 @@ export const Jobs: CollectionConfig = {
     },
     {
       name: 'tags',
-      type: 'text',
+      type: 'array',
+      fields: [
+        {
+          name: 'tag',
+          type: 'text',
+          required: true,
+        },
+      ],
     },
     {
       name: 'location',

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import { New } from "@/lib/types";
 import BlockRendererClient from "../global/BlockRendererClient";
+import { getImageUrl } from "@/lib/utils";
 
 interface NewsListPorps {
   NewsData: New;
@@ -45,7 +46,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
             <div className="space-y-4">
               <p>{news.bref}</p>
               <img
-                src={`${process.env.NEXT_IMAGE_BASE}${news.cover?.url}`}
+                src={getImageUrl(news.cover?.url)}
                 alt="news"
                 className="w-full max-h-[300px] object-cover object-center"
               />
@@ -60,7 +61,7 @@ const NewsDetails = ({ NewsData, newsList }: NewsListPorps) => {
                   <div className="flex gap-4 flex-col" key={article.id}>
                     <img
                       className="w-full h-[200px] object-cover bg-slate-300 shadow-md shadow-gray-400"
-                      src={`${process.env.NEXT_IMAGE_BASE}assets/${article.cover}`}
+                      src={getImageUrl(article.cover?.url)}
                       onError={(e) => {
                         e.currentTarget.src = "/ui/creamotif unique red.svg";
                       }}

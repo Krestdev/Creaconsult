@@ -5,7 +5,7 @@ export interface Job {
   id: number;
   documentId: string;
   title: string;
-  description: BlocksContent;
+  description: any;
   bref: string;
   tags: string;
   createdAt: Date;
@@ -90,7 +90,7 @@ export type New = {
   images: Illustration[];
   documentId: string;
   title: string;
-  content: BlocksContent;
+  content: any;
   headline: boolean;
   slug: string;
   subtitle: string;

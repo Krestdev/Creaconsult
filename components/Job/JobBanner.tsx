@@ -6,6 +6,7 @@ import { ArrowRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import { Job } from "@/lib/types";
+import { getImageUrl } from "@/lib/utils";
 
 interface JobOBannerProps {
   Jobs: Job[];
@@ -44,7 +45,7 @@ const JobBanner = ({ Jobs, dictionary }: JobOBannerProps) => {
                   key={index}
                   className="flex flex-col justify-between bg-[#700032]/10 p-4 bg-cover bg-center text-white"
                   style={{
-                    backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(255,0,0,0.5)),url('${process.env.NEXT_IMAGE_BASE}${job.illustration.url}')`,
+                    backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(255,0,0,0.5)),url('${getImageUrl(job.illustration.url)}')`,
                   }}
                 >
                   <div className="space-y-2">

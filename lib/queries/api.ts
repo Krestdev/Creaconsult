@@ -21,18 +21,18 @@ async function fetchAPI<T>(
 ): Promise<T> {
   const url = `${API_URL}${endpoint.startsWith("/") ? endpoint : "/" + endpoint}`;
 
-  const headers = {
-    "Content-Type": "application/json",
-    ...options.headers,
-  };
+  const token = process.env.NEXT_PUBLIC_TOKEN;
+  const headers = new Headers(options.headers);
+  headers.set("Content-Type", "application/json");
+
+  if (token) {
+    headers.set("Authorization", `Bearer ${token}`);
+  }
 
   try {
     const response = await fetch(url, {
       ...options,
-      headers: {
-        ...headers,
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
-      },
+      headers,
     });
 
     const data = await response.json().catch(() => ({}));
@@ -58,52 +58,83 @@ async function fetchAPI<T>(
   }
 }
 
+const mapPayloadJob = (job: any): Job => {
+  let tagsString = "";
+  if (Array.isArray(job.tags)) {
+    tagsString = job.tags.map((t: any) => t.tag).filter(Boolean).join(",");
+  } else if (typeof job.tags === 'string') {
+    tagsString = job.tags;
+  }
+  return {
+    ...job,
+    documentId: String(job.id),
+    tags: tagsString,
+  };
+};
+
 // Job APIs
 export const JobApi = {
   getJob: async () => {
-    const { data } = await fetchAPI<{ data: Job[]; meta: any }>(
-      `/jobs?populate=*`,
+    const { docs } = await fetchAPI<{ docs: any[] }>(
+      `/jobs`,
     );
-    return data;
+    return docs.map(mapPayloadJob);
   },
 
   getById: async (jobId: string) => {
-    const { data } = await fetchAPI<{ data: Job; meta: any }>(
-      `/jobs/${jobId}?populate=*`,
+    const data = await fetchAPI<any>(
+      `/jobs/${jobId}`,
     );
-    return data;
+    return mapPayloadJob(data);
   },
+};
+
+const mapPayloadNew = (article: any): New => {
+  return {
+    ...article,
+    documentId: article.slug || String(article.id),
+  };
 };
 
 // New APIs
 export const NewApi = {
   getNew: async () => {
-    const { data } = await fetchAPI<{ data: New[]; meta: any }>(
-      `/news?populate=*`,
+    const { docs } = await fetchAPI<{ docs: any[] }>(
+      `/news`,
     );
-    return data;
+    return docs.map(mapPayloadNew);
   },
 
-  getById: async (newId: string) => {
-    const { data } = await fetchAPI<{ data: New; meta: any }>(
-      `/news/${newId}?populate=*`,
+  getById: async (slug: string) => {
+    // news details query by slug query parameter or id fallback
+    const { docs } = await fetchAPI<{ docs: any[] }>(
+      `/news?where[slug][equals]=${slug}`,
     );
-    return data;
+    if (docs && docs.length > 0) {
+      return mapPayloadNew(docs[0]);
+    }
+    // Fallback: try by ID directly
+    try {
+      const data = await fetchAPI<any>(`/news/${slug}`);
+      return mapPayloadNew(data);
+    } catch {
+      throw new APIError(404, "NOT_FOUND", `News not found for slug or id: ${slug}`);
+    }
   },
 };
 
 // Contact APIs
 export const ContactApi = {
   getContact: async () => {
-    const { data } = await fetchAPI<{ data: Contact[]; meta: any }>(
-      `/contact?populate=*`,
+    const { docs } = await fetchAPI<{ docs: Contact[] }>(
+      `/contacts`,
     );
-    return data;
+    return docs;
   },
 
   getById: async (contactId: string) => {
-    const { data } = await fetchAPI<{ data: Contact[]; meta: any }>(
-      `/contact/${contactId}?populate=*`,
+    const data = await fetchAPI<Contact>(
+      `/contacts/${contactId}`,
     );
     return data;
   },

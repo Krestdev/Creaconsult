@@ -45,6 +45,10 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
+  if (pathname.includes("admin")) {
+    return NextResponse.next();
+  }
+
   // Redirect if there is no locale
   const locale = getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;

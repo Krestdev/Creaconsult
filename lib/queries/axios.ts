@@ -9,8 +9,9 @@ export const api = axios.create({
 // REQUEST INTERCEPTOR
 api.interceptors.request.use((config) => {
   const token = process.env.NEXT_PUBLIC_TOKEN;
-  config.headers.Authorization = `Bearer ${token}`;
-  console.log(config.headers.Authorization);
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
 
   return config;
 });

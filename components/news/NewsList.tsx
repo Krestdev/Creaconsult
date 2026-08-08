@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import SectionContainer from "../global/SectionContainer";
 import { Dictionary, getDictionary } from "@/lib/i18n";
 import { New } from "@/lib/types";
+import { getImageUrl } from "@/lib/utils";
 
 const NewsList = ({
   NewsListData,
@@ -128,7 +129,7 @@ const NewsList = ({
                     <img
                       src={
                         news.cover
-                          ? `${process.env.NEXT_IMAGE_BASE}${news.cover.url}`
+                          ? getImageUrl(news.cover.url)
                           : "/ui/creamotif unique red.svg"
                       }
                       alt="articel"
@@ -145,7 +146,7 @@ const NewsList = ({
                         timeStyle: 'short'
                       })}
                     </small>
-                    <Link href={`/news/${news.documentId}`}>
+                    <Link href={`/news/${news.id}`}>
                       <h4 className="font-semibold hidden md:block line-clamp-1">
                         {news.title}
                       </h4>
@@ -158,7 +159,7 @@ const NewsList = ({
                       timeStyle: 'short'
                     })}</p>
                     <Link
-                      href={`/news/${news.documentId}`}
+                      href={`/news/${news.id}`}
                       className="flex w-fit p-2 duration-300 gap-2 items-center text-[var(--primary)] font-semibold mt-auto hover:bg-[var(--primary)] hover:text-white"
                     >
                       <p>{dictionary.voir}</p> <ArrowRight size={24} />

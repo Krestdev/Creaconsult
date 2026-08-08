@@ -10,6 +10,7 @@ import { Button } from "../ui/button";
 import BlockRendererClient from "../global/BlockRendererClient";
 import { Job } from "@/lib/types";
 import { BlocksContent } from "@strapi/blocks-react-renderer";
+import { getImageUrl } from "@/lib/utils";
 
 const JobDetail = ({
   JobData,
@@ -46,7 +47,7 @@ const JobDetail = ({
         <>
           <div className="flex gap-4 justify-center items-start flex-col">
             <img
-              src={`${process.env.NEXT_IMAGE_BASE}${Job.illustration.url}`}
+              src={getImageUrl(Job.illustration.url)}
               alt="job"
               className="md:w-1/2 h-[300px] object-cover"
             />
